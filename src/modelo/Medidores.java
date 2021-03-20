@@ -27,6 +27,7 @@ public class Medidores {
 
     public String getCodigo() {
         return codigo;
+       System.out.print.line("hola musdoddddd");
     }
 
     public void setCodigo(String codigo) {
