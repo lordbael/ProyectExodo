@@ -7,7 +7,7 @@ package modelo;
 
 /**
  *
- * @author Juann Inga
+ * @author Juann Inga, Jefferson Condo y Anthony Cardenas
  */
 public class ConexionPG {
     

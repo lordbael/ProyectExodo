@@ -4,7 +4,7 @@ import java.util.Date;
 
 /**
  *
- * @author Juann Inga
+ * @author Juann Inga, Jefferson Condo y Anthony Cardenas
  */
 public class Factura {
 
