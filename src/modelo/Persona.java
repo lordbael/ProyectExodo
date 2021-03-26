@@ -1,12 +1,13 @@
 package modelo;
 
+import java.awt.Image;
 import java.util.Date;
 
 /**
  *
  * @author Juann Inga, Jefferson Condo y Anthony Cardenas
  */
-public class Clientes {
+public class Persona {
 
     private String cedula;
     private String nombre;
@@ -16,11 +17,12 @@ public class Clientes {
     private String direccion;
     private String correo;
     private String telefono;
+    private Image foto;
 
-    public Clientes() {
+    public Persona() {
     }
 
-    public Clientes(String cedula, String nombre, String apellido, String genero, Date fechanac, String direccion, String correo, String telefono) {
+    public Persona(String cedula, String nombre, String apellido, String genero, Date fechanac, String direccion, String correo, String telefono, Image foto) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -29,6 +31,7 @@ public class Clientes {
         this.direccion = direccion;
         this.correo = correo;
         this.telefono = telefono;
+        this.foto = foto;
     }
 
     public String getCedula() {
@@ -94,5 +97,14 @@ public class Clientes {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
+
+    public Image getFoto() {
+        return foto;
+    }
+
+    public void setFoto(Image foto) {
+        this.foto = foto;
+    }
+
 
 }

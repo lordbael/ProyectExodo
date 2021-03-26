@@ -7,52 +7,64 @@ import java.util.Date;
  * @author Juann Inga, Jefferson Condo y Anthony Cardenas
  */
 public class Factura {
-
-    private String codigofac;
-    private Date fechafac;
-    private String cedulacliente;
+    
+    private String codigofactura;
+    private Date fechafactura;
+    private String fkcodigocontrato;
+    private String fkcedulacliente;
     private String nombrecliente;
-    private String codigomedidor;
-    private String tipomedidor;
-    private double consumo;
-    private double total;
-
-    public Factura(String codigofac, Date fechafac, String cedulacliente, String nombrecliente, String codigomedidor, String tipomedidor, double consumo, double total) {
-        this.codigofac = codigofac;
-        this.fechafac = fechafac;
-        this.cedulacliente = cedulacliente;
-        this.nombrecliente = nombrecliente;
-        this.codigomedidor = codigomedidor;
-        this.tipomedidor = tipomedidor;
-        this.consumo = consumo;
-        this.total = total;
-    }
+    private String apellidocliente;
+    private String direccion;
+    private String fkcodigomedidor;
+    private double costowatts;
+    private int watts;
 
     public Factura() {
     }
 
-    public String getCodigofac() {
-        return codigofac;
+    public Factura(String codigofactura, Date fechafactura, String fkcodigocontrato, String fkcedulacliente, String nombrecliente, String apellidocliente, String direccion, String fkcodigomedidor, double costowatts, int watts) {
+        this.codigofactura = codigofactura;
+        this.fechafactura = fechafactura;
+        this.fkcodigocontrato = fkcodigocontrato;
+        this.fkcedulacliente = fkcedulacliente;
+        this.nombrecliente = nombrecliente;
+        this.apellidocliente = apellidocliente;
+        this.direccion = direccion;
+        this.fkcodigomedidor = fkcodigomedidor;
+        this.costowatts = costowatts;
+        this.watts = watts;
     }
 
-    public void setCodigofac(String codigofac) {
-        this.codigofac = codigofac;
+    public String getCodigofactura() {
+        return codigofactura;
     }
 
-    public Date getFechafac() {
-        return fechafac;
+    public void setCodigofactura(String codigofactura) {
+        this.codigofactura = codigofactura;
     }
 
-    public void setFechafac(Date fechafac) {
-        this.fechafac = fechafac;
+    public Date getFechafactura() {
+        return fechafactura;
     }
 
-    public String getCedulacliente() {
-        return cedulacliente;
+    public void setFechafactura(Date fechafactura) {
+        this.fechafactura = fechafactura;
     }
 
-    public void setCedulacliente(String cedulacliente) {
-        this.cedulacliente = cedulacliente;
+    public String getFkcodigocontrato() {
+        return fkcodigocontrato;
+    }
+
+    public void setFkcodigocontrato(String fkcodigocontrato) {
+        this.fkcodigocontrato = fkcodigocontrato;
+    }
+
+    public String getFkcedulacliente() {
+        return fkcedulacliente;
+    }
+
+    public void setFkcedulacliente(String fkcedulacliente) {
+        this.fkcedulacliente = fkcedulacliente;
     }
 
     public String getNombrecliente() {
@@ -63,36 +75,46 @@ public class Factura {
         this.nombrecliente = nombrecliente;
     }
 
-    public String getCodigomedidor() {
-        return codigomedidor;
+    public String getApellidocliente() {
+        return apellidocliente;
     }
 
-    public void setCodigomedidor(String codigomedidor) {
-        this.codigomedidor = codigomedidor;
+    public void setApellidocliente(String apellidocliente) {
+        this.apellidocliente = apellidocliente;
     }
 
-    public String getTipomedidor() {
-        return tipomedidor;
+    public String getDireccion() {
+        return direccion;
     }
 
-    public void setTipomedidor(String tipomedidor) {
-        this.tipomedidor = tipomedidor;
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 
-    public double getConsumo() {
-        return consumo;
+    public String getFkcodigomedidor() {
+        return fkcodigomedidor;
     }
 
-    public void setConsumo(double consumo) {
-        this.consumo = consumo;
+    public void setFkcodigomedidor(String fkcodigomedidor) {
+        this.fkcodigomedidor = fkcodigomedidor;
     }
 
-    public double getTotal() {
-        return total;
+    public double getCostowatts() {
+        return costowatts;
     }
 
-    public void setTotal(double total) {
-        this.total = total;
+    public void setCostowatts(double costowatts) {
+        this.costowatts = costowatts;
     }
 
+    public int getWatts() {
+        return watts;
+    }
+
+    public void setWatts(int watts) {
+        this.watts = watts;
+    }
+
+   
+    
 }

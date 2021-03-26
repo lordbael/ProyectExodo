@@ -8,46 +8,39 @@ import java.util.Date;
  */
 public class Medidores {
 
-    private String codigo;
-    private String color;
-    private Date añofab;
+    private String codigomedidor;
+    private String marca;
     private String tipo;
-    private int porcentaje;
+    private Date añofab;
+    private String capacidad;
+    private int precio;
 
     public Medidores() {
     }
 
-    public Medidores(String codigo, String color, Date añofab, String tipo, int porcentaje) {
-        this.codigo = codigo;
-        this.color = color;
-        this.añofab = añofab;
+    public Medidores(String codigomedidor, String marca, String tipo, Date añofab, String capacidad, int precio) {
+        this.codigomedidor = codigomedidor;
+        this.marca = marca;
         this.tipo = tipo;
-        this.porcentaje = porcentaje;
-    }
-
-    public String getCodigo() {
-        return codigo;
-       System.out.print.line("hola musdoddddd");
-    }
-
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public Date getAñofab() {
-        return añofab;
-    }
-
-    public void setAñofab(Date añofab) {
         this.añofab = añofab;
+        this.capacidad = capacidad;
+        this.precio = precio;
+    }
+
+    public String getCodigomedidor() {
+        return codigomedidor;
+    }
+
+    public void setCodigomedidor(String codigomedidor) {
+        this.codigomedidor = codigomedidor;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
     }
 
     public String getTipo() {
@@ -58,12 +51,30 @@ public class Medidores {
         this.tipo = tipo;
     }
 
-    public int getPorcentaje() {
-        return porcentaje;
+    public Date getAñofab() {
+        return añofab;
     }
 
-    public void setPorcentaje(int porcentaje) {
-        this.porcentaje = porcentaje;
+    public void setAñofab(Date añofab) {
+        this.añofab = añofab;
     }
 
+    public String getCapacidad() {
+        return capacidad;
+    }
+
+    public void setCapacidad(String capacidad) {
+        this.capacidad = capacidad;
+    }
+
+    public int getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(int precio) {
+        this.precio = precio;
+    }
+
+    
+   
 }
