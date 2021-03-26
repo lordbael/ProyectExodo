@@ -35,8 +35,14 @@ public class Medidores {
         this.codigomedidor = codigomedidor;
     }
 
+<<<<<<< HEAD
     public String getMarca() {
         return marca;
+=======
+    public String getCodigo() {
+        return codigo;
+
+>>>>>>> 8c20f56244d70d991d4ec796e58abeddf3781594
     }
 
     public void setMarca(String marca) {
