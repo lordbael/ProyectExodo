@@ -13,12 +13,12 @@ import java.util.logging.Logger;
  * @author Juann Inga, Jefferson Condo y Anthony Cardenas
  */
 public class ConexionPG {
-    
+
     private Connection conexion;
     private String cadConexion = "jdbc:postgresql://localhost:5432/exodo";
     private String usuario = "postgres";
     private String pass = "1234";
-    
+
     public ConexionPG() {
 
         try {
@@ -34,7 +34,7 @@ public class ConexionPG {
         }
 
     }
-    
+
     public ResultSet query(String sql) {
         try {
             Statement st;
@@ -46,6 +46,7 @@ public class ConexionPG {
             return null;
         }
     }
+
     public SQLException noQuery(String nsql) {
 
         try {
@@ -59,7 +60,7 @@ public class ConexionPG {
         }
 
     }
-    
+
     public Connection getConexion() {
         return conexion;
     }
@@ -68,5 +69,4 @@ public class ConexionPG {
         this.conexion = conexion;
     }
 
-    
 }

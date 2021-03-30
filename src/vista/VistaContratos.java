@@ -9,12 +9,12 @@ package vista;
  *
  * @author Juann Inga
  */
-public class VistaFacturas extends javax.swing.JFrame {
+public class VistaContratos extends javax.swing.JFrame {
 
     /**
-     * Creates new form VistaFacturas
+     * Creates new form VistaContratos
      */
-    public VistaFacturas() {
+    public VistaContratos() {
         initComponents();
     }
 
@@ -33,20 +33,17 @@ public class VistaFacturas extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 615, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 437, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    
+   
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
 }

@@ -9,8 +9,6 @@ package controlador;
  *
  * @author Juann Inga, Jefferson Condo y Anthony Cardenas
  */
-public class ControlClientes {
-
-//hola que hace
+public class ControlMedidor {
     
 }
