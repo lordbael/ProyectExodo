@@ -17,7 +17,7 @@ import javax.swing.JTextField;
  *
  * @author Juann Inga
  */
-public class VistaAdmin extends javax.swing.JFrame {
+public class VistaAdmin extends javax.swing.JInternalFrame{
 
     /**
      * Creates new form VistaAdmins

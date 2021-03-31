@@ -5,19 +5,19 @@
  */
 package controlador;
 
-import modelo.ModeloFactura;
-import vista.VistaFacturas;
+import modelo.ModeloAdmin;
+import vista.VistaAdmin;
 
 /**
  *
- * @author Juann Inga, Jefferson Condo y Anthony Cardenas
+ * @author Juann Inga
  */
-public class ControlFactura {
+public class ControlAdmin {
     
-    private ModeloFactura modelo;
-    private VistaFacturas vista;
+    private ModeloAdmin modelo;
+    private VistaAdmin vista;
 
-    public ControlFactura(ModeloFactura modelo, VistaFacturas vista) {
+    public ControlAdmin(ModeloAdmin modelo, VistaAdmin vista) {
         this.modelo = modelo;
         this.vista = vista;
         vista.setVisible(true);

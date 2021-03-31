@@ -16,7 +16,7 @@ import javax.swing.JTextField;
  *
  * @author Juann Inga
  */
-public class VistaMedidores extends javax.swing.JFrame {
+public class VistaMedidores extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form VistaMedidores

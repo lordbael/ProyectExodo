@@ -17,7 +17,7 @@ import javax.swing.JTextField;
  *
  * @author Juann Inga
  */
-public class VistaPersonas extends javax.swing.JFrame {
+public class VistaPersonas extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form VistaCliente

@@ -15,7 +15,7 @@ import javax.swing.JTextField;
  *
  * @author Juann Inga
  */
-public class VistaFacturas extends javax.swing.JFrame {
+public class VistaFacturas extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form VistaFacturas

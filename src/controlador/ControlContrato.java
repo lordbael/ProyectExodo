@@ -5,24 +5,24 @@
  */
 package controlador;
 
-import modelo.ModeloFactura;
-import vista.VistaFacturas;
+import modelo.ModeloContrato;
+import vista.VistaContratos;
 
 /**
  *
- * @author Juann Inga, Jefferson Condo y Anthony Cardenas
+ * @author Juann Inga
  */
-public class ControlFactura {
-    
-    private ModeloFactura modelo;
-    private VistaFacturas vista;
+public class ControlContrato {
 
-    public ControlFactura(ModeloFactura modelo, VistaFacturas vista) {
+    private ModeloContrato modelo;
+    private VistaContratos vista;
+
+    public ControlContrato(ModeloContrato modelo, VistaContratos vista) {
         this.modelo = modelo;
         this.vista = vista;
         vista.setVisible(true);
     }
-    
-    
-    
+
+   
+
 }

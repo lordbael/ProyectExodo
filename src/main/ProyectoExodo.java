@@ -1,7 +1,9 @@
 package main;
 
+import controlador.ControlInicio;
 import controlador.ControlPersona;
 import modelo.ModeloPersona;
+import vista.VistaInicio;
 import vista.VistaPersonas;
 
 /**
@@ -12,11 +14,9 @@ public class ProyectoExodo {
 
     public static void main(String[] args) {
         
-        ModeloPersona m = new ModeloPersona();
-        VistaPersonas v = new VistaPersonas();
-        ControlPersona c = new ControlPersona(m, v);
-        c.iniciarControl();
-        
+       VistaInicio vistainicio = new VistaInicio();
+       ControlInicio ci = new ControlInicio(vistainicio);
+       ci.iniciaControl();
 
     }
 
