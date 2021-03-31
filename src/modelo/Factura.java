@@ -18,11 +18,12 @@ public class Factura {
     private String fkcodigomedidor;
     private double costowatts;
     private int watts;
+    private double total;
 
     public Factura() {
     }
 
-    public Factura(String codigofactura, Date fechafactura, String fkcodigocontrato, String fkcedulacliente, String nombrecliente, String apellidocliente, String direccion, String fkcodigomedidor, double costowatts, int watts) {
+    public Factura(String codigofactura, Date fechafactura, String fkcodigocontrato, String fkcedulacliente, String nombrecliente, String apellidocliente, String direccion, String fkcodigomedidor, double costowatts, int watts, double total) {
         this.codigofactura = codigofactura;
         this.fechafactura = fechafactura;
         this.fkcodigocontrato = fkcodigocontrato;
@@ -33,6 +34,7 @@ public class Factura {
         this.fkcodigomedidor = fkcodigomedidor;
         this.costowatts = costowatts;
         this.watts = watts;
+        this.total = total;
     }
 
     public String getCodigofactura() {
@@ -113,6 +115,14 @@ public class Factura {
 
     public void setWatts(int watts) {
         this.watts = watts;
+    }
+
+    public double getTotal() {
+        return total;
+    }
+
+    public void setTotal(double total) {
+        this.total = total;
     }
 
    
