@@ -9,13 +9,13 @@ import modelo.ModeloAdmin;
 import modelo.ModeloContrato;
 import modelo.ModeloFactura;
 import modelo.ModeloMedidor;
-import modelo.ModeloPersona;
+import modelo.ModeloCliente;
 import vista.VistaAdmin;
 import vista.VistaContratos;
 import vista.VistaFacturas;
 import vista.VistaInicio;
 import vista.VistaMedidores;
-import vista.VistaPersonas;
+import vista.VistaClientes;
 
 /**
  *
@@ -41,11 +41,11 @@ public class ControlInicio {
     
     public void crudPersonas(){
         
-        ModeloPersona m = new ModeloPersona();
-        VistaPersonas v = new VistaPersonas();
-        ControlPersona c = new ControlPersona(m, v);
+        ModeloCliente m = new ModeloCliente();
+        VistaClientes v = new VistaClientes();
+        ControlCliente c = new ControlCliente(m, v);
         vi.getDesktop().add(v);
-        c.iniciarControl();
+        c.iniciaControl();
         
     }
     

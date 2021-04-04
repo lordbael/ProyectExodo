@@ -11,18 +11,18 @@ public class Medidores {
     private String codigomedidor;
     private String marca;
     private String tipo;
-    private Date añofab;
+    private Date aniofabricacion;
     private String capacidad;
     private int precio;
 
     public Medidores() {
     }
 
-    public Medidores(String codigomedidor, String marca, String tipo, Date añofab, String capacidad, int precio) {
+    public Medidores(String codigomedidor, String marca, String tipo, Date aniofabricacion, String capacidad, int precio) {
         this.codigomedidor = codigomedidor;
         this.marca = marca;
         this.tipo = tipo;
-        this.añofab = añofab;
+        this.aniofabricacion = aniofabricacion;
         this.capacidad = capacidad;
         this.precio = precio;
     }
@@ -52,11 +52,11 @@ public class Medidores {
     }
 
     public Date getAñofab() {
-        return añofab;
+        return aniofabricacion;
     }
 
-    public void setAñofab(Date añofab) {
-        this.añofab = añofab;
+    public void setAñofab(Date aniofabricacion) {
+        this.aniofabricacion = aniofabricacion;
     }
 
     public String getCapacidad() {

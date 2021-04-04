@@ -1,10 +1,10 @@
 package main;
 
 import controlador.ControlInicio;
-import controlador.ControlPersona;
-import modelo.ModeloPersona;
+import controlador.ControlCliente;
+import modelo.ModeloCliente;
 import vista.VistaInicio;
-import vista.VistaPersonas;
+import vista.VistaClientes;
 
 /**
  *

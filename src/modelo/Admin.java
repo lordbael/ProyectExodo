@@ -21,8 +21,8 @@ public class Admin extends Persona{
     }
 
     
-    public Admin(String usuario, String contrasenia, String cedula, String nombre, String apellido, String genero, Date fechanac, String direccion, String correo, String telefono, Image foto) {
-        super(cedula, nombre, apellido, genero, fechanac, direccion, correo, telefono, foto);
+    public Admin(String usuario, String contrasenia, String cedula, String nombre, String apellido, String genero, Date fechanac, String direccion, String correo, String telefono) {
+        super(cedula, nombre, apellido, genero, fechanac, direccion, correo, telefono);
         this.usuario = usuario;
         this.contrasenia = contrasenia;
     }
