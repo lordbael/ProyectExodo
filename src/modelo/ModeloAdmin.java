@@ -27,7 +27,7 @@ import org.postgresql.util.Base64;
 
 /**
  *
- * @author Juann Inga
+ * @author Juann Inga,Jefferson condo,Antony Cardenas
  */
 public class ModeloAdmin extends Admin {
     
