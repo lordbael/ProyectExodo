@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JInternalFrameFormInfo">
   <NonVisualComponents>
     <Container class="javax.swing.JDialog" name="dlgFacturas">
 
@@ -12,7 +12,7 @@
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="jPanel10" min="-2" max="-2" attributes="0"/>
+              <Component id="jPanel10" alignment="0" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>
@@ -32,22 +32,13 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jPanel11" alignment="0" max="32767" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel33" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              <Component id="btnAceptar" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="btnCancelar" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="jPanel11" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel33" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace pref="19" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -57,13 +48,8 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel33" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jPanel11" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="btnCancelar" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnAceptar" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="jPanel11" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -95,60 +81,87 @@
                       <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel43" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="1" attributes="0">
                                       <Group type="102" attributes="0">
+                                          <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                                          <Component id="jLabel34" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="jLabel41" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel34" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel35" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel36" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel37" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                      <Component id="txtCodigoFactura" min="-2" pref="176" max="-2" attributes="0"/>
+                                              <Component id="jLabel43" min="-2" max="-2" attributes="0"/>
+                                              <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                                                  <Component id="jLabel36" min="-2" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="1" attributes="0">
+                                                      <Component id="jLabel42" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jLabel37" min="-2" max="-2" attributes="0"/>
                                                   </Group>
-                                                  <Group type="102" alignment="1" attributes="0">
-                                                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                                                      <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="txtCodigoContrato" alignment="1" min="-2" pref="175" max="-2" attributes="0"/>
-                                                          <Component id="txtCedula" alignment="1" min="-2" pref="175" max="-2" attributes="0"/>
-                                                          <Component id="txtNombre" alignment="1" min="-2" pref="175" max="-2" attributes="0"/>
-                                                          <Component id="txtApellido" alignment="1" min="-2" pref="175" max="-2" attributes="0"/>
-                                                          <Component id="txtDireccion" alignment="1" min="-2" pref="175" max="-2" attributes="0"/>
-                                                      </Group>
-                                                  </Group>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                                                  <Component id="dtcFecha" min="-2" pref="179" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                       </Group>
-                                      <Component id="jLabel41" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="40" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel38" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel39" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel40" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel44" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="txtCodigoFacturaIn" min="-2" pref="176" max="-2" attributes="0"/>
+                                          <EmptySpace min="0" pref="234" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" attributes="0">
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="txtApellidoIn" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
+                                                      <Component id="dtcFechaIn" min="-2" pref="179" max="-2" attributes="0"/>
+                                                      <Group type="102" attributes="0">
+                                                          <Component id="txtNombreIn" min="-2" pref="175" max="-2" attributes="0"/>
+                                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                          <Component id="btnBuscarClientes" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <Component id="txtDireccionIn" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
+                                                      <Component id="txtCedulaIn" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <EmptySpace min="0" pref="124" max="32767" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                                  <Component id="btnAceptarIn" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="btnEditarIn" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="btnCancelarIn" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                      </Group>
                                   </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="txtCodigoMedidor" alignment="0" pref="175" max="32767" attributes="0"/>
-                                      <Component id="txtWatts" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="txtCosto" max="32767" attributes="0"/>
-                                      <Component id="txtTotal" max="32767" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jLabel42" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Group type="103" groupAlignment="1" attributes="0">
+                                              <Component id="jLabel35" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel4" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="txtCostoIn" pref="175" max="32767" attributes="0"/>
+                                      <Component id="txtCodigoContratoIn" max="32767" attributes="0"/>
+                                      <Component id="txtWattsIn" max="32767" attributes="0"/>
+                                      <Component id="txtTotalIn" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="btnBuscarContra" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="120" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -157,63 +170,64 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="txtCodigoMedidor" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="txtCosto" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel39" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="jLabel34" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="txtCodigoFactura" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel41" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="dtcFecha" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="jLabel35" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="txtCodigoContrato" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel40" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="txtWatts" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="jLabel36" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="txtCedula" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel44" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="txtTotal" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <Component id="jLabel38" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel37" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtNombre" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
+                          <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel34" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtCodigoFacturaIn" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="dtcFechaIn" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel41" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="txtNombreIn" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel37" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnBuscarClientes" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="txtCedulaIn" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel36" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel42" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtApellido" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtApellidoIn" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="txtDireccionIn" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel43" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel35" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtCodigoContratoIn" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnBuscarContra" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel43" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtDireccion" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="txtCostoIn" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="28" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtWattsIn" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtTotalIn" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace pref="71" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="btnCancelarIn" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnAceptarIn" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnEditarIn" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -239,78 +253,83 @@
                     <Property name="text" type="java.lang.String" value="Nombre:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel38">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="C&#xf3;digo Medidor:"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel39">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Costo:"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabel40">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Watts:"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JLabel" name="jLabel41">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Fecha Factura:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtCodigoFactura">
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCodigoFacturaActionPerformed"/>
-                  </Events>
+                <Component class="javax.swing.JTextField" name="txtCodigoFacturaIn">
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtCodigoContrato">
+                <Component class="javax.swing.JTextField" name="txtCodigoContratoIn">
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtCedula">
+                <Component class="com.toedter.calendar.JDateChooser" name="dtcFechaIn">
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtCodigoMedidor">
-                </Component>
-                <Component class="javax.swing.JTextField" name="txtWatts">
-                </Component>
-                <Component class="com.toedter.calendar.JDateChooser" name="dtcFecha">
-                </Component>
-                <Component class="javax.swing.JTextField" name="txtNombre">
+                <Component class="javax.swing.JTextField" name="txtNombreIn">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel42">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Apellido:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtApellido">
+                <Component class="javax.swing.JTextField" name="txtApellidoIn">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel43">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Direcci&#xf3;n:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtDireccion">
+                <Component class="javax.swing.JTextField" name="txtDireccionIn">
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtCosto">
+                <Component class="javax.swing.JButton" name="btnBuscarClientes">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Buscar Cliente"/>
+                  </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel44">
+                <Component class="javax.swing.JTextField" name="txtCedulaIn">
+                </Component>
+                <Component class="javax.swing.JButton" name="btnAceptarIn">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Aceptar"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnCancelarIn">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Cancelar"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnBuscarContra">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="buscar contrato"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="txtCostoIn">
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel3">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Costo Watts:"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel4">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Watts:"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="txtWattsIn">
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel5">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Total:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtTotal">
+                <Component class="javax.swing.JTextField" name="txtTotalIn">
+                </Component>
+                <Component class="javax.swing.JButton" name="btnEditarIn">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Editar"/>
+                  </Properties>
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JButton" name="btnCancelar">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Cancelar"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JButton" name="btnAceptar">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Aceptar"/>
-              </Properties>
-            </Component>
           </SubComponents>
         </Container>
       </SubComponents>
@@ -321,7 +340,6 @@
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
-    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
   </SyntheticProperties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
@@ -442,9 +460,9 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="btnNuevo" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnNuevoFac" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="btnActualizar" min="-2" pref="90" max="-2" attributes="0"/>
+                              <Component id="btnActualizarFac" min="-2" pref="90" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
@@ -454,13 +472,13 @@
                           </Group>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="btnEditar" min="-2" pref="90" max="-2" attributes="0"/>
+                      <Component id="btnEditarFac" min="-2" pref="90" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="btnEliminar" min="-2" pref="90" max="-2" attributes="0"/>
+                      <Component id="btnEliminarFac" min="-2" pref="90" max="-2" attributes="0"/>
                       <EmptySpace pref="365" max="32767" attributes="0"/>
-                      <Component id="btnExportar" min="-2" pref="90" max="-2" attributes="0"/>
+                      <Component id="btnExportarFac" min="-2" pref="90" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="btnImprimir" min="-2" pref="90" max="-2" attributes="0"/>
+                      <Component id="btnImprimirFac" min="-2" pref="90" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -470,12 +488,12 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="btnNuevo" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnActualizar" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnEditar" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnEliminar" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnExportar" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnImprimir" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnNuevoFac" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnActualizarFac" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnEditarFac" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnEliminarFac" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnExportarFac" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnImprimirFac" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -488,37 +506,34 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JButton" name="btnNuevo">
+            <Component class="javax.swing.JButton" name="btnNuevoFac">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Nueva Factura"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNuevoActionPerformed"/>
-              </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="btnActualizar">
+            <Component class="javax.swing.JButton" name="btnActualizarFac">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Actualizar"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtBuscar">
             </Component>
-            <Component class="javax.swing.JButton" name="btnEditar">
+            <Component class="javax.swing.JButton" name="btnEditarFac">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Editar"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="btnEliminar">
+            <Component class="javax.swing.JButton" name="btnEliminarFac">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Eliminar"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="btnExportar">
+            <Component class="javax.swing.JButton" name="btnExportarFac">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Exportar"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="btnImprimir">
+            <Component class="javax.swing.JButton" name="btnImprimirFac">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Imprimir"/>
               </Properties>
@@ -540,7 +555,7 @@
             <Component class="javax.swing.JTable" name="tblFacturas">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="11" rowCount="0">
+                  <Table columnCount="10" rowCount="0">
                     <Column editable="true" title="C&#xf3;digo Factura" type="java.lang.Object"/>
                     <Column editable="true" title="Fecha Factura" type="java.lang.Object"/>
                     <Column editable="true" title="C&#xf3;digo Contrato" type="java.lang.Object"/>
@@ -548,7 +563,6 @@
                     <Column editable="true" title="Nombre" type="java.lang.Object"/>
                     <Column editable="true" title="Apellido" type="java.lang.Object"/>
                     <Column editable="true" title="Direcci&#xf3;n" type="java.lang.Object"/>
-                    <Column editable="true" title="C&#xf3;digo Medidor" type="java.lang.Object"/>
                     <Column editable="true" title="Costo/Watts" type="java.lang.Object"/>
                     <Column editable="true" title="Watts" type="java.lang.Object"/>
                     <Column editable="true" title="Total" type="java.lang.Object"/>

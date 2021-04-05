@@ -105,21 +105,7 @@ public class VistaContratos extends javax.swing.JInternalFrame {
         this.dtcFecha = dtcFecha;
     }
 
-    public JRadioButton getRbChipset() {
-        return rbChipset;
-    }
 
-    public void setRbChipset(JRadioButton rbChipset) {
-        this.rbChipset = rbChipset;
-    }
-
-    public JRadioButton getRbSocket() {
-        return rbSocket;
-    }
-
-    public void setRbSocket(JRadioButton rbSocket) {
-        this.rbSocket = rbSocket;
-    }
 
     public JTable getTblContratos() {
         return tblContratos;
@@ -129,13 +115,7 @@ public class VistaContratos extends javax.swing.JInternalFrame {
         this.tblContratos = tblContratos;
     }
 
-    public JTextField getTxtApellido() {
-        return txtApellido;
-    }
 
-    public void setTxtApellido(JTextField txtApellido) {
-        this.txtApellido = txtApellido;
-    }
 
     public JTextField getTxtBuscar() {
         return txtBuscar;
@@ -169,21 +149,7 @@ public class VistaContratos extends javax.swing.JInternalFrame {
         this.txtCodigoMedidor = txtCodigoMedidor;
     }
 
-    public JTextField getTxtCosto() {
-        return txtCosto;
-    }
 
-    public void setTxtCosto(JTextField txtCosto) {
-        this.txtCosto = txtCosto;
-    }
-
-    public JTextField getTxtNombre() {
-        return txtNombre;
-    }
-
-    public void setTxtNombre(JTextField txtNombre) {
-        this.txtNombre = txtNombre;
-    }
     
 
     /**
@@ -202,21 +168,12 @@ public class VistaContratos extends javax.swing.JInternalFrame {
         jPanel5 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         txtCodigoContrato = new javax.swing.JTextField();
         txtCedula = new javax.swing.JTextField();
-        txtNombre = new javax.swing.JTextField();
         txtCodigoMedidor = new javax.swing.JTextField();
-        txtCosto = new javax.swing.JTextField();
         dtcFecha = new com.toedter.calendar.JDateChooser();
-        txtApellido = new javax.swing.JTextField();
-        rbSocket = new javax.swing.JRadioButton();
-        rbChipset = new javax.swing.JRadioButton();
         btnAceptar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
@@ -247,30 +204,13 @@ public class VistaContratos extends javax.swing.JInternalFrame {
 
         jLabel5.setText("Cédula Cliente:");
 
-        jLabel6.setText("Nombre:");
-
-        jLabel7.setText("Apellido:");
-
         jLabel8.setText("Código Medidor:");
-
-        jLabel9.setText("Tipo:");
-
-        jLabel10.setText("Costo:");
 
         jLabel12.setText("Fecha de Contrato:");
 
         txtCodigoContrato.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCodigoContratoActionPerformed(evt);
-            }
-        });
-
-        rbSocket.setText("Socket");
-
-        rbChipset.setText("Chipset");
-        rbChipset.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rbChipsetActionPerformed(evt);
             }
         });
 
@@ -288,30 +228,18 @@ public class VistaContratos extends javax.swing.JInternalFrame {
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel7))
+                            .addComponent(jLabel5))
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
                                 .addComponent(txtCodigoContrato, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                                 .addGap(19, 19, 19)
-                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtCedula, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtNombre, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtApellido, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                .addComponent(txtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel10))
+                .addComponent(jLabel8)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(rbSocket)
-                    .addComponent(rbChipset)
-                    .addComponent(txtCodigoMedidor, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
-                    .addComponent(txtCosto))
+                .addComponent(txtCodigoMedidor, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(25, 25, 25))
         );
         jPanel5Layout.setVerticalGroup(
@@ -319,20 +247,9 @@ public class VistaContratos extends javax.swing.JInternalFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
-                            .addComponent(txtCodigoMedidor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel9)
-                            .addComponent(rbChipset))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rbSocket)
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel10)
-                            .addComponent(txtCosto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel8)
+                        .addComponent(txtCodigoMedidor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
@@ -344,16 +261,8 @@ public class VistaContratos extends javax.swing.JInternalFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
-                            .addComponent(txtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel6)
-                            .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7)
-                            .addComponent(txtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(24, Short.MAX_VALUE))
+                            .addComponent(txtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(100, Short.MAX_VALUE))
         );
 
         btnAceptar.setText("Aceptar");
@@ -400,10 +309,10 @@ public class VistaContratos extends javax.swing.JInternalFrame {
         );
         dlgContratosLayout.setVerticalGroup(
             dlgContratosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 306, Short.MAX_VALUE)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 306, Short.MAX_VALUE)
         );
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel2.setBackground(new java.awt.Color(162, 138, 167));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -500,7 +409,7 @@ public class VistaContratos extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "Codigo Contrato", "Fecha Contrato", "Cédula", "Nombre", "Apellido", "Codigo Medidor", "Tipo", "Costo"
+                "Codigo Contrato", "Fecha Contrato", "Cédula", "Codigo Medidor"
             }
         ));
         jScrollPane1.setViewportView(tblContratos);
@@ -551,10 +460,6 @@ public class VistaContratos extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCodigoContratoActionPerformed
 
-    private void rbChipsetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbChipsetActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rbChipsetActionPerformed
-
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAceptar;
@@ -568,31 +473,22 @@ public class VistaContratos extends javax.swing.JInternalFrame {
     private javax.swing.JDialog dlgContratos;
     private com.toedter.calendar.JDateChooser dtcFecha;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JRadioButton rbChipset;
-    private javax.swing.JRadioButton rbSocket;
     private javax.swing.JTable tblContratos;
-    private javax.swing.JTextField txtApellido;
     private javax.swing.JTextField txtBuscar;
     private javax.swing.JTextField txtCedula;
     private javax.swing.JTextField txtCodigoContrato;
     private javax.swing.JTextField txtCodigoMedidor;
-    private javax.swing.JTextField txtCosto;
-    private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
 }

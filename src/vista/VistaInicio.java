@@ -7,6 +7,7 @@ package vista;
 
 import javax.swing.JButton;
 import javax.swing.JDesktopPane;
+import javax.swing.JLabel;
 
 /**
  *
@@ -68,6 +69,23 @@ public class VistaInicio extends javax.swing.JFrame {
     public void setTblCrudPersonas(JButton tblCrudPersonas) {
         this.tblCrudPersonas = tblCrudPersonas;
     }
+
+    public JLabel getJlfecha() {
+        return jlfecha;
+    }
+
+    public void setJlfecha(JLabel jlfecha) {
+        this.jlfecha = jlfecha;
+    }
+
+    public JLabel getJlnombre() {
+        return jlnombre;
+    }
+
+    public void setJlnombre(JLabel jlnombre) {
+        this.jlnombre = jlnombre;
+    }
+    
     
     
 
@@ -87,6 +105,11 @@ public class VistaInicio extends javax.swing.JFrame {
         tblCrudFacturas = new javax.swing.JButton();
         tblCrudAdmin = new javax.swing.JButton();
         Desktop = new javax.swing.JDesktopPane();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jlnombre = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jlfecha = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -125,15 +148,62 @@ public class VistaInicio extends javax.swing.JFrame {
         tblCrudAdmin.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(tblCrudAdmin);
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel2.setText("Usuario:");
+
+        jlnombre.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jlnombre.setText("nn");
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel3.setText("Fecha:");
+
+        jlfecha.setText("dd/mm/yyy");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(190, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jlfecha)
+                    .addComponent(jlnombre))
+                .addGap(16, 16, 16))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jlnombre)
+                    .addComponent(jLabel2))
+                .addGap(57, 57, 57)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jlfecha)
+                    .addComponent(jLabel3))
+                .addContainerGap(521, Short.MAX_VALUE))
+        );
+
+        Desktop.setLayer(jPanel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
         javax.swing.GroupLayout DesktopLayout = new javax.swing.GroupLayout(Desktop);
         Desktop.setLayout(DesktopLayout);
         DesktopLayout.setHorizontalGroup(
             DesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DesktopLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         DesktopLayout.setVerticalGroup(
             DesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 325, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jMenu1.setText("File");
@@ -148,7 +218,7 @@ public class VistaInicio extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 641, Short.MAX_VALUE)
+            .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 1006, Short.MAX_VALUE)
             .addComponent(Desktop)
         );
         layout.setVerticalGroup(
@@ -165,10 +235,15 @@ public class VistaInicio extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane Desktop;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JToolBar jToolBar1;
+    private javax.swing.JLabel jlfecha;
+    private javax.swing.JLabel jlnombre;
     private javax.swing.JButton tblCrudAdmin;
     private javax.swing.JButton tblCrudContratos;
     private javax.swing.JButton tblCrudFacturas;

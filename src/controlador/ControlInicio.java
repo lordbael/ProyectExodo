@@ -49,11 +49,13 @@ public class ControlInicio {
         
     }
     
-    public void crudMedidores(){
+     public void crudMedidores(){
         ModeloMedidor m = new ModeloMedidor();
         VistaMedidores v = new VistaMedidores();
         ControlMedidor c = new ControlMedidor(m,v);
         vi.getDesktop().add(v);
+        c.iniciaControl();
+        
         
     }
     
@@ -62,6 +64,7 @@ public class ControlInicio {
         VistaContratos v = new VistaContratos();
         ControlContrato c = new ControlContrato(m,v);
         vi.getDesktop().add(v);
+        c.iniciaControl();
         
     }
     public void crudFacturas(){
@@ -69,6 +72,7 @@ public class ControlInicio {
         VistaFacturas v = new VistaFacturas();
         ControlFactura c = new ControlFactura(m,v);
         vi.getDesktop().add(v);
+        c.iniciaControl();
         
     }
     
@@ -77,6 +81,7 @@ public class ControlInicio {
         VistaAdmin v = new VistaAdmin();
         ControlAdmin c = new ControlAdmin(m,v);
         vi.getDesktop().add(v);
+        c.iniciaControl();
         
         
     }

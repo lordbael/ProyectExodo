@@ -10,33 +10,36 @@ public class Factura {
     
     private String codigofactura;
     private Date fechafactura;
-    private String fkcodigocontrato;
-    private String fkcedulacliente;
+    
     private String nombrecliente;
+    private String fkcedulacliente;
     private String apellidocliente;
     private String direccion;
-    private String fkcodigomedidor;
+    private String fkcodigocontrato;
     private double costowatts;
     private int watts;
     private double total;
-
-    public Factura() {
+    
+    public Factura(String codigofact) {
+        this.codigofactura=codigofact;
     }
 
-    public Factura(String codigofactura, Date fechafactura, String fkcodigocontrato, String fkcedulacliente, String nombrecliente, String apellidocliente, String direccion, String fkcodigomedidor, double costowatts, int watts, double total) {
+    public Factura(String codigofactura, Date fechafactura, String nombrecliente, String fkcedulacliente, String apellidocliente, String direccion, String fkcodigocontrato, double costowatts, int watts, double total) {
         this.codigofactura = codigofactura;
         this.fechafactura = fechafactura;
-        this.fkcodigocontrato = fkcodigocontrato;
-        this.fkcedulacliente = fkcedulacliente;
         this.nombrecliente = nombrecliente;
+        this.fkcedulacliente = fkcedulacliente;
         this.apellidocliente = apellidocliente;
         this.direccion = direccion;
-        this.fkcodigomedidor = fkcodigomedidor;
+        this.fkcodigocontrato = fkcodigocontrato;
         this.costowatts = costowatts;
         this.watts = watts;
         this.total = total;
     }
-
+    public Factura(){
+    }
+    
+    
     public String getCodigofactura() {
         return codigofactura;
     }
@@ -53,12 +56,12 @@ public class Factura {
         this.fechafactura = fechafactura;
     }
 
-    public String getFkcodigocontrato() {
-        return fkcodigocontrato;
+    public String getNombrecliente() {
+        return nombrecliente;
     }
 
-    public void setFkcodigocontrato(String fkcodigocontrato) {
-        this.fkcodigocontrato = fkcodigocontrato;
+    public void setNombrecliente(String nombrecliente) {
+        this.nombrecliente = nombrecliente;
     }
 
     public String getFkcedulacliente() {
@@ -67,14 +70,6 @@ public class Factura {
 
     public void setFkcedulacliente(String fkcedulacliente) {
         this.fkcedulacliente = fkcedulacliente;
-    }
-
-    public String getNombrecliente() {
-        return nombrecliente;
-    }
-
-    public void setNombrecliente(String nombrecliente) {
-        this.nombrecliente = nombrecliente;
     }
 
     public String getApellidocliente() {
@@ -93,12 +88,12 @@ public class Factura {
         this.direccion = direccion;
     }
 
-    public String getFkcodigomedidor() {
-        return fkcodigomedidor;
+    public String getFkcodigocontrato() {
+        return fkcodigocontrato;
     }
 
-    public void setFkcodigomedidor(String fkcodigomedidor) {
-        this.fkcodigomedidor = fkcodigomedidor;
+    public void setFkcodigocontrato(String fkcodigocontrato) {
+        this.fkcodigocontrato = fkcodigocontrato;
     }
 
     public double getCostowatts() {
@@ -118,6 +113,7 @@ public class Factura {
     }
 
     public double getTotal() {
+        
         return total;
     }
 
@@ -125,6 +121,10 @@ public class Factura {
         this.total = total;
     }
 
+   
+
+    
+   
    
     
 }

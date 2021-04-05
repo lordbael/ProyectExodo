@@ -7,6 +7,7 @@ package vista;
 
 import com.toedter.calendar.JDateChooser;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JRadioButton;
 import javax.swing.JTable;
@@ -105,21 +106,15 @@ public class VistaMedidores extends javax.swing.JInternalFrame {
         this.dtcAnioFabriacion = dtcAnioFabriacion;
     }
 
-    public JRadioButton getRbChipset() {
-        return rbChipset;
+    public JComboBox<String> getCmbTipo() {
+        return cmbTipo;
     }
 
-    public void setRbChipset(JRadioButton rbChipset) {
-        this.rbChipset = rbChipset;
+    public void setCmbTipo(JComboBox<String> cmbTipo) {
+        this.cmbTipo = cmbTipo;
     }
 
-    public JRadioButton getRbSocket() {
-        return rbSocket;
-    }
 
-    public void setRbSocket(JRadioButton rbSocket) {
-        this.rbSocket = rbSocket;
-    }
 
     public JTable getTblMedidores() {
         return tblMedidores;
@@ -194,8 +189,7 @@ public class VistaMedidores extends javax.swing.JInternalFrame {
         txtCapacidad = new javax.swing.JTextField();
         txtPrecio = new javax.swing.JTextField();
         dtcAnioFabriacion = new com.toedter.calendar.JDateChooser();
-        rbChipset = new javax.swing.JRadioButton();
-        rbSocket = new javax.swing.JRadioButton();
+        cmbTipo = new javax.swing.JComboBox<>();
         btnAceptar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
@@ -246,14 +240,7 @@ public class VistaMedidores extends javax.swing.JInternalFrame {
             }
         });
 
-        rbChipset.setText("Chipset");
-        rbChipset.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rbChipsetActionPerformed(evt);
-            }
-        });
-
-        rbSocket.setText("Socket");
+        cmbTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-seleccione-", "CHIPSET", "SOCKET" }));
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -283,16 +270,12 @@ public class VistaMedidores extends javax.swing.JInternalFrame {
                         .addComponent(txtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(jLabel18)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtCapacidad, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(jLabel16)
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(rbSocket)
-                            .addComponent(rbChipset))))
+                    .addComponent(jLabel18)
+                    .addComponent(jLabel16))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cmbTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCapacidad, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(46, 46, 46))
         );
         jPanel7Layout.setVerticalGroup(
@@ -314,12 +297,9 @@ public class VistaMedidores extends javax.swing.JInternalFrame {
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel22)
                             .addComponent(dtcAnioFabriacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel16)
-                            .addComponent(rbChipset))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(rbSocket)))
+                    .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel16)
+                        .addComponent(cmbTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel19)
@@ -328,6 +308,11 @@ public class VistaMedidores extends javax.swing.JInternalFrame {
         );
 
         btnAceptar.setText("Aceptar");
+        btnAceptar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAceptarActionPerformed(evt);
+            }
+        });
 
         btnCancelar.setText("Cancelar");
 
@@ -374,7 +359,7 @@ public class VistaMedidores extends javax.swing.JInternalFrame {
             .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel2.setBackground(new java.awt.Color(65, 163, 87));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -513,13 +498,13 @@ public class VistaMedidores extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCodigoActionPerformed
 
-    private void rbChipsetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbChipsetActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rbChipsetActionPerformed
-
     private void txtPrecioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPrecioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPrecioActionPerformed
+
+    private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAceptarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -534,6 +519,7 @@ public class VistaMedidores extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnExportar;
     private javax.swing.JButton btnImprimir;
     private javax.swing.JButton btnNuevo;
+    private javax.swing.JComboBox<String> cmbTipo;
     private javax.swing.JDialog dlgMedidores;
     private com.toedter.calendar.JDateChooser dtcAnioFabriacion;
     private javax.swing.JLabel jLabel1;
@@ -551,8 +537,6 @@ public class VistaMedidores extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JRadioButton rbChipset;
-    private javax.swing.JRadioButton rbSocket;
     private javax.swing.JTable tblMedidores;
     private javax.swing.JTextField txtBuscar;
     private javax.swing.JTextField txtCapacidad;

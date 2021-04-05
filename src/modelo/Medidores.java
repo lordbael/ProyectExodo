@@ -18,6 +18,11 @@ public class Medidores {
     public Medidores() {
     }
 
+    public Medidores(String codigomedidor) {
+        this.codigomedidor = codigomedidor;
+    }
+    
+
     public Medidores(String codigomedidor, String marca, String tipo, Date aniofabricacion, String capacidad, int precio) {
         this.codigomedidor = codigomedidor;
         this.marca = marca;
@@ -51,11 +56,11 @@ public class Medidores {
         this.tipo = tipo;
     }
 
-    public Date getAñofab() {
+    public Date getAniofabricacion() {
         return aniofabricacion;
     }
 
-    public void setAñofab(Date aniofabricacion) {
+    public void setAniofabricacion(Date aniofabricacion) {
         this.aniofabricacion = aniofabricacion;
     }
 

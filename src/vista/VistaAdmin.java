@@ -7,6 +7,7 @@ package vista;
 
 import com.toedter.calendar.JDateChooser;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JRadioButton;
@@ -26,60 +27,84 @@ public class VistaAdmin extends javax.swing.JInternalFrame{
         initComponents();
     }
 
-    public JButton getBtnAceptar() {
-        return btnAceptar;
+    public JButton getBtnAceptarAd() {
+        return btnAceptarAd;
     }
 
-    public void setBtnAceptar(JButton btnAceptar) {
-        this.btnAceptar = btnAceptar;
+    public void setBtnAceptarAd(JButton btnAceptarAd) {
+        this.btnAceptarAd = btnAceptarAd;
     }
 
-    public JButton getBtnActualizar() {
-        return btnActualizar;
+    public JButton getBtnActualizarEx() {
+        return btnActualizarEx;
     }
 
-    public void setBtnActualizar(JButton btnActualizar) {
-        this.btnActualizar = btnActualizar;
+    public void setBtnActualizarEx(JButton btnActualizarEx) {
+        this.btnActualizarEx = btnActualizarEx;
     }
 
-    public JButton getBtnCancelar() {
-        return btnCancelar;
+    public JButton getBtnCancelarAd() {
+        return btnCancelarAd;
     }
 
-    public void setBtnCancelar(JButton btnCancelar) {
-        this.btnCancelar = btnCancelar;
+    public void setBtnCancelarAd(JButton btnCancelarAd) {
+        this.btnCancelarAd = btnCancelarAd;
     }
 
-    public JButton getBtnEditar() {
-        return btnEditar;
+    public JButton getBtnEditarAd() {
+        return btnEditarAd;
     }
 
-    public void setBtnEditar(JButton btnEditar) {
-        this.btnEditar = btnEditar;
+    public void setBtnEditarAd(JButton btnEditarAd) {
+        this.btnEditarAd = btnEditarAd;
     }
 
-    public JButton getBtnEliminar() {
-        return btnEliminar;
+    public JButton getBtnEditarEx() {
+        return btnEditarEx;
     }
 
-    public void setBtnEliminar(JButton btnEliminar) {
-        this.btnEliminar = btnEliminar;
+    public void setBtnEditarEx(JButton btnEditarEx) {
+        this.btnEditarEx = btnEditarEx;
     }
 
-    public JButton getBtnExaminar() {
-        return btnExaminar;
+    public JButton getBtnEliminarEx() {
+        return btnEliminarEx;
     }
 
-    public void setBtnExaminar(JButton btnExaminar) {
-        this.btnExaminar = btnExaminar;
+    public void setBtnEliminarEx(JButton btnEliminarEx) {
+        this.btnEliminarEx = btnEliminarEx;
     }
 
-    public JButton getBtnNuevo() {
-        return btnNuevo;
+    public JButton getBtnExaminarAd() {
+        return btnExaminarAd;
     }
 
-    public void setBtnNuevo(JButton btnNuevo) {
-        this.btnNuevo = btnNuevo;
+    public void setBtnExaminarAd(JButton btnExaminarAd) {
+        this.btnExaminarAd = btnExaminarAd;
+    }
+
+    public JButton getBtnNuevoEx() {
+        return btnNuevoEx;
+    }
+
+    public void setBtnNuevoEx(JButton btnNuevoEx) {
+        this.btnNuevoEx = btnNuevoEx;
+    }
+
+    public JComboBox<String> getCmbGeneroAd() {
+        return cmbGeneroAd;
+    }
+
+    public void setCmbGeneroAd(JComboBox<String> cmbGeneroAd) {
+        this.cmbGeneroAd = cmbGeneroAd;
+    }
+
+    public JComboBox<String> getCmbTipoUsuarioAd() {
+        return cmbTipoUsuarioAd;
+    }
+
+    public void setCmbTipoUsuarioAd(JComboBox<String> cmbTipoUsuarioAd) {
+        this.cmbTipoUsuarioAd = cmbTipoUsuarioAd;
     }
 
     public JDialog getDlgAdmin() {
@@ -90,36 +115,20 @@ public class VistaAdmin extends javax.swing.JInternalFrame{
         this.dlgAdmin = dlgAdmin;
     }
 
-    public JDateChooser getDtcFecha() {
-        return dtcFecha;
+    public JDateChooser getDtcFechaAd() {
+        return dtcFechaAd;
     }
 
-    public void setDtcFecha(JDateChooser dtcFecha) {
-        this.dtcFecha = dtcFecha;
+    public void setDtcFechaAd(JDateChooser dtcFechaAd) {
+        this.dtcFechaAd = dtcFechaAd;
     }
 
-    public JLabel getLblFoto() {
-        return lblFoto;
+    public JLabel getLblFotoAd() {
+        return lblFotoAd;
     }
 
-    public void setLblFoto(JLabel lblFoto) {
-        this.lblFoto = lblFoto;
-    }
-
-    public JRadioButton getRbFemenino() {
-        return rbFemenino;
-    }
-
-    public void setRbFemenino(JRadioButton rbFemenino) {
-        this.rbFemenino = rbFemenino;
-    }
-
-    public JRadioButton getRbMasculino() {
-        return rbMasculino;
-    }
-
-    public void setRbMasculino(JRadioButton rbMasculino) {
-        this.rbMasculino = rbMasculino;
+    public void setLblFotoAd(JLabel lblFotoAd) {
+        this.lblFotoAd = lblFotoAd;
     }
 
     public JTable getTblAdmin() {
@@ -130,12 +139,12 @@ public class VistaAdmin extends javax.swing.JInternalFrame{
         this.tblAdmin = tblAdmin;
     }
 
-    public JTextField getTxtApellido() {
-        return txtApellido;
+    public JTextField getTxtApellidoAd() {
+        return txtApellidoAd;
     }
 
-    public void setTxtApellido(JTextField txtApellido) {
-        this.txtApellido = txtApellido;
+    public void setTxtApellidoAd(JTextField txtApellidoAd) {
+        this.txtApellidoAd = txtApellidoAd;
     }
 
     public JTextField getTxtBuscar() {
@@ -146,61 +155,64 @@ public class VistaAdmin extends javax.swing.JInternalFrame{
         this.txtBuscar = txtBuscar;
     }
 
-    public JTextField getTxtCedula() {
-        return txtCedula;
+    public JTextField getTxtCedulaAd() {
+        return txtCedulaAd;
     }
 
-    public void setTxtCedula(JTextField txtCedula) {
-        this.txtCedula = txtCedula;
+    public void setTxtCedulaAd(JTextField txtCedulaAd) {
+        this.txtCedulaAd = txtCedulaAd;
     }
 
-    public JTextField getTxtContrasenia() {
-        return txtContrasenia;
+    public JTextField getTxtCodigoAd() {
+        return txtCodigoAd;
     }
 
-    public void setTxtContrasenia(JTextField txtContrasenia) {
-        this.txtContrasenia = txtContrasenia;
+    public void setTxtCodigoAd(JTextField txtCodigoAd) {
+        this.txtCodigoAd = txtCodigoAd;
     }
 
-    public JTextField getTxtCorreo() {
-        return txtCorreo;
+    public JTextField getTxtContraseniaAd() {
+        return txtContraseniaAd;
     }
 
-    public void setTxtCorreo(JTextField txtCorreo) {
-        this.txtCorreo = txtCorreo;
+    public void setTxtContraseniaAd(JTextField txtContraseniaAd) {
+        this.txtContraseniaAd = txtContraseniaAd;
     }
 
-    public JTextField getTxtDireccion() {
-        return txtDireccion;
+    public JTextField getTxtCorreoAd() {
+        return txtCorreoAd;
     }
 
-    public void setTxtDireccion(JTextField txtDireccion) {
-        this.txtDireccion = txtDireccion;
+    public void setTxtCorreoAd(JTextField txtCorreoAd) {
+        this.txtCorreoAd = txtCorreoAd;
     }
 
-    public JTextField getTxtNombre() {
-        return txtNombre;
+    public JTextField getTxtDireccionAd() {
+        return txtDireccionAd;
     }
 
-    public void setTxtNombre(JTextField txtNombre) {
-        this.txtNombre = txtNombre;
+    public void setTxtDireccionAd(JTextField txtDireccionAd) {
+        this.txtDireccionAd = txtDireccionAd;
     }
 
-    public JTextField getTxtTelefono() {
-        return txtTelefono;
+    public JTextField getTxtNombreAd() {
+        return txtNombreAd;
     }
 
-    public void setTxtTelefono(JTextField txtTelefono) {
-        this.txtTelefono = txtTelefono;
+    public void setTxtNombreAd(JTextField txtNombreAd) {
+        this.txtNombreAd = txtNombreAd;
     }
 
-    public JTextField getTxtUsuario() {
-        return txtUsuario;
+    public JTextField getTxtTelefonoAd() {
+        return txtTelefonoAd;
     }
 
-    public void setTxtUsuario(JTextField txtUsuario) {
-        this.txtUsuario = txtUsuario;
+    public void setTxtTelefonoAd(JTextField txtTelefonoAd) {
+        this.txtTelefonoAd = txtTelefonoAd;
     }
+    
+
+   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -224,32 +236,34 @@ public class VistaAdmin extends javax.swing.JInternalFrame{
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        txtCedula = new javax.swing.JTextField();
-        txtNombre = new javax.swing.JTextField();
-        txtApellido = new javax.swing.JTextField();
-        txtDireccion = new javax.swing.JTextField();
-        txtCorreo = new javax.swing.JTextField();
-        txtTelefono = new javax.swing.JTextField();
-        dtcFecha = new com.toedter.calendar.JDateChooser();
-        lblFoto = new javax.swing.JLabel();
-        btnExaminar = new javax.swing.JButton();
-        rbMasculino = new javax.swing.JRadioButton();
-        rbFemenino = new javax.swing.JRadioButton();
+        txtCedulaAd = new javax.swing.JTextField();
+        txtNombreAd = new javax.swing.JTextField();
+        txtApellidoAd = new javax.swing.JTextField();
+        txtDireccionAd = new javax.swing.JTextField();
+        txtCorreoAd = new javax.swing.JTextField();
+        txtTelefonoAd = new javax.swing.JTextField();
+        dtcFechaAd = new com.toedter.calendar.JDateChooser();
+        lblFotoAd = new javax.swing.JLabel();
+        btnExaminarAd = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        txtUsuario = new javax.swing.JTextField();
-        txtContrasenia = new javax.swing.JTextField();
-        btnAceptar = new javax.swing.JButton();
-        btnCancelar = new javax.swing.JButton();
+        txtCodigoAd = new javax.swing.JTextField();
+        txtContraseniaAd = new javax.swing.JTextField();
+        cmbGeneroAd = new javax.swing.JComboBox<>();
+        cmbTipoUsuarioAd = new javax.swing.JComboBox<>();
+        jLabel15 = new javax.swing.JLabel();
+        btnAceptarAd = new javax.swing.JButton();
+        btnCancelarAd = new javax.swing.JButton();
+        btnEditarAd = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        btnNuevo = new javax.swing.JButton();
-        btnActualizar = new javax.swing.JButton();
+        btnNuevoEx = new javax.swing.JButton();
+        btnActualizarEx = new javax.swing.JButton();
         txtBuscar = new javax.swing.JTextField();
-        btnEditar = new javax.swing.JButton();
-        btnEliminar = new javax.swing.JButton();
+        btnEditarEx = new javax.swing.JButton();
+        btnEliminarEx = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblAdmin = new javax.swing.JTable();
@@ -281,133 +295,158 @@ public class VistaAdmin extends javax.swing.JInternalFrame{
 
         jLabel12.setText("Fecha/Nac:");
 
-        txtCedula.addActionListener(new java.awt.event.ActionListener() {
+        txtCedulaAd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCedulaActionPerformed(evt);
+                txtCedulaAdActionPerformed(evt);
             }
         });
 
-        lblFoto.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lblFotoAd.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        btnExaminar.setText("Examinar...");
+        btnExaminarAd.setText("Examinar...");
 
-        rbMasculino.setText("Masculino");
-        rbMasculino.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rbMasculinoActionPerformed(evt);
-            }
-        });
-
-        rbFemenino.setText("Femenino");
-
-        jLabel13.setText("Nombre de Usuario:");
+        jLabel13.setText("codigo:");
 
         jLabel14.setText("Contraseña:");
+
+        cmbGeneroAd.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-seleccione-", "masculino", "femenino" }));
+
+        cmbTipoUsuarioAd.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-seleccione-", "masculino", "femenino" }));
+
+        jLabel15.setText("tipoUsuario:");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7)
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel5Layout.createSequentialGroup()
+                            .addGap(24, 24, 24)
+                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel13)
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)))))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel12)
+                                .addComponent(jLabel8)
+                                .addComponent(jLabel10)))))
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel13)
-                            .addComponent(jLabel14)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel12))
+                            .addComponent(txtNombreAd, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtApellidoAd, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(21, 190, Short.MAX_VALUE)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnExaminarAd, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblFotoAd, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cmbTipoUsuarioAd, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(84, 84, 84))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                                .addGap(11, 11, 11)
-                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(dtcFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(txtNombre, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(txtApellido, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(rbMasculino)
-                                        .addComponent(rbFemenino, javax.swing.GroupLayout.Alignment.TRAILING))))
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtCedula, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
-                                    .addComponent(txtUsuario)
-                                    .addComponent(txtContrasenia))))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel11))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(txtCorreo)
-                        .addComponent(txtDireccion)
-                        .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(lblFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnExaminar, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                                    .addComponent(txtCedulaAd, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
+                                    .addComponent(txtCodigoAd))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel11))
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(cmbGeneroAd, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(dtcFechaAd, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel15))
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(jPanel5Layout.createSequentialGroup()
+                                        .addGap(1, 1, 1)
+                                        .addComponent(txtTelefonoAd, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE))
+                                    .addComponent(txtCorreoAd, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtDireccionAd, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel14)))
+                        .addGap(10, 10, 10)
+                        .addComponent(txtContraseniaAd, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(46, 46, 46))))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel13)
+                            .addComponent(txtCodigoAd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(10, 10, 10)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtCedulaAd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4)))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(jLabel11)))
+                .addGap(26, 26, 26)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel13)
-                    .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel5)
+                    .addComponent(txtNombreAd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(txtApellidoAd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel14)
-                    .addComponent(txtContrasenia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cmbGeneroAd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7))
+                .addGap(29, 29, 29)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(dtcFechaAd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel12))
+                .addGap(16, 16, 16)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(txtDireccionAd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jLabel9)
+                        .addGap(28, 28, 28)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel10)
-                            .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel11)
-                            .addComponent(lblFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnExaminar))
+                            .addComponent(txtTelefonoAd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(58, Short.MAX_VALUE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(txtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel6)
-                            .addComponent(txtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel12)
-                            .addComponent(dtcFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel7)
-                            .addComponent(rbMasculino))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(rbFemenino)))
-                .addContainerGap(25, Short.MAX_VALUE))
+                        .addComponent(txtCorreoAd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(lblFotoAd, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnExaminarAd)
+                .addGap(35, 35, 35)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cmbTipoUsuarioAd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel15))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel14)
+                    .addComponent(txtContraseniaAd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        btnAceptar.setText("Aceptar");
+        btnAceptarAd.setText("Aceptar");
 
-        btnCancelar.setText("Cancelar");
+        btnCancelarAd.setText("Cancelar");
+
+        btnEditarAd.setText("Editar");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -419,13 +458,16 @@ public class VistaAdmin extends javax.swing.JInternalFrame{
                     .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel3)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnAceptarAd, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnEditarAd, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnCancelarAd, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -433,12 +475,13 @@ public class VistaAdmin extends javax.swing.JInternalFrame{
                 .addContainerGap()
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAceptar)
-                    .addComponent(btnCancelar))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnAceptarAd)
+                    .addComponent(btnCancelarAd)
+                    .addComponent(btnEditarAd))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout dlgAdminLayout = new javax.swing.GroupLayout(dlgAdmin.getContentPane());
@@ -449,10 +492,8 @@ public class VistaAdmin extends javax.swing.JInternalFrame{
         );
         dlgAdminLayout.setVerticalGroup(
             dlgAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel2.setBackground(new java.awt.Color(0, 102, 102));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -481,13 +522,13 @@ public class VistaAdmin extends javax.swing.JInternalFrame{
 
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        btnNuevo.setText("Nuevo Registro");
+        btnNuevoEx.setText("Nuevo Registro");
 
-        btnActualizar.setText("Actualizar");
+        btnActualizarEx.setText("Actualizar");
 
-        btnEditar.setText("Editar");
+        btnEditarEx.setText("Editar");
 
-        btnEliminar.setText("Eliminar");
+        btnEliminarEx.setText("Eliminar");
 
         jLabel2.setText("Buscar:");
 
@@ -499,18 +540,18 @@ public class VistaAdmin extends javax.swing.JInternalFrame{
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(btnNuevo)
+                        .addComponent(btnNuevoEx)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnActualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnActualizarEx, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(8, 8, 8)
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtBuscar)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnEditarEx, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnEliminarEx, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(336, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -518,10 +559,10 @@ public class VistaAdmin extends javax.swing.JInternalFrame{
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnNuevo)
-                    .addComponent(btnActualizar)
-                    .addComponent(btnEditar)
-                    .addComponent(btnEliminar))
+                    .addComponent(btnNuevoEx)
+                    .addComponent(btnActualizarEx)
+                    .addComponent(btnEditarEx)
+                    .addComponent(btnEliminarEx))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
@@ -534,7 +575,7 @@ public class VistaAdmin extends javax.swing.JInternalFrame{
 
             },
             new String [] {
-                "Cedula", "Nombre", "Apellido", "Genero", "Fecha/Nac", "Dirección", "Correo", "Teléfono", "Foto"
+                "codigo", "Cedula", "Nombre", "Apellido", "Genero", "Fecha/Nac", "Dirección", "Correo", "Teléfono", "Foto"
             }
         ));
         jScrollPane1.setViewportView(tblAdmin);
@@ -577,30 +618,30 @@ public class VistaAdmin extends javax.swing.JInternalFrame{
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtCedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCedulaActionPerformed
+    private void txtCedulaAdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCedulaAdActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtCedulaActionPerformed
-
-    private void rbMasculinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbMasculinoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rbMasculinoActionPerformed
+    }//GEN-LAST:event_txtCedulaAdActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAceptar;
-    private javax.swing.JButton btnActualizar;
-    private javax.swing.JButton btnCancelar;
-    private javax.swing.JButton btnEditar;
-    private javax.swing.JButton btnEliminar;
-    private javax.swing.JButton btnExaminar;
-    private javax.swing.JButton btnNuevo;
+    private javax.swing.JButton btnAceptarAd;
+    private javax.swing.JButton btnActualizarEx;
+    private javax.swing.JButton btnCancelarAd;
+    private javax.swing.JButton btnEditarAd;
+    private javax.swing.JButton btnEditarEx;
+    private javax.swing.JButton btnEliminarEx;
+    private javax.swing.JButton btnExaminarAd;
+    private javax.swing.JButton btnNuevoEx;
+    private javax.swing.JComboBox<String> cmbGeneroAd;
+    private javax.swing.JComboBox<String> cmbTipoUsuarioAd;
     private javax.swing.JDialog dlgAdmin;
-    private com.toedter.calendar.JDateChooser dtcFecha;
+    private com.toedter.calendar.JDateChooser dtcFechaAd;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -615,18 +656,16 @@ public class VistaAdmin extends javax.swing.JInternalFrame{
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel lblFoto;
-    private javax.swing.JRadioButton rbFemenino;
-    private javax.swing.JRadioButton rbMasculino;
+    private javax.swing.JLabel lblFotoAd;
     private javax.swing.JTable tblAdmin;
-    private javax.swing.JTextField txtApellido;
+    private javax.swing.JTextField txtApellidoAd;
     private javax.swing.JTextField txtBuscar;
-    private javax.swing.JTextField txtCedula;
-    private javax.swing.JTextField txtContrasenia;
-    private javax.swing.JTextField txtCorreo;
-    private javax.swing.JTextField txtDireccion;
-    private javax.swing.JTextField txtNombre;
-    private javax.swing.JTextField txtTelefono;
-    private javax.swing.JTextField txtUsuario;
+    private javax.swing.JTextField txtCedulaAd;
+    private javax.swing.JTextField txtCodigoAd;
+    private javax.swing.JTextField txtContraseniaAd;
+    private javax.swing.JTextField txtCorreoAd;
+    private javax.swing.JTextField txtDireccionAd;
+    private javax.swing.JTextField txtNombreAd;
+    private javax.swing.JTextField txtTelefonoAd;
     // End of variables declaration//GEN-END:variables
 }
