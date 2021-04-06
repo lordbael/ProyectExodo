@@ -6,6 +6,7 @@
 package controlador;
 
 import java.awt.Image;
+import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
@@ -42,7 +43,7 @@ public class ControlAdmin {
     private ModeloAdmin modelo;
     private VistaAdmin vista;
     String st;
-    //private int cod_ars=1;
+    boolean validarBotonA;
 
     public ControlAdmin(ModeloAdmin modelo, VistaAdmin vista) {
         this.modelo = modelo;
@@ -69,15 +70,32 @@ public class ControlAdmin {
         };
 
         vista.getBtnActualizarEx().addActionListener(l -> cargarLista(""));
-        vista.getBtnNuevoEx().addActionListener(l -> MuestraDialog());
-        vista.getBtnEditarEx().addActionListener(l ->editarPersona());
-        vista.getBtnAceptarAd().addActionListener(l -> grabarPersona());
-        vista.getBtnEditarAd().addActionListener(l -> Actualizar());
+
+        vista.getBtnNuevoEx().addActionListener(l -> {
+            this.validarBotonA = true;
+            MuestraDialog();
+        });
+        vista.getBtnAceptarAd().addActionListener(l -> validarBoton());
+
+        vista.getBtnEditarEx().addActionListener((ActionEvent l) -> {
+            editar();
+            this.validarBotonA = false;
+        });
+
         vista.getBtnEliminarEx().addActionListener(l -> Delet());
+        vista.getBtnCancelarAd().addActionListener(l -> cerrarVentana());
         vista.getTxtBuscar().addKeyListener(kn1);
         vista.getBtnExaminarAd().addActionListener(l -> cargarInmagen());
         //vista.getBtnimprimir().addActionListener(l -> ImprimirReporte());
 
+    }
+
+    private void validarBoton() {
+        if (validarBotonA) {
+            grabarPersona();
+        } else {
+            EditarPersona();
+        }
     }
 
     private void cargarLista(String aguja) {
@@ -104,7 +122,7 @@ public class ControlAdmin {
             vista.getTblAdmin().setValueAt(p1.getDireccion(), i.value, 6);
             vista.getTblAdmin().setValueAt(p1.getCorreo(), i.value, 7);
             vista.getTblAdmin().setValueAt(p1.getTelefono(), i.value, 8);
-            
+
             Image img = p1.getFoto();
             if (img != null) {
                 Image newimg = img.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
@@ -117,82 +135,191 @@ public class ControlAdmin {
             i.value++;
             ;
             //vista.getTblAdmin().setValueAt(p1.getUsuario(), i.value, 10);
-            
+
             //vista.getTblAdmin().setValueAt(p1.getContrasenia(), i.value, 11);
         });
     }
 
     private void grabarPersona() {
-        
-        String cod_administrador = vista.getTxtCodigoAd().getText();
-        String cedula = vista.getTxtCedulaAd().getText();
-        String nombre = vista.getTxtNombreAd().getText();
-        String apellido = vista.getTxtApellidoAd().getText();
-        String sexo = "";
-        sexo = vista.getCmbGeneroAd().getSelectedItem().toString();
-        String direccion = vista.getTxtDireccionAd().getText();
+        if (Validacion()) {
 
-        Instant instante = vista.getDtcFechaAd().getDate().toInstant();
-        ZoneId zi = ZoneId.of("America/Guayaquil");
-        ZonedDateTime zdt = ZonedDateTime.ofInstant(instante, zi);
-        Date fechaNacimiento = Date.valueOf(zdt.toLocalDate());
+            String cod_administrador = vista.getTxtCodigoAd().getText();
+            String cedula = vista.getTxtCedulaAd().getText();
+            String nombre = vista.getTxtNombreAd().getText();
+            String apellido = vista.getTxtApellidoAd().getText();
+            String sexo = "";
+            sexo = vista.getCmbGeneroAd().getSelectedItem().toString();
+            String direccion = vista.getTxtDireccionAd().getText();
+            Instant instante = vista.getDtcFechaAd().getDate().toInstant();
+            ZoneId zi = ZoneId.of("America/Guayaquil");
+            ZonedDateTime zdt = ZonedDateTime.ofInstant(instante, zi);
+            Date fechaNacimiento = Date.valueOf(zdt.toLocalDate());
+            String correo = vista.getTxtCorreoAd().getText();
+            String telefono = vista.getTxtTelefonoAd().getText();
+            String tipo_us = "";
+            tipo_us = vista.getCmbTipoUsuarioAd().getSelectedItem().toString();
+            String contrasenia = vista.getTxtContraseniaAd().getText();
 
-        String correo = vista.getTxtCorreoAd().getText();
-        String telefono = vista.getTxtTelefonoAd().getText();
-        
-        String tipo_us = "";
-        tipo_us = vista.getCmbTipoUsuarioAd().getSelectedItem().toString();
-        String contrasenia = vista.getTxtContraseniaAd().getText();
+            ModeloAdmin persona = new ModeloAdmin(cod_administrador, cedula, nombre, apellido, sexo, fechaNacimiento, direccion, correo, telefono, tipo_us, contrasenia);
 
-        ModeloAdmin persona = new ModeloAdmin(cod_administrador, cedula, nombre, apellido, sexo, fechaNacimiento, direccion, correo, telefono, tipo_us, contrasenia);
+            ImageIcon ic = (ImageIcon) vista.getLblFotoAd().getIcon();
+            persona.setFoto(ic.getImage());
 
-        ImageIcon ic = (ImageIcon) vista.getLblFotoAd().getIcon();
-        persona.setFoto(ic.getImage());
-        if (persona.crear()) {
-            cargarLista("");
-            vista.getDlgAdmin().setVisible(false);
-            JOptionPane.showMessageDialog(vista, "Admin Creada Existosamente");
-
-        } else {
-            JOptionPane.showMessageDialog(vista, "ERROR!!!!!!");
+            if (persona.crear()) {
+                cargarLista("");
+                vista.getDlgAdmin().setVisible(false);
+                JOptionPane.showMessageDialog(vista, "Admin Creada Existosamente");
+            } else {
+                JOptionPane.showMessageDialog(vista, "ERROR!!!!!!");
+            }
         }
+    }
+
+    public boolean Validacion() {
+        boolean verificar = true;
+        //////////////////////////////codigo admincliente
+        if (vista.getTxtCodigoAd().getText().length() > 10) {
+            JOptionPane.showMessageDialog(null, "Número de caracteres en código administador excedido", "Código cliente errónea", JOptionPane.ERROR_MESSAGE);
+            verificar = false;
+        }
+
+        if (vista.getTxtCodigoAd().getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "El campo de código administrador es obligatorio", "Campo vacío", JOptionPane.ERROR_MESSAGE);
+            verificar = false;
+        }
+        //////////////////////////////cedula
+        if (vista.getTxtCedulaAd().getText().length() > 10) {
+            JOptionPane.showMessageDialog(null, "Número de caracteres en cédula excedido", "Cédula errónea", JOptionPane.ERROR_MESSAGE);
+            verificar = false;
+        }
+
+        if (vista.getTxtCedulaAd().getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "El campo de cédula es obligatorio", "Campo vacío", JOptionPane.ERROR_MESSAGE);
+            verificar = false;
+        }
+
+        ///////////////////////////////////////////////////////////////////nombres
+        if (vista.getTxtNombreAd().getText().length() > 50) {
+            JOptionPane.showMessageDialog(null, "Número de caracteres en nombre excedido", "Nombre erróneo", JOptionPane.ERROR_MESSAGE);
+            verificar = false;
+        }
+
+        if (vista.getTxtNombreAd().getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "El campo de nombre es obligatorio", "Campo vacío", JOptionPane.ERROR_MESSAGE);
+            verificar = false;
+        }
+        ////////////////////////////////////////////////////////////////////apellidos
+        if (vista.getTxtApellidoAd().getText().length() > 50) {
+            JOptionPane.showMessageDialog(null, "Número de caracteres en apellido excedido", "Apellido erróneo", JOptionPane.ERROR_MESSAGE);
+            verificar = false;
+        }
+
+        if (vista.getTxtApellidoAd().getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "El campo de apellido es obligatorio", "Campo vacío", JOptionPane.ERROR_MESSAGE);
+            verificar = false;
+        }
+        ////////////////////////////////////////////////////////////////////fecha
+//        if (vista.getDtcFecha().getDate().toString().equals("Seleccione")) {
+//            JOptionPane.showMessageDialog(null, "El campo de fecha es obligatorio", "Campo vacío", JOptionPane.ERROR_MESSAGE);
+//            verificar = false;
+//        }
+
+        ////////////////////////////////////////////////////////////////////direccion
+        if (vista.getTxtDireccionAd().getText().length() > 100) {
+            JOptionPane.showMessageDialog(null, "Número de caracteres en dirección excedido", "Dirección erróneo", JOptionPane.ERROR_MESSAGE);
+            verificar = false;
+        }
+
+        if (vista.getTxtDireccionAd().getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "El campo de dirección es obligatorio", "Campo vacío", JOptionPane.ERROR_MESSAGE);
+            verificar = false;
+        }
+        ////////////////////////////////////////////////////////////////////correo
+        if (vista.getTxtCorreoAd().getText().length() > 50) {
+            JOptionPane.showMessageDialog(null, "Número de caracteres en correo excedido", "Correo erróneo", JOptionPane.ERROR_MESSAGE);
+            verificar = false;
+        }
+
+        if (vista.getTxtCorreoAd().getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "El campo de correo es obligatorio", "Campo vacío", JOptionPane.ERROR_MESSAGE);
+            verificar = false;
+        }
+        ////////////////////////////////////////////////////////////////////telefono
+        if (vista.getTxtTelefonoAd().getText().length() > 10) {
+            JOptionPane.showMessageDialog(null, "Número de caracteres en teléfono excedido", "Teléfon Erroneo", JOptionPane.ERROR_MESSAGE);
+            verificar = false;
+        }
+
+        if (vista.getTxtTelefonoAd().getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "El campo de teléfono es obligatorio", "Campo vacío", JOptionPane.ERROR_MESSAGE);
+            verificar = false;
+        }
+        ////////////////////////////////////////////////////////////////////genero
+        if (vista.getCmbGeneroAd().getSelectedItem().equals("Seleccione")) {
+            JOptionPane.showMessageDialog(null, "El campo de género es obligatorio", "Campo vacío", JOptionPane.ERROR_MESSAGE);
+            verificar = false;
+        }
+        ////////////////////////////////////////////////////////////////////tipo de usuario
+        if (vista.getCmbTipoUsuarioAd().getSelectedItem().equals("Seleccione")) {
+            JOptionPane.showMessageDialog(null, "El campo de tipo de usuario es obligatorio", "Campo vacío", JOptionPane.ERROR_MESSAGE);
+            verificar = false;
+        }
+        ////////////////////////////////////////////////////////////////////contraseña
+        if (vista.getTxtContraseniaAd().getText().length() > 30) {
+            JOptionPane.showMessageDialog(null, "Número de caracteres en contraseña excedido", "Contraseña errónea", JOptionPane.ERROR_MESSAGE);
+            verificar = false;
+        }
+
+        if (vista.getTxtContraseniaAd().getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "El campo de contraseña es obligatorio", "Campo vacío", JOptionPane.ERROR_MESSAGE);
+            verificar = false;
+        }
+        ///////////////////////////////////////////////////////////foto
+//         if (vista.getLblFoto().getText().equals("")) {
+//            JOptionPane.showMessageDialog(null, "El campo de foto es obligatorio", "Campo vacío", JOptionPane.ERROR_MESSAGE);
+//            verificar = false;
+//        }
+        return verificar;
 
     }
 
-    public void Actualizar() {
+    public void EditarPersona() {
 
-        String cod_administrador = vista.getTxtCodigoAd().getText();
-        String cedula = vista.getTxtCedulaAd().getText();
-        String nombre = vista.getTxtNombreAd().getText();
-        String apellido = vista.getTxtApellidoAd().getText();
-        String sexo = "";
-        sexo = vista.getCmbGeneroAd().getSelectedItem().toString();
-        String direccion = vista.getTxtDireccionAd().getText();
+        if (Validacion()) {
 
-        Instant instante = vista.getDtcFechaAd().getDate().toInstant();
-        ZoneId zi = ZoneId.of("America/Guayaquil");
-        ZonedDateTime zdt = ZonedDateTime.ofInstant(instante, zi);
-        Date fechaNacimiento = Date.valueOf(zdt.toLocalDate());
+            String cod_administrador = vista.getTxtCodigoAd().getText();
+            String cedula = vista.getTxtCedulaAd().getText();
+            String nombre = vista.getTxtNombreAd().getText();
+            String apellido = vista.getTxtApellidoAd().getText();
+            String sexo = "";
+            sexo = vista.getCmbGeneroAd().getSelectedItem().toString();
+            String direccion = vista.getTxtDireccionAd().getText();
 
-        String correo = vista.getTxtCorreoAd().getText();
-        String telefono = vista.getTxtTelefonoAd().getText();
-        
-        String tipo_us = "";
-        tipo_us = vista.getCmbGeneroAd().getSelectedItem().toString();
-        String contrasenia = vista.getTxtContraseniaAd().getText();
+            Instant instante = vista.getDtcFechaAd().getDate().toInstant();
+            ZoneId zi = ZoneId.of("America/Guayaquil");
+            ZonedDateTime zdt = ZonedDateTime.ofInstant(instante, zi);
+            Date fechaNacimiento = Date.valueOf(zdt.toLocalDate());
 
-        ModeloAdmin persona = new ModeloAdmin(cod_administrador, cedula, nombre, apellido, sexo, fechaNacimiento, direccion, correo, telefono, tipo_us, contrasenia);
+            String correo = vista.getTxtCorreoAd().getText();
+            String telefono = vista.getTxtTelefonoAd().getText();
 
-        ImageIcon ic = (ImageIcon) vista.getLblFotoAd().getIcon();
-        persona.setFoto(ic.getImage());
-        
-        if (persona.modificar()) {
-            cargarLista("");
-            vista.getDlgAdmin().setVisible(false);
-            JOptionPane.showMessageDialog(vista, "Admin Modificado Existosamente");
+            String tipo_us = "";
+            tipo_us = vista.getCmbGeneroAd().getSelectedItem().toString();
+            String contrasenia = vista.getTxtContraseniaAd().getText();
 
-        } else {
-            JOptionPane.showMessageDialog(vista, "ERROR!!!!!!");
+            ModeloAdmin persona = new ModeloAdmin(cod_administrador, cedula, nombre, apellido, sexo, fechaNacimiento, direccion, correo, telefono, tipo_us, contrasenia);
+
+            ImageIcon ic = (ImageIcon) vista.getLblFotoAd().getIcon();
+            persona.setFoto(ic.getImage());
+
+            if (persona.modificar()) {
+                JOptionPane.showMessageDialog(vista, "Admin Modificado Existosamente");
+                cargarLista("");
+                vista.getDlgAdmin().setVisible(false);
+
+            } else {
+                JOptionPane.showMessageDialog(vista, "ERROR!!!!!!");
+            }
         }
     }
 
@@ -204,7 +331,7 @@ public class ControlAdmin {
                     + "codigo: " + model.getValueAt(fila, 0).toString() + "\n"
                     + "Nombre: " + model.getValueAt(fila, 2).toString() + "\n"
                     + "Apellido: " + model.getValueAt(fila, 3).toString() + "\n"
-                    );
+            );
             if (op == 0) {
                 ModeloAdmin p1 = new ModeloAdmin();
                 p1.setCod_Admin(model.getValueAt(fila, 0).toString());
@@ -220,25 +347,22 @@ public class ControlAdmin {
     }
 
     private void MuestraDialog() {
-        //cod_ars++;
+
         vista.getTxtCodigoAd().setEditable(true);
         vista.getDlgAdmin().setVisible(true);
         vista.getDlgAdmin().setSize(660, 600);
-        vista.getDlgAdmin().setTitle("NUEVA Admin");
+        vista.getDlgAdmin().setTitle("NUEVO ADMIN");
         vista.getDlgAdmin().setLocationRelativeTo(vista);
-        //vista.getTxtCodigoAd().setText(""+cod_ars);
         vista.getTxtCodigoAd().setText("");
         vista.getTxtNombreAd().setText("");
         vista.getTxtApellidoAd().setText("");
         vista.getDtcFechaAd().setDate(null);
         vista.getTxtTelefonoAd().setText("");
         vista.getTxtContraseniaAd().setText("");
-        vista.getCmbGeneroAd().setSelectedIndex(0);
-        vista.getCmbTipoUsuarioAd().setSelectedIndex(0);
+        vista.getCmbGeneroAd().setSelectedItem(0);
+        vista.getCmbTipoUsuarioAd().setSelectedItem(0);
         vista.getTxtCorreoAd().setText("");
         vista.getLblFotoAd().setIcon(null);
-        vista.getBtnEditarAd().setVisible(false);
-        vista.getBtnAceptarAd().setVisible(true);
     }
 
     private void cargarInmagen() {
@@ -322,7 +446,7 @@ public class ControlAdmin {
         return null;
     }
 
-    public void editarPersona() {
+    public void editar() {
         String seleccionarId = Elegir();
         ModeloAdmin persona = new ModeloAdmin(seleccionarId);
         List<Admin> ps = persona.buscar();
@@ -334,11 +458,14 @@ public class ControlAdmin {
             String apellido = indexpersona.getApellido();
             Date fecha = (Date) indexpersona.getFechanac();
             String telefono = indexpersona.getTelefono();
-            String sexo = indexpersona.getGenero();
-            String usuari= indexpersona.getUsuario();
+            String genero = indexpersona.getGenero();
+            String usuario = indexpersona.getUsuario();
             String direccion = indexpersona.getDireccion();
             String correo = indexpersona.getCorreo();
             String contrasenia = indexpersona.getContrasenia();
+
+            MuestraDialog();
+
             Image img = indexpersona.getFoto();
             if (img != null) {
                 Image newimg = img.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
@@ -347,7 +474,6 @@ public class ControlAdmin {
             } else {
                 vista.getLblFotoAd().setIcon(null);
             }
-            vista.getDlgAdmin().setVisible(true);
             vista.getDlgAdmin().setSize(660, 600);
             vista.getDlgAdmin().setTitle("EDITAR PERSONA");
             vista.getDlgAdmin().setLocationRelativeTo(vista);
@@ -358,14 +484,16 @@ public class ControlAdmin {
             vista.getDtcFechaAd().setDate(fecha);
             vista.getTxtTelefonoAd().setText(telefono);
             vista.getTxtContraseniaAd().setText(contrasenia);
-            vista.getCmbGeneroAd().setSelectedItem(sexo);
-            vista.getCmbTipoUsuarioAd().setSelectedItem(usuari);
+            vista.getCmbGeneroAd().setSelectedItem(genero);
+            vista.getCmbTipoUsuarioAd().setSelectedItem(usuario);
             vista.getTxtCorreoAd().setText(correo);
             vista.getTxtDireccionAd().setText(direccion);
-            vista.getBtnAceptarAd().setVisible(false);
-            vista.getBtnEditarAd().setVisible(true);
 
         }
+    }
+    private void cerrarVentana() {
+        vista.getDlgAdmin().setVisible(false);
+
     }
 
 }

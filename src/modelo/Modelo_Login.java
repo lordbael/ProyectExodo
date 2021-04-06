@@ -35,7 +35,6 @@ public class Modelo_Login extends Admin {
 
     public Modelo_Login() {
     }
-
     public boolean IniciarSesion() {
         boolean comprobar = false;
 
@@ -43,11 +42,11 @@ public class Modelo_Login extends Admin {
             String sql;
             sql = "SELECT cedula, contrasenia\n"
                     + "FROM admin \n"
-                    + "where cedula='123456' and contrasenia='123';";
+                    + "where cedula='"+getCedula()+"' and contrasenia='"+getContrasenia()+"';";
 
             ResultSet rs = con.query(sql);
             while (rs.next()) {
-                System.out.println("USUARIO" + getUsuario() + "INICIO SESION");
+                System.out.println("USUARIO" + getCedula() + "INICIO SESION");
                 comprobar = true;
             }
 
@@ -56,5 +55,29 @@ public class Modelo_Login extends Admin {
         }
         return comprobar;
     }
+
+    
+    
+    
+//    public boolean IniciarSesion() {
+//        boolean comprobar = false;
+//
+//        try {
+//            String sql;
+//            sql = "SELECT cedula, contrasenia\n"
+//                    + "FROM admin \n"
+//                    + "where cedula='0107453631' and contrasenia='1234';";
+//
+//            ResultSet rs = con.query(sql);
+//            while (rs.next()) {
+//                System.out.println("USUARIO" + getUsuario() + "INICIO SESION");
+//                comprobar = true;
+//            }
+//
+//        } catch (Exception e) {
+//            comprobar = false;
+//        }
+//        return comprobar;
+//    }
 
 }

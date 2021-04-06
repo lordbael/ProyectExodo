@@ -126,7 +126,7 @@ public class ControlMedidor {
     private void muestraDialogo() {
         vista.getTxtCodigo().setEditable(true);
         vista.getDlgMedidores().setVisible(true);
-        vista.getDlgMedidores().setSize(420, 550);
+        vista.getDlgMedidores().setSize(630, 283);
         vista.getDlgMedidores().setTitle("NUEVO MEDIDOR");
         vista.getDlgMedidores().setLocationRelativeTo(vista);
         vista.getTxtCodigo().setText("");
@@ -138,25 +138,75 @@ public class ControlMedidor {
     }
 
     private void grabarMedidor() {
-        String codigomedidor = vista.getTxtCodigo().getText();
-        String marca = vista.getTxtMarca().getText();
-        String tipo = "";
-        tipo = vista.getCmbTipo().getSelectedItem().toString();
-        Instant instant = vista.getDtcAnioFabriacion().getDate().toInstant();
-        ZoneId zid = ZoneId.of("America/Guayaquil");
-        ZonedDateTime zdt = ZonedDateTime.ofInstant(instant, zid);
-        Date aniofabricacion = Date.valueOf(zdt.toLocalDate());
-        String capacidad = vista.getTxtCapacidad().getText();
-        int precio = Integer.parseInt(vista.getTxtPrecio().getText());
+        if (Validacion()) {
+            String codigomedidor = vista.getTxtCodigo().getText();
+            String marca = vista.getTxtMarca().getText();
+            String tipo = "";
+            tipo = vista.getCmbTipo().getSelectedItem().toString();
+            Instant instant = vista.getDtcAnioFabriacion().getDate().toInstant();
+            ZoneId zid = ZoneId.of("America/Guayaquil");
+            ZonedDateTime zdt = ZonedDateTime.ofInstant(instant, zid);
+            Date aniofabricacion = Date.valueOf(zdt.toLocalDate());
+            String capacidad = vista.getTxtCapacidad().getText();
+            int precio = Integer.parseInt(vista.getTxtPrecio().getText());
 
-        ModeloMedidor medidor = new ModeloMedidor(codigomedidor, marca, tipo, aniofabricacion, capacidad, precio);
-        if (medidor.grabarMedidor()) {
-            JOptionPane.showMessageDialog(vista, "Registro grabado satisfactoriamente");
-            cargarLista("");
-            vista.getDlgMedidores().setVisible(false);
-        } else {
-            JOptionPane.showMessageDialog(vista, "ERROR");
+            ModeloMedidor medidor = new ModeloMedidor(codigomedidor, marca, tipo, aniofabricacion, capacidad, precio);
+            if (medidor.grabarMedidor()) {
+                JOptionPane.showMessageDialog(vista, "Registro grabado satisfactoriamente");
+                cargarLista("");
+                vista.getDlgMedidores().setVisible(false);
+            } else {
+                JOptionPane.showMessageDialog(vista, "ERROR");
+            }
         }
+
+    }
+
+    public boolean Validacion() {
+        boolean verificar = true;
+        //////////////////////////////cedula
+        if (vista.getTxtCodigo().getText().length() > 10) {
+            JOptionPane.showMessageDialog(null, "el campo de codigo de medidor es obligatorio", "Campo Erroneo", JOptionPane.ERROR_MESSAGE);
+            verificar = false;
+        }
+
+        if (vista.getTxtCodigo().getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "CAMPO VACIO", " Campo Erroneo", JOptionPane.ERROR_MESSAGE);
+            verificar = false;
+        }
+        ///////////////////////////////////////////////////////////////////nombres
+        if (vista.getTxtMarca().getText().length() > 50) {
+            JOptionPane.showMessageDialog(null, "El campo de marca es obligatorio", "Campo Erroneo", JOptionPane.ERROR_MESSAGE);
+            verificar = false;
+        }
+
+        if (vista.getTxtMarca().getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "MARCA VACIA", "Campo Erroneo", JOptionPane.ERROR_MESSAGE);
+            verificar = false;
+        }
+        ////////////////////////////////////////////////////////////////////apellidos
+
+        if (vista.getCmbTipo().getSelectedItem().equals("")) {
+            JOptionPane.showMessageDialog(null, "El campo tipo es obligatorio", "Campo Erroneo", JOptionPane.ERROR_MESSAGE);
+            verificar = false;
+        }
+        ////////////////////////////////////////////////////////////////////////
+        if (vista.getTxtCapacidad().getText().length() > 50) {
+            JOptionPane.showMessageDialog(null, "El campo de capacidad es obligatorio", "Campo Erroneo", JOptionPane.ERROR_MESSAGE);
+            verificar = false;
+        }
+
+        if (vista.getTxtCapacidad().getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "CAPACIDAD VACIA", "Campo Erroneo", JOptionPane.ERROR_MESSAGE);
+            verificar = false;
+        }
+
+        if (vista.getTxtPrecio().getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "PRECIO VACIO", "Campo Erroneo", JOptionPane.ERROR_MESSAGE);
+            verificar = false;
+        }
+
+        return verificar;
 
     }
 
@@ -210,12 +260,11 @@ public class ControlMedidor {
             Date aniofabricacion = (Date) indexMedidores.getAniofabricacion();
             String capacidad = indexMedidores.getCapacidad();
             int precio = indexMedidores.getPrecio();
-             
+
             muestraDialogo();
-            
-         
+
             vista.getDlgMedidores().setTitle("EDITAR MEDIDOR");
-              vista.getTxtCodigo().setEditable(false);
+            vista.getTxtCodigo().setEditable(false);
             vista.getTxtCodigo().setText(codigomedidor);
             vista.getTxtCodigo().setEditable(false);
             vista.getTxtMarca().setText(marca);
@@ -228,26 +277,28 @@ public class ControlMedidor {
     }
 
     private void grabarEditarMedidores() {
-        String codigomedidor = vista.getTxtCodigo().getText();
-        String marca = vista.getTxtMarca().getText();
-        String tipo = "";
-        tipo = vista.getCmbTipo().getSelectedItem().toString();
-        Instant instant = vista.getDtcAnioFabriacion().getDate().toInstant();
-        ZoneId zid = ZoneId.of("America/Guayaquil");
-        ZonedDateTime zdt = ZonedDateTime.ofInstant(instant, zid);
-        Date aniofabricacion = Date.valueOf(zdt.toLocalDate());
-        String capacidad = vista.getTxtCapacidad().getText();
-        int precio = Integer.parseInt(vista.getTxtPrecio().getText());
+        if (Validacion()) {
+            String codigomedidor = vista.getTxtCodigo().getText();
+            String marca = vista.getTxtMarca().getText();
+            String tipo = "";
+            tipo = vista.getCmbTipo().getSelectedItem().toString();
+            Instant instant = vista.getDtcAnioFabriacion().getDate().toInstant();
+            ZoneId zid = ZoneId.of("America/Guayaquil");
+            ZonedDateTime zdt = ZonedDateTime.ofInstant(instant, zid);
+            Date aniofabricacion = Date.valueOf(zdt.toLocalDate());
+            String capacidad = vista.getTxtCapacidad().getText();
+            int precio = Integer.parseInt(vista.getTxtPrecio().getText());
 
-        ModeloMedidor medidor = new ModeloMedidor(codigomedidor, marca, tipo, aniofabricacion, capacidad, precio);
+            ModeloMedidor medidor = new ModeloMedidor(codigomedidor, marca, tipo, aniofabricacion, capacidad, precio);
 
-        if (medidor.EditarMedidor()) {
-            JOptionPane.showMessageDialog(vista, "El Registro se ha editado satisfactoriamente");
-            cargarLista("");
-            vista.getDlgMedidores().setVisible(false);
+            if (medidor.EditarMedidor()) {
+                JOptionPane.showMessageDialog(vista, "El Registro se ha editado satisfactoriamente");
+                cargarLista("");
+                vista.getDlgMedidores().setVisible(false);
 
-        } else {
-            JOptionPane.showMessageDialog(vista, "ERROR");
+            } else {
+                JOptionPane.showMessageDialog(vista, "ERROR");
+            }
         }
 
     }

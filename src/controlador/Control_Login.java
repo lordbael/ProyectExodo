@@ -47,8 +47,8 @@ public class Control_Login {
             VistaInicio ver = new VistaInicio();
             ControlInicio lg = new ControlInicio(ver);
             lg.iniciaControl();
-            ver.getJlnombre().setText(vista.getTxtUsuario().getText());
-            ver.getJlfecha().setText(form.format(fecha));
+//            ver.getJlnombre().setText(vista.getTxtUsuario().getText());
+//            ver.getJlfecha().setText(form.format(fecha));
             ver.setVisible(true);
             
         } else {

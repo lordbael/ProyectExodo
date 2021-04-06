@@ -32,7 +32,7 @@ public class Admin extends Persona{
         
     }
     public Admin(String cedula,String contrasenia){
-        cedula=getCedula();
+        super.setCedula(cedula);
         this.contrasenia=contrasenia;
         
     }

@@ -161,33 +161,127 @@ public class ControlCliente {
     }
 
     private void grabarClientes() {
+        if (Validacion()) {
 
-        String codigo_cliente = vista.getTxtCodigoCliente().getText();
-        String cedula = vista.getTxtCedula().getText();
-        String nombre = vista.getTxtNombre().getText();
-        String apellido = vista.getTxtApellido().getText();
-        String sexo = "";
-        sexo = vista.getCmbGenero().getSelectedItem().toString();
-        Instant instant = vista.getDtcFecha().getDate().toInstant();
-        ZoneId zid = ZoneId.of("America/Guayaquil");
-        ZonedDateTime zdt = ZonedDateTime.ofInstant(instant, zid);
-        Date fechanacimiento = Date.valueOf(zdt.toLocalDate());
-        String direccion = vista.getTxtDireccion().getText();
-        String correo = vista.getTxtCorreo().getText();
-        String telefono = vista.getTxtTelefono().getText();
+            String codigo_cliente = vista.getTxtCodigoCliente().getText();
+            String cedula = vista.getTxtCedula().getText();
+            String nombre = vista.getTxtNombre().getText();
+            String apellido = vista.getTxtApellido().getText();
+            String sexo = "";
+            sexo = vista.getCmbGenero().getSelectedItem().toString();
+            Instant instant = vista.getDtcFecha().getDate().toInstant();
+            ZoneId zid = ZoneId.of("America/Guayaquil");
+            ZonedDateTime zdt = ZonedDateTime.ofInstant(instant, zid);
+            Date fechanacimiento = Date.valueOf(zdt.toLocalDate());
+            String direccion = vista.getTxtDireccion().getText();
+            String correo = vista.getTxtCorreo().getText();
+            String telefono = vista.getTxtTelefono().getText();
 
-        ModeloCliente cliente = new ModeloCliente(codigo_cliente, cedula, nombre, apellido, sexo, fechanacimiento, direccion, correo, telefono);
+            ModeloCliente cliente = new ModeloCliente(codigo_cliente, cedula, nombre, apellido, sexo, fechanacimiento, direccion, correo, telefono);
 
-        ImageIcon ic = (ImageIcon) vista.getLblFoto().getIcon();
-        cliente.setFoto(ic.getImage());
+            ImageIcon ic = (ImageIcon) vista.getLblFoto().getIcon();
+            cliente.setFoto(ic.getImage());
 
-        if (cliente.grabar()) {
-            JOptionPane.showMessageDialog(vista, "Registro grabado satisfactoriamente");
-            cargarLista("");
-            vista.getDlgClientes().setVisible(false);
-        } else {
-            JOptionPane.showMessageDialog(vista, "ERROR");
+            if (cliente.grabar()) {
+                cargarLista("");
+                vista.getDlgClientes().setVisible(false);
+                JOptionPane.showMessageDialog(vista, "Registro grabado satisfactoriamente");
+            } else {
+                JOptionPane.showMessageDialog(vista, "ERROR");
+            }
         }
+
+    }
+
+    public boolean Validacion() {
+        boolean verificar = true;
+        //////////////////////////////cedula
+        if (vista.getTxtCedula().getText().length() > 10) {
+            JOptionPane.showMessageDialog(null, "Número de caracteres en cédula excedido", "Cédula errónea", JOptionPane.ERROR_MESSAGE);
+            verificar = false;
+        }
+
+        if (vista.getTxtCedula().getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "El campo de cédula es obligatorio", "Campo vacío", JOptionPane.ERROR_MESSAGE);
+            verificar = false;
+        }
+        //////////////////////////////codigo cliente
+        if (vista.getTxtCodigoCliente().getText().length() > 10) {
+            JOptionPane.showMessageDialog(null, "Número de caracteres en código cliente excedido", "Código cliente errónea", JOptionPane.ERROR_MESSAGE);
+            verificar = false;
+        }
+
+        if (vista.getTxtCodigoCliente().getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "El campo de código cliente es obligatorio", "Campo vacío", JOptionPane.ERROR_MESSAGE);
+            verificar = false;
+        }
+        ///////////////////////////////////////////////////////////////////nombres
+        if (vista.getTxtNombre().getText().length() > 50) {
+            JOptionPane.showMessageDialog(null, "Número de caracteres en nombre excedido", "Nombre erróneo", JOptionPane.ERROR_MESSAGE);
+            verificar = false;
+        }
+
+        if (vista.getTxtNombre().getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "El campo de nombre es obligatorio", "Campo vacío", JOptionPane.ERROR_MESSAGE);
+            verificar = false;
+        }
+        ////////////////////////////////////////////////////////////////////apellidos
+        if (vista.getTxtApellido().getText().length() > 50) {
+            JOptionPane.showMessageDialog(null, "Número de caracteres en apellido excedido", "Apellido erróneo", JOptionPane.ERROR_MESSAGE);
+            verificar = false;
+        }
+
+        if (vista.getTxtApellido().getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "El campo de apellido es obligatorio", "Campo vacío", JOptionPane.ERROR_MESSAGE);
+            verificar = false;
+        }
+        ////////////////////////////////////////////////////////////////////genero
+        if (vista.getCmbGenero().getSelectedItem().equals("Seleccione")) {
+            JOptionPane.showMessageDialog(null, "El campo de género es obligatorio", "Campo vacío", JOptionPane.ERROR_MESSAGE);
+            verificar = false;
+        }
+        ////////////////////////////////////////////////////////////////////fecha
+//        if (vista.getDtcFecha().getDate().toString().equals("Seleccione")) {
+//            JOptionPane.showMessageDialog(null, "El campo de fecha es obligatorio", "Campo vacío", JOptionPane.ERROR_MESSAGE);
+//            verificar = false;
+//        }
+
+        ////////////////////////////////////////////////////////////////////direccion
+        if (vista.getTxtDireccion().getText().length() > 100) {
+            JOptionPane.showMessageDialog(null, "Número de caracteres en dirección excedido", "Dirección erróneo", JOptionPane.ERROR_MESSAGE);
+            verificar = false;
+        }
+
+        if (vista.getTxtDireccion().getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "El campo de dirección es obligatorio", "Campo vacío", JOptionPane.ERROR_MESSAGE);
+            verificar = false;
+        }
+        ////////////////////////////////////////////////////////////////////correo
+        if (vista.getTxtCorreo().getText().length() > 50) {
+            JOptionPane.showMessageDialog(null, "Número de caracteres en correo excedido", "Correo erróneo", JOptionPane.ERROR_MESSAGE);
+            verificar = false;
+        }
+
+        if (vista.getTxtCorreo().getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "El campo de correo es obligatorio", "Campo vacío", JOptionPane.ERROR_MESSAGE);
+            verificar = false;
+        }
+        ////////////////////////////////////////////////////////////////////telefono
+        if (vista.getTxtTelefono().getText().length() > 10) {
+            JOptionPane.showMessageDialog(null, "Número de caracteres en teléfono excedido", "Teléfon Erroneo", JOptionPane.ERROR_MESSAGE);
+            verificar = false;
+        }
+
+        if (vista.getTxtTelefono().getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "El campo de teléfono es obligatorio", "Campo vacío", JOptionPane.ERROR_MESSAGE);
+            verificar = false;
+        }
+        ///////////////////////////////////////////////////////////foto
+//         if (vista.getLblFoto().getText().equals("")) {
+//            JOptionPane.showMessageDialog(null, "El campo de foto es obligatorio", "Campo vacío", JOptionPane.ERROR_MESSAGE);
+//            verificar = false;
+//        }
+        return verificar;
 
     }
 
@@ -255,6 +349,7 @@ public class ControlCliente {
 
             vista.getTxtCodigoCliente().setText(codigo_cliente);
             vista.getTxtCodigoCliente().setEditable(false);
+            vista.getTxtCedula().setEditable(false);
             vista.getTxtCedula().setText(cedula);
             vista.getTxtNombre().setText(nombre);
             vista.getTxtApellido().setText(apellido);
@@ -267,33 +362,35 @@ public class ControlCliente {
     }
 
     private void grabarEditarClientes() {
-        String codigo_cliente = vista.getTxtCodigoCliente().getText();
-        String cedula = vista.getTxtCedula().getText();
-        String nombre = vista.getTxtNombre().getText();
-        String apellido = vista.getTxtApellido().getText();
-        String sexo = "";
-        sexo = vista.getCmbGenero().getSelectedItem().toString();
+        if (Validacion()) {
+            String codigo_cliente = vista.getTxtCodigoCliente().getText();
+            String cedula = vista.getTxtCedula().getText();
+            String nombre = vista.getTxtNombre().getText();
+            String apellido = vista.getTxtApellido().getText();
+            String sexo = "";
+            sexo = vista.getCmbGenero().getSelectedItem().toString();
 
-        Instant instant = vista.getDtcFecha().getDate().toInstant();
-        ZoneId zid = ZoneId.of("America/Guayaquil");
-        ZonedDateTime zdt = ZonedDateTime.ofInstant(instant, zid);
-        Date fechanacimiento = Date.valueOf(zdt.toLocalDate());
+            Instant instant = vista.getDtcFecha().getDate().toInstant();
+            ZoneId zid = ZoneId.of("America/Guayaquil");
+            ZonedDateTime zdt = ZonedDateTime.ofInstant(instant, zid);
+            Date fechanacimiento = Date.valueOf(zdt.toLocalDate());
 
-        String direccion = vista.getTxtDireccion().getText();
-        String correo = vista.getTxtCorreo().getText();
-        String telefono = vista.getTxtTelefono().getText();
+            String direccion = vista.getTxtDireccion().getText();
+            String correo = vista.getTxtCorreo().getText();
+            String telefono = vista.getTxtTelefono().getText();
 
-        ModeloCliente cliente = new ModeloCliente(codigo_cliente, cedula, nombre, apellido, sexo, fechanacimiento, direccion, correo, telefono);
+            ModeloCliente cliente = new ModeloCliente(codigo_cliente, cedula, nombre, apellido, sexo, fechanacimiento, direccion, correo, telefono);
 
-        ImageIcon ic = (ImageIcon) vista.getLblFoto().getIcon();
-        cliente.setFoto(ic.getImage());
-        if (cliente.Editar()) {
-            JOptionPane.showMessageDialog(vista, "El Registro se ha editado satisfactoriamente");
-            cargarLista("");
-            vista.getDlgClientes().setVisible(false);
+            ImageIcon ic = (ImageIcon) vista.getLblFoto().getIcon();
+            cliente.setFoto(ic.getImage());
+            if (cliente.Editar()) {
+                JOptionPane.showMessageDialog(vista, "El Registro se ha editado satisfactoriamente");
+                cargarLista("");
+                vista.getDlgClientes().setVisible(false);
 
-        } else {
-            JOptionPane.showMessageDialog(vista, "ERROR");
+            } else {
+                JOptionPane.showMessageDialog(vista, "ERROR");
+            }
         }
 
     }

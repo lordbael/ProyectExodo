@@ -1,6 +1,5 @@
 package main;
 
-import controlador.ControlInicio;
 import controlador.ControlCliente;
 import controlador.Control_Login;
 import modelo.ModeloCliente;
@@ -18,6 +17,8 @@ public class ProyectoExodo {
     public static void main(String[] args) {
         
        Vista_Iniciar_secion vistas =  new Vista_Iniciar_secion();
+       vistas.setTitle("Exodo v1.0");
+       vistas.setLocationRelativeTo(null);
        Modelo_Login lg = new Modelo_Login();
        Control_Login ci = new Control_Login(lg,vistas);
        ci.IniciarContro();

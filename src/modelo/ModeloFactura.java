@@ -17,17 +17,17 @@ import java.util.logging.Logger;
  *
  * @author Juann Inga
  */
-public class ModeloFactura extends Factura{
+public class ModeloFactura extends Factura {
+
     private static ConexionPG con = new ConexionPG();
 
     public ModeloFactura(String codigofactura, Date fechafactura, String nombrecliente, String fkcedulacliente, String apellidocliente, String direccion, String fkcodigocontrato, double costowatts, int watts, double total) {
         super(codigofactura, fechafactura, nombrecliente, fkcedulacliente, apellidocliente, direccion, fkcodigocontrato, costowatts, watts, total);
     }
-    
+
     public ModeloFactura(String codigoFact) {
         super(codigoFact);
     }
-    
 
     public ModeloFactura() {
     }
@@ -69,8 +69,6 @@ public class ModeloFactura extends Factura{
         }
     }
 
-
-    
     public static List<Factura> listar(String aguja) {
 
         try {
@@ -104,7 +102,7 @@ public class ModeloFactura extends Factura{
             }
 
             rs.close();
-            return lista; 
+            return lista;
         } catch (SQLException ex) {
             Logger.getLogger(ModeloCliente.class.getName()).log(Level.SEVERE, null, ex);
             return null;
@@ -131,7 +129,7 @@ public class ModeloFactura extends Factura{
                 fac1.setCostowatts(rs.getDouble("costowatts"));
                 fac1.setWatts(rs.getInt("watts"));
                 fac1.setTotal(rs.getDouble("total"));
-                lista.add(fac1);  
+                lista.add(fac1);
 
             }
             rs.close();
@@ -142,8 +140,6 @@ public class ModeloFactura extends Factura{
         }
 
     }
-    
-    
 
     public boolean Eliminar() {
 
@@ -156,8 +152,7 @@ public class ModeloFactura extends Factura{
         } else {
             return false;
         }
-    };
-    
-    
-    
+    }
+;
+
 }
