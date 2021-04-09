@@ -22,69 +22,67 @@ import vista.VistaClientes;
  * @author Juann Inga
  */
 public class ControlInicio {
+
     VistaInicio vi;
 
     public ControlInicio(VistaInicio vi) {
         this.vi = vi;
         vi.setVisible(true);
     }
-    
-    public void iniciaControl(){
-        
-        vi.getTblCrudPersonas().addActionListener(l-> crudPersonas());
-        vi.getTblCrudMedidores().addActionListener(l-> crudMedidores());
-        vi.getTblCrudContratos().addActionListener(l-> crudContratos());
-        vi.getTblCrudFacturas().addActionListener(l-> crudFacturas());
-        vi.getTblCrudAdmin().addActionListener(l-> crudAdmin());
-        
+
+    public void iniciaControl() {
+
+        vi.getTblCrudPersonas().addActionListener(l -> crudPersonas());
+        vi.getTblCrudMedidores().addActionListener(l -> crudMedidores());
+        vi.getTblCrudContratos().addActionListener(l -> crudContratos());
+        vi.getTblCrudFacturas().addActionListener(l -> crudFacturas());
+        vi.getTblCrudAdmin().addActionListener(l -> crudAdmin());
+
     }
-    
-    public void crudPersonas(){
-        
+
+    public void crudPersonas() {
+
         ModeloCliente m = new ModeloCliente();
         VistaClientes v = new VistaClientes();
-        ControlCliente c = new ControlCliente(m, v);
         vi.getDesktop().add(v);
+        ControlCliente c = new ControlCliente(m, v);
         c.iniciaControl();
-        
+
     }
-    
-     public void crudMedidores(){
+
+    public void crudMedidores() {
         ModeloMedidor m = new ModeloMedidor();
         VistaMedidores v = new VistaMedidores();
-        ControlMedidor c = new ControlMedidor(m,v);
         vi.getDesktop().add(v);
+        ControlMedidor c = new ControlMedidor(m, v);
         c.iniciaControl();
-        
-        
+
     }
-    
-    public void crudContratos(){
+
+    public void crudContratos() {
         ModeloContrato m = new ModeloContrato();
         VistaContratos v = new VistaContratos();
-        ControlContrato c = new ControlContrato(m,v);
         vi.getDesktop().add(v);
+        ControlContrato c = new ControlContrato(m, v);
         c.iniciaControl();
-        
+
     }
-    public void crudFacturas(){
+
+    public void crudFacturas() {
         ModeloFactura m = new ModeloFactura();
         VistaFacturas v = new VistaFacturas();
-        ControlFactura c = new ControlFactura(m,v);
         vi.getDesktop().add(v);
+        ControlFactura c = new ControlFactura(m, v);
         c.iniciaControl();
-        
+
     }
-    
-    public void crudAdmin(){
+
+    public void crudAdmin() {
         ModeloAdmin m = new ModeloAdmin();
         VistaAdmin v = new VistaAdmin();
-        ControlAdmin c = new ControlAdmin(m,v);
         vi.getDesktop().add(v);
+        ControlAdmin c = new ControlAdmin(m, v);
         c.iniciaControl();
-        
-        
     }
-    
-    
+
 }

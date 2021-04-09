@@ -88,7 +88,7 @@ public class ControlMedidor {
 
     private void cargarLista(String aguja) {
         vista.getTblMedidores().setDefaultRenderer(Object.class, new ImagenTabla());
-        vista.getTblMedidores().setRowHeight(100);
+        vista.getTblMedidores().setRowHeight(30);
         DefaultTableCellRenderer renderer = new DefaultTableCellRenderer();
         DefaultTableModel tblModel;
         tblModel = (DefaultTableModel) vista.getTblMedidores().getModel();

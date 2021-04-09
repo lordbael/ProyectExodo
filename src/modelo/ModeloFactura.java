@@ -59,7 +59,7 @@ public class ModeloFactura extends Factura {
         sql = "UPDATE factura\n"
                 + "   SET fechafactura='" + getFechafactura() + "', nombrecliente='" + getNombrecliente() + "', fkcedulacliente='" + getFkcedulacliente() + "', \n"
                 + "       apellidocliente='" + getApellidocliente() + "', direccion='" + getDireccion() + "', fkcodigocontrato='" + getFkcodigocontrato() + "', costowatts='" + getCostowatts() + "', \n"
-                + "       watts=?, total=?\n"
+                + "       watts='" + getWatts() + "', total='" + getTotal() + "'\n"
                 + " WHERE codigofactura='" + getCodigofactura() + "';";
         if (con.noQuery(sql) == null) {
             return true;
@@ -72,13 +72,11 @@ public class ModeloFactura extends Factura {
     public static List<Factura> listar(String aguja) {
 
         try {
-            String query = "SELECT codigofactura, fechafactura, nombrecliente, fkcedulacliente, \n"
-                    + "       apellidocliente, direccion, fkcodigocontrato, costowatts, watts, \n"
-                    + "       total\n"
-                    + "  FROM factura WHERE;";
+            String query = "SELECT *\n"
+                    + "  FROM factura WHERE ";
 
             query += "upper(codigofactura) LIKE upper('%" + aguja + "%') OR ";
-            query += "upper(fechafactura) LIKE upper('%" + aguja + "%') OR ";
+            query += "upper(nombrecliente) LIKE upper('%" + aguja + "%') OR ";
             query += "upper(fkcedulacliente) LIKE upper('%" + aguja + "%')";
 
             ResultSet rs = con.query(query);
@@ -100,10 +98,9 @@ public class ModeloFactura extends Factura {
                 lista.add(fac1);
 
             }
-
             rs.close();
             return lista;
-        } catch (SQLException ex) {
+          } catch (SQLException ex) {
             Logger.getLogger(ModeloCliente.class.getName()).log(Level.SEVERE, null, ex);
             return null;
         }

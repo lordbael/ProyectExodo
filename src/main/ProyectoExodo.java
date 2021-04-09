@@ -6,7 +6,7 @@ import modelo.ModeloCliente;
 import modelo.Modelo_Login;
 import vista.VistaInicio;
 import vista.VistaClientes;
-import vista.Vista_Iniciar_secion;
+import vista.Vista_Iniciar_sesion;
 
 /**
  *
@@ -16,7 +16,7 @@ public class ProyectoExodo {
 
     public static void main(String[] args) {
         
-       Vista_Iniciar_secion vistas =  new Vista_Iniciar_secion();
+       Vista_Iniciar_sesion vistas =  new Vista_Iniciar_sesion();
        vistas.setTitle("Exodo v1.0");
        vistas.setLocationRelativeTo(null);
        Modelo_Login lg = new Modelo_Login();

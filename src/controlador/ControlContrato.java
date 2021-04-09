@@ -102,7 +102,7 @@ public class ControlContrato {
 
     private void cargarLista(String aguja) {
         vista.getTblContratos().setDefaultRenderer(Object.class, new ImagenTabla());
-        vista.getTblContratos().setRowHeight(100);
+        vista.getTblContratos().setRowHeight(30);
         DefaultTableCellRenderer renderer = new DefaultTableCellRenderer();
 
         DefaultTableModel tblModel;
@@ -367,6 +367,7 @@ public class ControlContrato {
             vista.getTblClientes().setValueAt(pl.getCorreo(), i.value, 7);
             vista.getTblClientes().setValueAt(pl.getTelefono(), i.value, 8);
             vista.getTblClientes().setValueAt(pl.getFoto(), i.value, 9);
+            i.value++;
 
         });
     }

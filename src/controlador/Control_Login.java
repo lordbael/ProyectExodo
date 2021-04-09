@@ -10,7 +10,7 @@ import java.util.Date;
 import javax.swing.JOptionPane;
 import modelo.Modelo_Login;
 import vista.VistaInicio;
-import vista.Vista_Iniciar_secion;
+import vista.Vista_Iniciar_sesion;
 
 /**
  *
@@ -19,9 +19,9 @@ import vista.Vista_Iniciar_secion;
 public class Control_Login {
 
     private Modelo_Login modelo;
-    private Vista_Iniciar_secion vista;
+    private Vista_Iniciar_sesion vista;
     
-    public Control_Login(Modelo_Login modelo, Vista_Iniciar_secion vista) {
+    public Control_Login(Modelo_Login modelo, Vista_Iniciar_sesion vista) {
         this.modelo = modelo;
         this.vista = vista;
         vista.setVisible(true);
@@ -39,7 +39,7 @@ public class Control_Login {
         Modelo_Login ini = new Modelo_Login(usuario, contrasenia);
         
         if (ini.IniciarSesion()) {
-            JOptionPane.showMessageDialog(vista, "Bienvenido");            
+            JOptionPane.showMessageDialog(vista, "¡BIENVENIDO!");            
             vista.setVisible(false);
             Date fecha = new Date();
             SimpleDateFormat form = new SimpleDateFormat("dd/mm/yyyy");
@@ -52,7 +52,7 @@ public class Control_Login {
             ver.setVisible(true);
             
         } else {
-            JOptionPane.showMessageDialog(vista, "Usuario y contrasenia no registrado");            
+            JOptionPane.showMessageDialog(vista, "Usuario y contraseña no registrados");            
         }
         
     }

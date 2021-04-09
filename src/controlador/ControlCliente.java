@@ -105,7 +105,7 @@ public class ControlCliente {
     private void cargarLista(String aguja) {
 
         vista.getTblClientes().setDefaultRenderer(Object.class, new ImagenTabla());
-        vista.getTblClientes().setRowHeight(120);
+        vista.getTblClientes().setRowHeight(100);
         DefaultTableCellRenderer renderer = new DefaultTableCellRenderer();
 
         DefaultTableModel tblModel;

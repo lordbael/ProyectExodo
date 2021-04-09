@@ -5,7 +5,6 @@
  */
 package controlador;
 
-import java.awt.Image;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
@@ -15,11 +14,8 @@ import java.time.Instant;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.List;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
-import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.xml.ws.Holder;
 import modelo.Clientes;
@@ -28,10 +24,8 @@ import modelo.ModeloFactura;
 import modelo.Factura;
 import modelo.ModeloCliente;
 import modelo.ModeloContrato;
-import vista.VistaClientes;
 import vista.VistaFacturas;
 import vista.VistaInicio;
-import vista.VistaMedidores;
 
 /**
  *
@@ -75,7 +69,7 @@ public class ControlFactura {
         vista.getBtnActualizarFac().addActionListener(l -> cargarLista(""));
         vista.getBtnNuevoFac().addActionListener(l -> MuestraDialog());
         vista.getBtnAceptarIn().addActionListener(l -> grabarFactura());
-        vista.getBtnEditarIn().addActionListener(l -> editarFactura());
+        vista.getBtnEditarFac().addActionListener(l -> editarFactura());
         vista.getBtnEditarIn().addActionListener(l -> Actualizar());
         vista.getBtnEliminarFac().addActionListener(l -> Delet());
         //---BUSCAR FACTURA
@@ -100,6 +94,7 @@ public class ControlFactura {
 
         DefaultTableModel tblModel;
         tblModel = (DefaultTableModel) vista.getTblFacturas().getModel();
+        vista.getTblFacturas().setRowHeight(30);
         tblModel.setNumRows(0);
         List<Factura> lista = ModeloFactura.listar(aguja);
         int ncols = tblModel.getColumnCount();
@@ -108,21 +103,22 @@ public class ControlFactura {
             tblModel.addRow(new Object[ncols]);
             vista.getTblFacturas().setValueAt(p1.getCodigofactura(), i.value, 0);
             vista.getTblFacturas().setValueAt(p1.getFechafactura(), i.value, 1);
-            vista.getTblFacturas().setValueAt(p1.getNombrecliente(), i.value, 2);
+            vista.getTblFacturas().setValueAt(p1.getFkcodigocontrato(), i.value, 2);
             vista.getTblFacturas().setValueAt(p1.getFkcedulacliente(), i.value, 3);
-            vista.getTblFacturas().setValueAt(p1.getApellidocliente(), i.value, 4);
-            vista.getTblFacturas().setValueAt(p1.getDireccion(), i.value, 5);
-            vista.getTblFacturas().setValueAt(p1.getFkcodigocontrato(), i.value, 6);
+            vista.getTblFacturas().setValueAt(p1.getNombrecliente(), i.value, 4);
+            vista.getTblFacturas().setValueAt(p1.getApellidocliente(), i.value, 5);
+            vista.getTblFacturas().setValueAt(p1.getDireccion(), i.value, 6);
             vista.getTblFacturas().setValueAt(p1.getCostowatts(), i.value, 7);
             vista.getTblFacturas().setValueAt(p1.getWatts(), i.value, 8);
             vista.getTblFacturas().setValueAt(p1.getTotal(), i.value, 9);
             //completar datos
+            i.value++;
 
         });
     }
 
     private void grabarFactura() {
-
+        double total;
         String cod_fact = vista.getTxtCodigoFacturaIn().getText();
 
         Instant instante = vista.getDtcFechaIn().getDate().toInstant();
@@ -137,12 +133,15 @@ public class ControlFactura {
         String contra = vista.getTxtCodigoContratoIn().getText();
         double costo_wats = Double.parseDouble(vista.getTxtCostoIn().getText());
         int watts = Integer.parseInt(vista.getTxtWattsIn().getText());
-        double total = Double.parseDouble(vista.getTxtTotalIn().getText());
-
+        total=costo_wats*watts;
+        vista.getTxtTotalIn().setText(""+total);
         ModeloFactura fact = new ModeloFactura(cod_fact, fecha_reg, nombre, cedula, apellido, direccion, contra, costo_wats, watts, total);
 
         if (fact.crear()) {
+            vista.getDlgClientes().setVisible(false);
+            vista.getDlgContratos().setVisible(false);
             cargarLista("");
+            
             vista.getDlgFacturas().setVisible(false);
             JOptionPane.showMessageDialog(vista, "Factura Creada Existosamente");
 
@@ -153,7 +152,7 @@ public class ControlFactura {
     }
 
     public void Actualizar() {
-
+        double total;
         String cod_fact = vista.getTxtCodigoFacturaIn().getText();
 
         Instant instante = vista.getDtcFechaIn().getDate().toInstant();
@@ -168,10 +167,13 @@ public class ControlFactura {
         String contra = vista.getTxtCodigoContratoIn().getText();
         double costo_wats = Double.parseDouble(vista.getTxtCostoIn().getText());
         int watts = Integer.parseInt(vista.getTxtWattsIn().getText());
-        double total = Double.parseDouble(vista.getTxtTotalIn().getText());
+        total=costo_wats*watts;
+        vista.getTxtTotalIn().setText(""+total);
 
         ModeloFactura fact = new ModeloFactura(cod_fact, fecha_reg, nombre, cedula, apellido, direccion, contra, costo_wats, watts, total);
         if (fact.modificar()) {
+            vista.getDlgClientes().setVisible(false);
+            vista.getDlgContratos().setVisible(false);
             cargarLista("");
             vista.getDlgFacturas().setVisible(false);
             JOptionPane.showMessageDialog(vista, "Modificado Existosamente");
@@ -209,7 +211,7 @@ public class ControlFactura {
         vista.getTxtCedulaIn().setEditable(true);
         vista.getDlgFacturas().setVisible(true);
         vista.getDlgFacturas().setSize(660, 600);
-        vista.getDlgFacturas().setTitle("NUEVA PERSONA");
+        vista.getDlgFacturas().setTitle("nueva factura");
         vista.getDlgFacturas().setLocationRelativeTo(vista);
         vista.getTxtCodigoFacturaIn().setText("");
         vista.getDtcFechaIn().setDate(null);
@@ -221,6 +223,7 @@ public class ControlFactura {
         vista.getTxtCostoIn().setText("");
         vista.getTxtWattsIn().setText("");
         vista.getTxtTotalIn().setText("");
+        vista.getBtnEditarIn().setVisible(false);
         vista.getBtnAceptarIn().setVisible(true);
 
     }
@@ -309,7 +312,7 @@ public class ControlFactura {
 
             vista.getDlgFacturas().setVisible(true);
             vista.getDlgFacturas().setSize(660, 600);
-            vista.getDlgFacturas().setTitle("EDITAR PERSONA");
+            vista.getDlgFacturas().setTitle("EDITAR factura");
             vista.getDlgFacturas().setLocationRelativeTo(vista);
             ///--------------------------------------------------
             vista.getTxtCodigoFacturaIn().setText(idfact);
@@ -359,7 +362,7 @@ public class ControlFactura {
             vista.getTblClientes().setValueAt(pl.getDireccion(), i.value, 6);
             vista.getTblClientes().setValueAt(pl.getCorreo(), i.value, 7);
             vista.getTblClientes().setValueAt(pl.getTelefono(), i.value, 8);
-            vista.getTblClientes().setValueAt(pl.getFoto(), i.value, 9);
+            i.value++;
 
         });
     }
