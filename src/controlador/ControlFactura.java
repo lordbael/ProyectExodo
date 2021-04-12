@@ -143,7 +143,7 @@ public class ControlFactura {
             cargarLista("");
             
             vista.getDlgFacturas().setVisible(false);
-            JOptionPane.showMessageDialog(vista, "Factura Creada Existosamente");
+            JOptionPane.showMessageDialog(vista, "Registro creado satisfactoriamente");
 
         } else {
             JOptionPane.showMessageDialog(vista, "ERROR!!!!!!");
@@ -176,10 +176,10 @@ public class ControlFactura {
             vista.getDlgContratos().setVisible(false);
             cargarLista("");
             vista.getDlgFacturas().setVisible(false);
-            JOptionPane.showMessageDialog(vista, "Modificado Existosamente");
+            JOptionPane.showMessageDialog(vista, "El registro se ha editado satisfactoriamente");
 
         } else {
-            JOptionPane.showMessageDialog(vista, "ERROR!!!!!!");
+            JOptionPane.showMessageDialog(vista, "ERROR");
         }
 
     }
@@ -188,21 +188,21 @@ public class ControlFactura {
         try {
             int fila = vista.getTblFacturas().getSelectedRow();
             DefaultTableModel model = (DefaultTableModel) vista.getTblFacturas().getModel();
-            int op = JOptionPane.showConfirmDialog(vista, "\tDesea elimianr la factura\n"
-                    + "codigo: " + model.getValueAt(fila, 0).toString() + "\n"
+            int op = JOptionPane.showConfirmDialog(vista, "\t¿Desea elimianr la factura?\n"
+                    + "Código: " + model.getValueAt(fila, 0).toString() + "\n"
                     + "Nombre: " + model.getValueAt(fila, 1).toString() + "\n"
-                    + "contrato: " + model.getValueAt(fila, 2).toString() + "\n"
+                    + "Código de contrato: " + model.getValueAt(fila, 2).toString() + "\n"
             );
             if (op == 0) {
                 ModeloFactura p1 = new ModeloFactura();
                 p1.setCodigofactura(model.getValueAt(fila, 0).toString());
                 if (p1.Eliminar()) {
-                    JOptionPane.showMessageDialog(vista, "Factura eliminada");
+                    JOptionPane.showMessageDialog(vista, "La factura ha sido eliminada");
                     cargarLista("");
                 }
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(vista, "No ha seleccionado ninguna fila para eliminarla");
+            JOptionPane.showMessageDialog(vista, "No ha seleccionado ninguna fila para eliminar");
         }
 
     }
@@ -211,7 +211,7 @@ public class ControlFactura {
         vista.getTxtCedulaIn().setEditable(true);
         vista.getDlgFacturas().setVisible(true);
         vista.getDlgFacturas().setSize(660, 600);
-        vista.getDlgFacturas().setTitle("nueva factura");
+        vista.getDlgFacturas().setTitle("NUEVA FACTURA");
         vista.getDlgFacturas().setLocationRelativeTo(vista);
         vista.getTxtCodigoFacturaIn().setText("");
         vista.getDtcFechaIn().setDate(null);
@@ -312,7 +312,7 @@ public class ControlFactura {
 
             vista.getDlgFacturas().setVisible(true);
             vista.getDlgFacturas().setSize(660, 600);
-            vista.getDlgFacturas().setTitle("EDITAR factura");
+            vista.getDlgFacturas().setTitle("EDITAR FACTURA");
             vista.getDlgFacturas().setLocationRelativeTo(vista);
             ///--------------------------------------------------
             vista.getTxtCodigoFacturaIn().setText(idfact);
@@ -456,9 +456,9 @@ public class ControlFactura {
         for (int i = 0; i < ps.size(); i++) {
             Contratos indexContratos = ps.get(i);
             String codigocontrato = indexContratos.getCodigocontrato();
+            vista.getDlgFacturas().setVisible(true);
             vista.getDlgContratos().setSize(660, 600);
             vista.getDlgContratos().setTitle("lista contratos");
-            vista.getDlgContratos().setVisible(true);
             vista.getDlgContratos().setLocationRelativeTo(vista);
             vista.getTxtCodigoContratoIn().setText(codigocontrato);
             

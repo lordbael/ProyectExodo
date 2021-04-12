@@ -88,43 +88,29 @@ public class VistaInicio extends javax.swing.JFrame {
     private void initComponents() {
 
         jSeparator69 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator4 = new javax.swing.JSeparator();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator36 = new javax.swing.JSeparator();
+        jSeparator37 = new javax.swing.JSeparator();
+        jSeparator38 = new javax.swing.JSeparator();
+        jSeparator40 = new javax.swing.JSeparator();
         jToolBar1 = new javax.swing.JToolBar();
         tblCrudPersonas = new javax.swing.JButton();
-        jSeparator26 = new javax.swing.JToolBar.Separator();
-        jSeparator27 = new javax.swing.JToolBar.Separator();
-        tblCrudMedidores = new javax.swing.JButton();
-        jSeparator28 = new javax.swing.JToolBar.Separator();
-        jSeparator29 = new javax.swing.JToolBar.Separator();
-        tblCrudContratos = new javax.swing.JButton();
-        jSeparator30 = new javax.swing.JToolBar.Separator();
-        jSeparator31 = new javax.swing.JToolBar.Separator();
-        tblCrudFacturas = new javax.swing.JButton();
-        jSeparator1 = new javax.swing.JToolBar.Separator();
-        jSeparator2 = new javax.swing.JToolBar.Separator();
         jSeparator3 = new javax.swing.JToolBar.Separator();
-        jSeparator4 = new javax.swing.JToolBar.Separator();
         jSeparator5 = new javax.swing.JToolBar.Separator();
+        tblCrudMedidores = new javax.swing.JButton();
         jSeparator6 = new javax.swing.JToolBar.Separator();
         jSeparator7 = new javax.swing.JToolBar.Separator();
+        tblCrudContratos = new javax.swing.JButton();
         jSeparator8 = new javax.swing.JToolBar.Separator();
         jSeparator9 = new javax.swing.JToolBar.Separator();
+        tblCrudFacturas = new javax.swing.JButton();
         jSeparator10 = new javax.swing.JToolBar.Separator();
         jSeparator11 = new javax.swing.JToolBar.Separator();
         jSeparator12 = new javax.swing.JToolBar.Separator();
         jSeparator13 = new javax.swing.JToolBar.Separator();
         jSeparator14 = new javax.swing.JToolBar.Separator();
-        jSeparator57 = new javax.swing.JToolBar.Separator();
-        jSeparator60 = new javax.swing.JToolBar.Separator();
-        jSeparator62 = new javax.swing.JToolBar.Separator();
-        jSeparator66 = new javax.swing.JToolBar.Separator();
-        jSeparator73 = new javax.swing.JToolBar.Separator();
-        jSeparator74 = new javax.swing.JToolBar.Separator();
-        jSeparator75 = new javax.swing.JToolBar.Separator();
-        jSeparator76 = new javax.swing.JToolBar.Separator();
-        jSeparator77 = new javax.swing.JToolBar.Separator();
-        jSeparator78 = new javax.swing.JToolBar.Separator();
-        jSeparator32 = new javax.swing.JToolBar.Separator();
-        jSeparator33 = new javax.swing.JToolBar.Separator();
         jSeparator15 = new javax.swing.JToolBar.Separator();
         jSeparator16 = new javax.swing.JToolBar.Separator();
         jSeparator17 = new javax.swing.JToolBar.Separator();
@@ -136,8 +122,22 @@ public class VistaInicio extends javax.swing.JFrame {
         jSeparator23 = new javax.swing.JToolBar.Separator();
         jSeparator24 = new javax.swing.JToolBar.Separator();
         jSeparator25 = new javax.swing.JToolBar.Separator();
+        jSeparator26 = new javax.swing.JToolBar.Separator();
+        jSeparator27 = new javax.swing.JToolBar.Separator();
+        jSeparator28 = new javax.swing.JToolBar.Separator();
+        jSeparator29 = new javax.swing.JToolBar.Separator();
+        jSeparator30 = new javax.swing.JToolBar.Separator();
+        jSeparator31 = new javax.swing.JToolBar.Separator();
+        jSeparator32 = new javax.swing.JToolBar.Separator();
+        jSeparator33 = new javax.swing.JToolBar.Separator();
         jSeparator34 = new javax.swing.JToolBar.Separator();
         jSeparator35 = new javax.swing.JToolBar.Separator();
+        jSeparator39 = new javax.swing.JToolBar.Separator();
+        jSeparator41 = new javax.swing.JToolBar.Separator();
+        jSeparator42 = new javax.swing.JToolBar.Separator();
+        jSeparator43 = new javax.swing.JToolBar.Separator();
+        jSeparator44 = new javax.swing.JToolBar.Separator();
+        jSeparator45 = new javax.swing.JToolBar.Separator();
         tblCrudAdmin = new javax.swing.JButton();
         Desktop = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -155,14 +155,14 @@ public class VistaInicio extends javax.swing.JFrame {
         jToolBar1.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jToolBar1.setRollover(true);
 
-        tblCrudPersonas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/User_Group-80_icon-icons.com_57247.png"))); // NOI18N
+        tblCrudPersonas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/clientes_apagado.png"))); // NOI18N
         tblCrudPersonas.setToolTipText("Clientes");
         tblCrudPersonas.setBorder(null);
+        tblCrudPersonas.setContentAreaFilled(false);
         tblCrudPersonas.setFocusable(false);
         tblCrudPersonas.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        tblCrudPersonas.setMaximumSize(new java.awt.Dimension(45, 45));
-        tblCrudPersonas.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/User_Group-80_icon-icons.com_57247.png"))); // NOI18N
-        tblCrudPersonas.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/User_Group-80_icon-icons.com_57247.png"))); // NOI18N
+        tblCrudPersonas.setMaximumSize(new java.awt.Dimension(50, 60));
+        tblCrudPersonas.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/clientes.png"))); // NOI18N
         tblCrudPersonas.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         tblCrudPersonas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -170,15 +170,17 @@ public class VistaInicio extends javax.swing.JFrame {
             }
         });
         jToolBar1.add(tblCrudPersonas);
-        jToolBar1.add(jSeparator26);
-        jToolBar1.add(jSeparator27);
+        jToolBar1.add(jSeparator3);
+        jToolBar1.add(jSeparator5);
 
-        tblCrudMedidores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/gauge_115097.png"))); // NOI18N
+        tblCrudMedidores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/medidor_apagado.png"))); // NOI18N
         tblCrudMedidores.setToolTipText("Medidores");
         tblCrudMedidores.setBorder(null);
+        tblCrudMedidores.setContentAreaFilled(false);
         tblCrudMedidores.setFocusable(false);
         tblCrudMedidores.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        tblCrudMedidores.setMaximumSize(new java.awt.Dimension(45, 45));
+        tblCrudMedidores.setMaximumSize(new java.awt.Dimension(50, 60));
+        tblCrudMedidores.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/medidor.png"))); // NOI18N
         tblCrudMedidores.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         tblCrudMedidores.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -186,15 +188,17 @@ public class VistaInicio extends javax.swing.JFrame {
             }
         });
         jToolBar1.add(tblCrudMedidores);
-        jToolBar1.add(jSeparator28);
-        jToolBar1.add(jSeparator29);
+        jToolBar1.add(jSeparator6);
+        jToolBar1.add(jSeparator7);
 
-        tblCrudContratos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/1486505387-document-file-contract-agreement-certificate-degree-paper_81409.png"))); // NOI18N
+        tblCrudContratos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/contrato_apagado.png"))); // NOI18N
         tblCrudContratos.setToolTipText("Contratos");
         tblCrudContratos.setBorder(null);
+        tblCrudContratos.setContentAreaFilled(false);
         tblCrudContratos.setFocusable(false);
         tblCrudContratos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        tblCrudContratos.setMaximumSize(new java.awt.Dimension(45, 45));
+        tblCrudContratos.setMaximumSize(new java.awt.Dimension(50, 60));
+        tblCrudContratos.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/contrato.png"))); // NOI18N
         tblCrudContratos.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         tblCrudContratos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -202,15 +206,17 @@ public class VistaInicio extends javax.swing.JFrame {
             }
         });
         jToolBar1.add(tblCrudContratos);
-        jToolBar1.add(jSeparator30);
-        jToolBar1.add(jSeparator31);
+        jToolBar1.add(jSeparator8);
+        jToolBar1.add(jSeparator9);
 
-        tblCrudFacturas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/invoice_dollar_business_document_dollar_coin_icon_150738.png"))); // NOI18N
+        tblCrudFacturas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/factura_apagado.png"))); // NOI18N
         tblCrudFacturas.setToolTipText("Facturación");
         tblCrudFacturas.setBorder(null);
+        tblCrudFacturas.setContentAreaFilled(false);
         tblCrudFacturas.setFocusable(false);
         tblCrudFacturas.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        tblCrudFacturas.setMaximumSize(new java.awt.Dimension(45, 45));
+        tblCrudFacturas.setMaximumSize(new java.awt.Dimension(50, 60));
+        tblCrudFacturas.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/factura.png"))); // NOI18N
         tblCrudFacturas.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         tblCrudFacturas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -218,34 +224,11 @@ public class VistaInicio extends javax.swing.JFrame {
             }
         });
         jToolBar1.add(tblCrudFacturas);
-
-        jSeparator1.setBackground(new java.awt.Color(153, 153, 153));
-        jToolBar1.add(jSeparator1);
-        jToolBar1.add(jSeparator2);
-        jToolBar1.add(jSeparator3);
-        jToolBar1.add(jSeparator4);
-        jToolBar1.add(jSeparator5);
-        jToolBar1.add(jSeparator6);
-        jToolBar1.add(jSeparator7);
-        jToolBar1.add(jSeparator8);
-        jToolBar1.add(jSeparator9);
         jToolBar1.add(jSeparator10);
         jToolBar1.add(jSeparator11);
         jToolBar1.add(jSeparator12);
         jToolBar1.add(jSeparator13);
         jToolBar1.add(jSeparator14);
-        jToolBar1.add(jSeparator57);
-        jToolBar1.add(jSeparator60);
-        jToolBar1.add(jSeparator62);
-        jToolBar1.add(jSeparator66);
-        jToolBar1.add(jSeparator73);
-        jToolBar1.add(jSeparator74);
-        jToolBar1.add(jSeparator75);
-        jToolBar1.add(jSeparator76);
-        jToolBar1.add(jSeparator77);
-        jToolBar1.add(jSeparator78);
-        jToolBar1.add(jSeparator32);
-        jToolBar1.add(jSeparator33);
         jToolBar1.add(jSeparator15);
         jToolBar1.add(jSeparator16);
         jToolBar1.add(jSeparator17);
@@ -257,15 +240,31 @@ public class VistaInicio extends javax.swing.JFrame {
         jToolBar1.add(jSeparator23);
         jToolBar1.add(jSeparator24);
         jToolBar1.add(jSeparator25);
+        jToolBar1.add(jSeparator26);
+        jToolBar1.add(jSeparator27);
+        jToolBar1.add(jSeparator28);
+        jToolBar1.add(jSeparator29);
+        jToolBar1.add(jSeparator30);
+        jToolBar1.add(jSeparator31);
+        jToolBar1.add(jSeparator32);
+        jToolBar1.add(jSeparator33);
         jToolBar1.add(jSeparator34);
         jToolBar1.add(jSeparator35);
+        jToolBar1.add(jSeparator39);
+        jToolBar1.add(jSeparator41);
+        jToolBar1.add(jSeparator42);
+        jToolBar1.add(jSeparator43);
+        jToolBar1.add(jSeparator44);
+        jToolBar1.add(jSeparator45);
 
-        tblCrudAdmin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/admin_man_person_user_icon_127232.png"))); // NOI18N
+        tblCrudAdmin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/admin_apagado.png"))); // NOI18N
         tblCrudAdmin.setToolTipText("Administradores");
         tblCrudAdmin.setBorder(null);
+        tblCrudAdmin.setContentAreaFilled(false);
         tblCrudAdmin.setFocusable(false);
         tblCrudAdmin.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        tblCrudAdmin.setMaximumSize(new java.awt.Dimension(45, 45));
+        tblCrudAdmin.setMaximumSize(new java.awt.Dimension(50, 60));
+        tblCrudAdmin.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/admin.png"))); // NOI18N
         tblCrudAdmin.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         tblCrudAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -280,7 +279,7 @@ public class VistaInicio extends javax.swing.JFrame {
         Desktop.setLayout(DesktopLayout);
         DesktopLayout.setHorizontalGroup(
             DesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 931, Short.MAX_VALUE)
+            .addGap(0, 980, Short.MAX_VALUE)
         );
         DesktopLayout.setVerticalGroup(
             DesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -315,7 +314,7 @@ public class VistaInicio extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(Desktop))
         );
@@ -329,10 +328,6 @@ public class VistaInicio extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void tblCrudAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tblCrudAdminActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tblCrudAdminActionPerformed
 
     private void tblCrudFacturasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tblCrudFacturasActionPerformed
         // TODO add your handling code here:
@@ -350,6 +345,10 @@ public class VistaInicio extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tblCrudPersonasActionPerformed
 
+    private void tblCrudAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tblCrudAdminActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tblCrudAdminActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane Desktop;
@@ -361,7 +360,7 @@ public class VistaInicio extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JToolBar.Separator jSeparator1;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JToolBar.Separator jSeparator10;
     private javax.swing.JToolBar.Separator jSeparator11;
     private javax.swing.JToolBar.Separator jSeparator12;
@@ -372,7 +371,7 @@ public class VistaInicio extends javax.swing.JFrame {
     private javax.swing.JToolBar.Separator jSeparator17;
     private javax.swing.JToolBar.Separator jSeparator18;
     private javax.swing.JToolBar.Separator jSeparator19;
-    private javax.swing.JToolBar.Separator jSeparator2;
+    private javax.swing.JSeparator jSeparator2;
     private javax.swing.JToolBar.Separator jSeparator20;
     private javax.swing.JToolBar.Separator jSeparator21;
     private javax.swing.JToolBar.Separator jSeparator22;
@@ -390,21 +389,21 @@ public class VistaInicio extends javax.swing.JFrame {
     private javax.swing.JToolBar.Separator jSeparator33;
     private javax.swing.JToolBar.Separator jSeparator34;
     private javax.swing.JToolBar.Separator jSeparator35;
-    private javax.swing.JToolBar.Separator jSeparator4;
+    private javax.swing.JSeparator jSeparator36;
+    private javax.swing.JSeparator jSeparator37;
+    private javax.swing.JSeparator jSeparator38;
+    private javax.swing.JToolBar.Separator jSeparator39;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator40;
+    private javax.swing.JToolBar.Separator jSeparator41;
+    private javax.swing.JToolBar.Separator jSeparator42;
+    private javax.swing.JToolBar.Separator jSeparator43;
+    private javax.swing.JToolBar.Separator jSeparator44;
+    private javax.swing.JToolBar.Separator jSeparator45;
     private javax.swing.JToolBar.Separator jSeparator5;
-    private javax.swing.JToolBar.Separator jSeparator57;
     private javax.swing.JToolBar.Separator jSeparator6;
-    private javax.swing.JToolBar.Separator jSeparator60;
-    private javax.swing.JToolBar.Separator jSeparator62;
-    private javax.swing.JToolBar.Separator jSeparator66;
     private javax.swing.JSeparator jSeparator69;
     private javax.swing.JToolBar.Separator jSeparator7;
-    private javax.swing.JToolBar.Separator jSeparator73;
-    private javax.swing.JToolBar.Separator jSeparator74;
-    private javax.swing.JToolBar.Separator jSeparator75;
-    private javax.swing.JToolBar.Separator jSeparator76;
-    private javax.swing.JToolBar.Separator jSeparator77;
-    private javax.swing.JToolBar.Separator jSeparator78;
     private javax.swing.JToolBar.Separator jSeparator8;
     private javax.swing.JToolBar.Separator jSeparator9;
     private javax.swing.JToolBar jToolBar1;

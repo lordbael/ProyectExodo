@@ -14,7 +14,7 @@ import vista.Vista_Iniciar_sesion;
 
 /**
  *
- * @author Sammy Guergachi <sguergachi at gmail.com>
+ * @author Juan Inga
  */
 public class Control_Login {
 

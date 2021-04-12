@@ -25,7 +25,7 @@ public class VistaAdmin extends javax.swing.JInternalFrame{
      */
     public VistaAdmin() {
         initComponents();
-        this.setSize(1309, 682);
+        this.setSize(1301, 682);
         this.setTitle("Administradores");
     }
 
@@ -511,10 +511,12 @@ public class VistaAdmin extends javax.swing.JInternalFrame{
         btnNuevoEx.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnNuevoEx.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/nuevo.png"))); // NOI18N
         btnNuevoEx.setText("Nuevo Registro");
+        btnNuevoEx.setFocusable(false);
 
         btnActualizarEx.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnActualizarEx.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/actualizar.png"))); // NOI18N
         btnActualizarEx.setText("Actualizar");
+        btnActualizarEx.setFocusable(false);
         btnActualizarEx.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnActualizarExActionPerformed(evt);
@@ -530,6 +532,7 @@ public class VistaAdmin extends javax.swing.JInternalFrame{
         btnEditarEx.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnEditarEx.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/editar.png"))); // NOI18N
         btnEditarEx.setText("Editar");
+        btnEditarEx.setFocusable(false);
         btnEditarEx.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditarExActionPerformed(evt);
@@ -539,6 +542,7 @@ public class VistaAdmin extends javax.swing.JInternalFrame{
         btnEliminarEx.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnEliminarEx.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/eliminar.png"))); // NOI18N
         btnEliminarEx.setText("Eliminar");
+        btnEliminarEx.setFocusable(false);
 
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/searchmagnifierinterfacesymbol1_79893.png"))); // NOI18N
 

@@ -152,7 +152,7 @@ public class ControlMedidor {
 
             ModeloMedidor medidor = new ModeloMedidor(codigomedidor, marca, tipo, aniofabricacion, capacidad, precio);
             if (medidor.grabarMedidor()) {
-                JOptionPane.showMessageDialog(vista, "Registro grabado satisfactoriamente");
+                JOptionPane.showMessageDialog(vista, "Registro creado satisfactoriamente");
                 cargarLista("");
                 vista.getDlgMedidores().setVisible(false);
             } else {
@@ -313,20 +313,20 @@ public class ControlMedidor {
             int fila = vista.getTblMedidores().getSelectedRow();
             DefaultTableModel model = (DefaultTableModel) vista.getTblMedidores().getModel();
             int op = JOptionPane.showConfirmDialog(vista, "\t¿Desea eliminar el medidor seleccionada?\n"
-                    + "codigomedidor: " + model.getValueAt(fila, 0).toString() + "\n"
-                    + "marca: " + model.getValueAt(fila, 1).toString() + "\n"
-                    + "tipo: " + model.getValueAt(fila, 2).toString() + "\n"
-                    + "año de fabricacion: " + model.getValueAt(fila, 3).toString());
+                    + "Código de medidor: " + model.getValueAt(fila, 0).toString() + "\n"
+                    + "Marca: " + model.getValueAt(fila, 1).toString() + "\n"
+                    + "Tipo: " + model.getValueAt(fila, 2).toString() + "\n"
+                    + "Año de fabricación: " + model.getValueAt(fila, 3).toString());
             if (op == 0) {
                 ModeloMedidor med1 = new ModeloMedidor();
                 med1.setCodigomedidor(model.getValueAt(fila, 0).toString());
                 if (med1.EliminarMedidor()) {
-                    JOptionPane.showMessageDialog(vista, "El medidor ha sido eliminada");
+                    JOptionPane.showMessageDialog(vista, "El medidor ha sido eliminado");
                     cargarLista("");
                 }
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(vista, "No ha seleccionado ninguna fila para eliminarla");
+            JOptionPane.showMessageDialog(vista, "No ha seleccionado ninguna fila para eliminar");
         }
 
     }

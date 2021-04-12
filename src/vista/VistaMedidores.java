@@ -24,7 +24,7 @@ public class VistaMedidores extends javax.swing.JInternalFrame {
      */
     public VistaMedidores() {
         initComponents();
-        this.setSize(1309, 682);
+        this.setSize(1301, 682);
         this.setTitle("Medidores");
 
     }

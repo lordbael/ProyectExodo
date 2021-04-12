@@ -185,7 +185,7 @@ public class ControlCliente {
             if (cliente.grabar()) {
                 cargarLista("");
                 vista.getDlgClientes().setVisible(false);
-                JOptionPane.showMessageDialog(vista, "Registro grabado satisfactoriamente");
+                JOptionPane.showMessageDialog(vista, "Registro creado satisfactoriamente");
             } else {
                 JOptionPane.showMessageDialog(vista, "ERROR");
             }
@@ -268,7 +268,7 @@ public class ControlCliente {
         }
         ////////////////////////////////////////////////////////////////////telefono
         if (vista.getTxtTelefono().getText().length() > 10) {
-            JOptionPane.showMessageDialog(null, "Número de caracteres en teléfono excedido", "Teléfon Erroneo", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Número de caracteres en teléfono excedido", "Teléfono Erroneo", JOptionPane.ERROR_MESSAGE);
             verificar = false;
         }
 
@@ -345,7 +345,7 @@ public class ControlCliente {
             } else {
                 vista.getLblFoto().setIcon(null);
             }
-            vista.getDlgClientes().setTitle("EDITAR PERSONA");
+            vista.getDlgClientes().setTitle("EDITAR CLIENTE");
 
             vista.getTxtCodigoCliente().setText(codigo_cliente);
             vista.getTxtCodigoCliente().setEditable(false);
@@ -384,7 +384,7 @@ public class ControlCliente {
             ImageIcon ic = (ImageIcon) vista.getLblFoto().getIcon();
             cliente.setFoto(ic.getImage());
             if (cliente.Editar()) {
-                JOptionPane.showMessageDialog(vista, "El Registro se ha editado satisfactoriamente");
+                JOptionPane.showMessageDialog(vista, "El registro se ha editado satisfactoriamente");
                 cargarLista("");
                 vista.getDlgClientes().setVisible(false);
 
@@ -404,7 +404,7 @@ public class ControlCliente {
         try {
             int fila = vista.getTblClientes().getSelectedRow();
             DefaultTableModel model = (DefaultTableModel) vista.getTblClientes().getModel();
-            int op = JOptionPane.showConfirmDialog(vista, "\t¿Desea eliminar el cliente seleccionada?\n"
+            int op = JOptionPane.showConfirmDialog(vista, "\t¿Desea eliminar el cliente seleccionado?\n"
                     + "Cédula: " + model.getValueAt(fila, 0).toString() + "\n"
                     + "Código Cliente: " + model.getValueAt(fila, 1).toString() + "\n"
                     + "Nombre: " + model.getValueAt(fila, 2).toString() + "\n"
@@ -413,12 +413,12 @@ public class ControlCliente {
                 ModeloCliente c1 = new ModeloCliente();
                 c1.setCedula(model.getValueAt(fila, 0).toString());
                 if (c1.Eliminar()) {
-                    JOptionPane.showMessageDialog(vista, "La persona ha sido eliminada");
+                    JOptionPane.showMessageDialog(vista, "El cliente ha sido eliminado");
                     cargarLista("");
                 }
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(vista, "No ha seleccionado ninguna fila para eliminarla");
+            JOptionPane.showMessageDialog(vista, "No ha seleccionado ninguna fila para eliminar");
         }
 
     }

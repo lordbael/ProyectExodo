@@ -4,6 +4,20 @@
   <NonVisualComponents>
     <Component class="javax.swing.JSeparator" name="jSeparator69">
     </Component>
+    <Component class="javax.swing.JSeparator" name="jSeparator2">
+    </Component>
+    <Component class="javax.swing.JSeparator" name="jSeparator4">
+    </Component>
+    <Component class="javax.swing.JSeparator" name="jSeparator1">
+    </Component>
+    <Component class="javax.swing.JSeparator" name="jSeparator36">
+    </Component>
+    <Component class="javax.swing.JSeparator" name="jSeparator37">
+    </Component>
+    <Component class="javax.swing.JSeparator" name="jSeparator38">
+    </Component>
+    <Component class="javax.swing.JSeparator" name="jSeparator40">
+    </Component>
     <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
       <SubComponents>
         <Menu class="javax.swing.JMenu" name="jMenu1">
@@ -68,7 +82,7 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <Component id="jToolBar1" min="-2" max="-2" attributes="0"/>
+              <Component id="jToolBar1" min="-2" pref="65" max="-2" attributes="0"/>
               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
               <Component id="Desktop" max="32767" attributes="0"/>
           </Group>
@@ -98,22 +112,20 @@
         <Component class="javax.swing.JButton" name="tblCrudPersonas">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/icons/User_Group-80_icon-icons.com_57247.png"/>
+              <Image iconType="3" name="/icons/clientes_apagado.png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Clientes"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
             </Property>
+            <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="focusable" type="boolean" value="false"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[45, 45]"/>
-            </Property>
-            <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/icons/User_Group-80_icon-icons.com_57247.png"/>
+              <Dimension value="[50, 60]"/>
             </Property>
             <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/icons/User_Group-80_icon-icons.com_57247.png"/>
+              <Image iconType="3" name="/icons/clientes.png"/>
             </Property>
             <Property name="verticalTextPosition" type="int" value="3"/>
           </Properties>
@@ -121,23 +133,27 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tblCrudPersonasActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JToolBar$Separator" name="jSeparator26">
+        <Component class="javax.swing.JToolBar$Separator" name="jSeparator3">
         </Component>
-        <Component class="javax.swing.JToolBar$Separator" name="jSeparator27">
+        <Component class="javax.swing.JToolBar$Separator" name="jSeparator5">
         </Component>
         <Component class="javax.swing.JButton" name="tblCrudMedidores">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/icons/gauge_115097.png"/>
+              <Image iconType="3" name="/icons/medidor_apagado.png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Medidores"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
             </Property>
+            <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="focusable" type="boolean" value="false"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[45, 45]"/>
+              <Dimension value="[50, 60]"/>
+            </Property>
+            <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/icons/medidor.png"/>
             </Property>
             <Property name="verticalTextPosition" type="int" value="3"/>
           </Properties>
@@ -145,23 +161,27 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tblCrudMedidoresActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JToolBar$Separator" name="jSeparator28">
+        <Component class="javax.swing.JToolBar$Separator" name="jSeparator6">
         </Component>
-        <Component class="javax.swing.JToolBar$Separator" name="jSeparator29">
+        <Component class="javax.swing.JToolBar$Separator" name="jSeparator7">
         </Component>
         <Component class="javax.swing.JButton" name="tblCrudContratos">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/icons/1486505387-document-file-contract-agreement-certificate-degree-paper_81409.png"/>
+              <Image iconType="3" name="/icons/contrato_apagado.png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Contratos"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
             </Property>
+            <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="focusable" type="boolean" value="false"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[45, 45]"/>
+              <Dimension value="[50, 60]"/>
+            </Property>
+            <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/icons/contrato.png"/>
             </Property>
             <Property name="verticalTextPosition" type="int" value="3"/>
           </Properties>
@@ -169,52 +189,33 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tblCrudContratosActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JToolBar$Separator" name="jSeparator30">
+        <Component class="javax.swing.JToolBar$Separator" name="jSeparator8">
         </Component>
-        <Component class="javax.swing.JToolBar$Separator" name="jSeparator31">
+        <Component class="javax.swing.JToolBar$Separator" name="jSeparator9">
         </Component>
         <Component class="javax.swing.JButton" name="tblCrudFacturas">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/icons/invoice_dollar_business_document_dollar_coin_icon_150738.png"/>
+              <Image iconType="3" name="/icons/factura_apagado.png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Facturaci&#xf3;n"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
             </Property>
+            <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="focusable" type="boolean" value="false"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[45, 45]"/>
+              <Dimension value="[50, 60]"/>
+            </Property>
+            <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/icons/factura.png"/>
             </Property>
             <Property name="verticalTextPosition" type="int" value="3"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tblCrudFacturasActionPerformed"/>
           </Events>
-        </Component>
-        <Component class="javax.swing.JToolBar$Separator" name="jSeparator1">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="99" green="99" red="99" type="rgb"/>
-            </Property>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JToolBar$Separator" name="jSeparator2">
-        </Component>
-        <Component class="javax.swing.JToolBar$Separator" name="jSeparator3">
-        </Component>
-        <Component class="javax.swing.JToolBar$Separator" name="jSeparator4">
-        </Component>
-        <Component class="javax.swing.JToolBar$Separator" name="jSeparator5">
-        </Component>
-        <Component class="javax.swing.JToolBar$Separator" name="jSeparator6">
-        </Component>
-        <Component class="javax.swing.JToolBar$Separator" name="jSeparator7">
-        </Component>
-        <Component class="javax.swing.JToolBar$Separator" name="jSeparator8">
-        </Component>
-        <Component class="javax.swing.JToolBar$Separator" name="jSeparator9">
         </Component>
         <Component class="javax.swing.JToolBar$Separator" name="jSeparator10">
         </Component>
@@ -225,30 +226,6 @@
         <Component class="javax.swing.JToolBar$Separator" name="jSeparator13">
         </Component>
         <Component class="javax.swing.JToolBar$Separator" name="jSeparator14">
-        </Component>
-        <Component class="javax.swing.JToolBar$Separator" name="jSeparator57">
-        </Component>
-        <Component class="javax.swing.JToolBar$Separator" name="jSeparator60">
-        </Component>
-        <Component class="javax.swing.JToolBar$Separator" name="jSeparator62">
-        </Component>
-        <Component class="javax.swing.JToolBar$Separator" name="jSeparator66">
-        </Component>
-        <Component class="javax.swing.JToolBar$Separator" name="jSeparator73">
-        </Component>
-        <Component class="javax.swing.JToolBar$Separator" name="jSeparator74">
-        </Component>
-        <Component class="javax.swing.JToolBar$Separator" name="jSeparator75">
-        </Component>
-        <Component class="javax.swing.JToolBar$Separator" name="jSeparator76">
-        </Component>
-        <Component class="javax.swing.JToolBar$Separator" name="jSeparator77">
-        </Component>
-        <Component class="javax.swing.JToolBar$Separator" name="jSeparator78">
-        </Component>
-        <Component class="javax.swing.JToolBar$Separator" name="jSeparator32">
-        </Component>
-        <Component class="javax.swing.JToolBar$Separator" name="jSeparator33">
         </Component>
         <Component class="javax.swing.JToolBar$Separator" name="jSeparator15">
         </Component>
@@ -272,23 +249,55 @@
         </Component>
         <Component class="javax.swing.JToolBar$Separator" name="jSeparator25">
         </Component>
+        <Component class="javax.swing.JToolBar$Separator" name="jSeparator26">
+        </Component>
+        <Component class="javax.swing.JToolBar$Separator" name="jSeparator27">
+        </Component>
+        <Component class="javax.swing.JToolBar$Separator" name="jSeparator28">
+        </Component>
+        <Component class="javax.swing.JToolBar$Separator" name="jSeparator29">
+        </Component>
+        <Component class="javax.swing.JToolBar$Separator" name="jSeparator30">
+        </Component>
+        <Component class="javax.swing.JToolBar$Separator" name="jSeparator31">
+        </Component>
+        <Component class="javax.swing.JToolBar$Separator" name="jSeparator32">
+        </Component>
+        <Component class="javax.swing.JToolBar$Separator" name="jSeparator33">
+        </Component>
         <Component class="javax.swing.JToolBar$Separator" name="jSeparator34">
         </Component>
         <Component class="javax.swing.JToolBar$Separator" name="jSeparator35">
         </Component>
+        <Component class="javax.swing.JToolBar$Separator" name="jSeparator39">
+        </Component>
+        <Component class="javax.swing.JToolBar$Separator" name="jSeparator41">
+        </Component>
+        <Component class="javax.swing.JToolBar$Separator" name="jSeparator42">
+        </Component>
+        <Component class="javax.swing.JToolBar$Separator" name="jSeparator43">
+        </Component>
+        <Component class="javax.swing.JToolBar$Separator" name="jSeparator44">
+        </Component>
+        <Component class="javax.swing.JToolBar$Separator" name="jSeparator45">
+        </Component>
         <Component class="javax.swing.JButton" name="tblCrudAdmin">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/icons/admin_man_person_user_icon_127232.png"/>
+              <Image iconType="3" name="/icons/admin_apagado.png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Administradores"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
             </Property>
+            <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="focusable" type="boolean" value="false"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[45, 45]"/>
+              <Dimension value="[50, 60]"/>
+            </Property>
+            <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/icons/admin.png"/>
             </Property>
             <Property name="verticalTextPosition" type="int" value="3"/>
           </Properties>
@@ -315,7 +324,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="931" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="980" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">

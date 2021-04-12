@@ -163,8 +163,10 @@ public class ControlContrato {
             ModeloContrato contrato = new ModeloContrato(codigocontrato, fechacontrato, fkcedulacliente, fkcodigomedidor);
             if (contrato.grabarContrato()) {
                 JOptionPane.showMessageDialog(vista, "Contrato grabado satisfactoriamente");
-                cargarLista("");
+                vista.getDlgCliente().setVisible(false);
                 vista.getDlgContratos().setVisible(false);
+                vista.getDlgMedidor().setVisible(false);
+                cargarLista("");
             } else {
                 JOptionPane.showMessageDialog(vista, "ERROR");
             }
@@ -297,8 +299,10 @@ public class ControlContrato {
 
             if (contrato.EditarContrato()) {
                 JOptionPane.showMessageDialog(vista, "El Registro se ha editado satisfactoriamente");
-                cargarLista("");
+                vista.getDlgCliente().setVisible(false);
                 vista.getDlgContratos().setVisible(false);
+                vista.getDlgMedidor().setVisible(false);
+                cargarLista("");
 
             } else {
                 JOptionPane.showMessageDialog(vista, "ERROR");
@@ -316,28 +320,28 @@ public class ControlContrato {
         try {
             int fila = vista.getTblContratos().getSelectedRow();
             DefaultTableModel model = (DefaultTableModel) vista.getTblContratos().getModel();
-            int op = JOptionPane.showConfirmDialog(vista, "\t¿Desea eliminar el medidor seleccionada?\n"
-                    + "codigocontrato: " + model.getValueAt(fila, 0).toString() + "\n"
-                    + "fechacontrato: " + model.getValueAt(fila, 1).toString() + "\n"
-                    + "fkcedulacliente: " + model.getValueAt(fila, 2).toString() + "\n"
-                    + "fkcodigomedidor: " + model.getValueAt(fila, 3).toString());
+            int op = JOptionPane.showConfirmDialog(vista, "\t¿Desea eliminar el contrato seleccionado?\n"
+                    + "Código de contrato: " + model.getValueAt(fila, 0).toString() + "\n"
+                    + "Fecha de contrato: " + model.getValueAt(fila, 1).toString() + "\n"
+                    + "Cédula de cliente: " + model.getValueAt(fila, 2).toString() + "\n"
+                    + "Código de medidor: " + model.getValueAt(fila, 3).toString());
             if (op == 0) {
                 ModeloContrato con1 = new ModeloContrato();
                 con1.setCodigocontrato(model.getValueAt(fila, 0).toString());
                 if (con1.EliminarContrato()) {
-                    JOptionPane.showMessageDialog(vista, "El medidor ha sido eliminada");
+                    JOptionPane.showMessageDialog(vista, "El contrato ha sido eliminada");
                     cargarLista("");
                 }
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(vista, "No ha seleccionado ninguna fila para eliminarla");
+            JOptionPane.showMessageDialog(vista, "No ha seleccionado ninguna fila para eliminar");
         }
 
     }
 
     ///////////////////////////////////////////////////////////
     private void ObtenerClientes() {
-        
+
         vista.getDlgCliente().setSize(800, 300);
         vista.getDlgCliente().setVisible(true);
 //        vista.getDlgCliente().setTitle("LISTA DE CONTRATOS");
@@ -434,6 +438,7 @@ public class ControlContrato {
             vista.getTblMedidores().setValueAt(pl.getAniofabricacion(), i.value, 3);
             vista.getTblMedidores().setValueAt(pl.getCapacidad(), i.value, 4);
             vista.getTblMedidores().setValueAt(pl.getPrecio(), i.value, 5);
+            i.value++;
 
         });
     }

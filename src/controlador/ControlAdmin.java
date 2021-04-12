@@ -168,9 +168,9 @@ public class ControlAdmin {
             if (persona.crear()) {
                 cargarLista("");
                 vista.getDlgAdmin().setVisible(false);
-                JOptionPane.showMessageDialog(vista, "Admin Creada Existosamente");
+                JOptionPane.showMessageDialog(vista, "Registro creado satisfactoriamente");
             } else {
-                JOptionPane.showMessageDialog(vista, "ERROR!!!!!!");
+                JOptionPane.showMessageDialog(vista, "ERROR");
             }
         }
     }
@@ -246,7 +246,7 @@ public class ControlAdmin {
         }
         ////////////////////////////////////////////////////////////////////telefono
         if (vista.getTxtTelefonoAd().getText().length() > 10) {
-            JOptionPane.showMessageDialog(null, "Número de caracteres en teléfono excedido", "Teléfon Erroneo", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Número de caracteres en teléfono excedido", "Teléfono Erroneo", JOptionPane.ERROR_MESSAGE);
             verificar = false;
         }
 
@@ -313,12 +313,12 @@ public class ControlAdmin {
             persona.setFoto(ic.getImage());
 
             if (persona.modificar()) {
-                JOptionPane.showMessageDialog(vista, "Admin Modificado Existosamente");
+                JOptionPane.showMessageDialog(vista, "El registro se ha editado satisfactoriamente");
                 cargarLista("");
                 vista.getDlgAdmin().setVisible(false);
 
             } else {
-                JOptionPane.showMessageDialog(vista, "ERROR!!!!!!");
+                JOptionPane.showMessageDialog(vista, "ERROR");
             }
         }
     }
@@ -327,7 +327,7 @@ public class ControlAdmin {
         try {
             int fila = vista.getTblAdmin().getSelectedRow();
             DefaultTableModel model = (DefaultTableModel) vista.getTblAdmin().getModel();
-            int op = JOptionPane.showConfirmDialog(vista, "\tDesea elimianr el Admin\n"
+            int op = JOptionPane.showConfirmDialog(vista, "\tDesea elimianr el administrador seleccionado\n"
                     + "codigo: " + model.getValueAt(fila, 0).toString() + "\n"
                     + "Nombre: " + model.getValueAt(fila, 2).toString() + "\n"
                     + "Apellido: " + model.getValueAt(fila, 3).toString() + "\n"
@@ -336,12 +336,12 @@ public class ControlAdmin {
                 ModeloAdmin p1 = new ModeloAdmin();
                 p1.setCod_Admin(model.getValueAt(fila, 0).toString());
                 if (p1.Eliminar()) {
-                    JOptionPane.showMessageDialog(vista, "PERSONA ELIMINADA");
+                    JOptionPane.showMessageDialog(vista, "El administrador ha sido eliminado");
                     cargarLista("");
                 }
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(vista, "No ha seleccionado ninguna fila para eliminarla");
+            JOptionPane.showMessageDialog(vista, "No ha seleccionado ninguna fila para eliminar");
         }
 
     }
@@ -475,8 +475,10 @@ public class ControlAdmin {
                 vista.getLblFotoAd().setIcon(null);
             }
             vista.getDlgAdmin().setSize(660, 600);
-            vista.getDlgAdmin().setTitle("EDITAR PERSONA");
+            vista.getDlgAdmin().setTitle("EDITAR CLIENTE");
             vista.getDlgAdmin().setLocationRelativeTo(vista);
+            vista.getTxtCodigoAd().setEditable(false);
+            vista.getTxtCedulaAd().setEditable(false);
             vista.getTxtCodigoAd().setText(cod_Admin);
             vista.getTxtCedulaAd().setText(cedula);
             vista.getTxtNombreAd().setText(nombre);

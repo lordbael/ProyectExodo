@@ -19,7 +19,7 @@ public class VistaFacturas extends javax.swing.JInternalFrame {
     
     public VistaFacturas() {
         initComponents();
-        this.setSize(1309, 682);
+        this.setSize(1301, 682);
         this.setTitle("Facturas");
     }
 

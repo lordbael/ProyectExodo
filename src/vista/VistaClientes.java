@@ -32,7 +32,7 @@ public class VistaClientes extends javax.swing.JInternalFrame {
 
     public VistaClientes() {
         initComponents();
-        this.setSize(1309, 682);
+        this.setSize(1301, 682);
         this.setTitle("Clientes");
     }
 

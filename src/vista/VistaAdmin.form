@@ -631,6 +631,7 @@
                   <Image iconType="3" name="/icons/nuevo.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Nuevo Registro"/>
+                <Property name="focusable" type="boolean" value="false"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="btnActualizarEx">
@@ -642,6 +643,7 @@
                   <Image iconType="3" name="/icons/actualizar.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Actualizar"/>
+                <Property name="focusable" type="boolean" value="false"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnActualizarExActionPerformed"/>
@@ -661,6 +663,7 @@
                   <Image iconType="3" name="/icons/editar.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Editar"/>
+                <Property name="focusable" type="boolean" value="false"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditarExActionPerformed"/>
@@ -675,6 +678,7 @@
                   <Image iconType="3" name="/icons/eliminar.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Eliminar"/>
+                <Property name="focusable" type="boolean" value="false"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel16">
