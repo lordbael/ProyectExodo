@@ -170,7 +170,7 @@ public class ControlAdmin {
                 vista.getDlgAdmin().setVisible(false);
                 JOptionPane.showMessageDialog(vista, "Registro creado satisfactoriamente");
             } else {
-                JOptionPane.showMessageDialog(vista, "ERROR");
+                JOptionPane.showMessageDialog(vista, "El adminstrador ya se encuentra registrado");
             }
         }
     }

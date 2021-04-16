@@ -117,29 +117,47 @@ public class VistaInicio extends javax.swing.JFrame {
         jSeparator18 = new javax.swing.JToolBar.Separator();
         jSeparator19 = new javax.swing.JToolBar.Separator();
         jSeparator20 = new javax.swing.JToolBar.Separator();
-        jSeparator21 = new javax.swing.JToolBar.Separator();
-        jSeparator22 = new javax.swing.JToolBar.Separator();
-        jSeparator23 = new javax.swing.JToolBar.Separator();
-        jSeparator24 = new javax.swing.JToolBar.Separator();
-        jSeparator25 = new javax.swing.JToolBar.Separator();
-        jSeparator26 = new javax.swing.JToolBar.Separator();
-        jSeparator27 = new javax.swing.JToolBar.Separator();
-        jSeparator28 = new javax.swing.JToolBar.Separator();
-        jSeparator29 = new javax.swing.JToolBar.Separator();
         jSeparator30 = new javax.swing.JToolBar.Separator();
         jSeparator31 = new javax.swing.JToolBar.Separator();
         jSeparator32 = new javax.swing.JToolBar.Separator();
         jSeparator33 = new javax.swing.JToolBar.Separator();
         jSeparator34 = new javax.swing.JToolBar.Separator();
-        jSeparator35 = new javax.swing.JToolBar.Separator();
         jSeparator39 = new javax.swing.JToolBar.Separator();
         jSeparator41 = new javax.swing.JToolBar.Separator();
         jSeparator42 = new javax.swing.JToolBar.Separator();
-        jSeparator43 = new javax.swing.JToolBar.Separator();
-        jSeparator44 = new javax.swing.JToolBar.Separator();
         jSeparator45 = new javax.swing.JToolBar.Separator();
+        jSeparator46 = new javax.swing.JToolBar.Separator();
+        jSeparator47 = new javax.swing.JToolBar.Separator();
+        jSeparator48 = new javax.swing.JToolBar.Separator();
+        jSeparator49 = new javax.swing.JToolBar.Separator();
+        jSeparator50 = new javax.swing.JToolBar.Separator();
+        jSeparator51 = new javax.swing.JToolBar.Separator();
+        jSeparator52 = new javax.swing.JToolBar.Separator();
+        jSeparator53 = new javax.swing.JToolBar.Separator();
+        jSeparator54 = new javax.swing.JToolBar.Separator();
+        jSeparator55 = new javax.swing.JToolBar.Separator();
+        jSeparator56 = new javax.swing.JToolBar.Separator();
+        jSeparator57 = new javax.swing.JToolBar.Separator();
+        jSeparator58 = new javax.swing.JToolBar.Separator();
+        jSeparator59 = new javax.swing.JToolBar.Separator();
+        jSeparator60 = new javax.swing.JToolBar.Separator();
         tblCrudAdmin = new javax.swing.JButton();
         Desktop = new javax.swing.JDesktopPane();
+        jPanel1 = new javax.swing.JPanel();
+        barraxd = new javax.swing.JButton();
+        btnAcercade1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -235,27 +253,30 @@ public class VistaInicio extends javax.swing.JFrame {
         jToolBar1.add(jSeparator18);
         jToolBar1.add(jSeparator19);
         jToolBar1.add(jSeparator20);
-        jToolBar1.add(jSeparator21);
-        jToolBar1.add(jSeparator22);
-        jToolBar1.add(jSeparator23);
-        jToolBar1.add(jSeparator24);
-        jToolBar1.add(jSeparator25);
-        jToolBar1.add(jSeparator26);
-        jToolBar1.add(jSeparator27);
-        jToolBar1.add(jSeparator28);
-        jToolBar1.add(jSeparator29);
         jToolBar1.add(jSeparator30);
         jToolBar1.add(jSeparator31);
         jToolBar1.add(jSeparator32);
         jToolBar1.add(jSeparator33);
         jToolBar1.add(jSeparator34);
-        jToolBar1.add(jSeparator35);
         jToolBar1.add(jSeparator39);
         jToolBar1.add(jSeparator41);
         jToolBar1.add(jSeparator42);
-        jToolBar1.add(jSeparator43);
-        jToolBar1.add(jSeparator44);
         jToolBar1.add(jSeparator45);
+        jToolBar1.add(jSeparator46);
+        jToolBar1.add(jSeparator47);
+        jToolBar1.add(jSeparator48);
+        jToolBar1.add(jSeparator49);
+        jToolBar1.add(jSeparator50);
+        jToolBar1.add(jSeparator51);
+        jToolBar1.add(jSeparator52);
+        jToolBar1.add(jSeparator53);
+        jToolBar1.add(jSeparator54);
+        jToolBar1.add(jSeparator55);
+        jToolBar1.add(jSeparator56);
+        jToolBar1.add(jSeparator57);
+        jToolBar1.add(jSeparator58);
+        jToolBar1.add(jSeparator59);
+        jToolBar1.add(jSeparator60);
 
         tblCrudAdmin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/admin_apagado.png"))); // NOI18N
         tblCrudAdmin.setToolTipText("Administradores");
@@ -283,7 +304,130 @@ public class VistaInicio extends javax.swing.JFrame {
         );
         DesktopLayout.setVerticalGroup(
             DesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
+            .addGap(0, 566, Short.MAX_VALUE)
+        );
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        barraxd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/progresoxd.png"))); // NOI18N
+        barraxd.setText("12,5/128,3MB");
+        barraxd.setToolTipText("Uso de ram");
+        barraxd.setBorder(null);
+        barraxd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                barraxdActionPerformed(evt);
+            }
+        });
+
+        btnAcercade1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/acercade.png"))); // NOI18N
+        btnAcercade1.setToolTipText("Acerca de");
+        btnAcercade1.setBorder(null);
+
+        jLabel1.setText("|");
+
+        jLabel2.setText("|");
+
+        jPanel2.setBackground(new java.awt.Color(255, 204, 51));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 13, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        jPanel3.setBackground(new java.awt.Color(51, 255, 0));
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 13, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        jLabel3.setForeground(new java.awt.Color(0, 0, 155));
+        jLabel3.setText("ESP");
+
+        jLabel4.setText("|");
+
+        jLabel5.setText("|");
+
+        jLabel6.setText("•••");
+
+        jLabel7.setForeground(new java.awt.Color(204, 0, 0));
+        jLabel7.setText("◧ ◨ ◩ ◪ ");
+
+        jLabel8.setText("|");
+
+        jLabel9.setText("|");
+
+        jLabel10.setText("Orientación:");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(64, 64, 64)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel5)
+                .addGap(157, 157, 157)
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel10)
+                .addGap(2, 2, 2)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(120, 120, 120)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(barraxd)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel2)
+                .addGap(48, 48, 48)
+                .addComponent(jLabel6)
+                .addGap(48, 48, 48)
+                .addComponent(jLabel1)
+                .addGap(38, 38, 38)
+                .addComponent(btnAcercade1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnAcercade1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(barraxd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel1)
+                        .addComponent(jLabel2)
+                        .addComponent(jLabel3)
+                        .addComponent(jLabel4)
+                        .addComponent(jLabel5)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel8)
+                        .addComponent(jLabel9)
+                        .addComponent(jLabel10))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap())))
         );
 
         jMenu1.setText("Archivos");
@@ -317,11 +461,16 @@ public class VistaInicio extends javax.swing.JFrame {
                 .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(Desktop))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Desktop)
-            .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 570, Short.MAX_VALUE)
+                    .addComponent(Desktop))
+                .addGap(0, 0, 0)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         Desktop.getAccessibleContext().setAccessibleParent(Desktop);
@@ -349,9 +498,25 @@ public class VistaInicio extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tblCrudAdminActionPerformed
 
+    private void barraxdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_barraxdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_barraxdActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane Desktop;
+    private javax.swing.JButton barraxd;
+    private javax.swing.JButton btnAcercade1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -360,6 +525,9 @@ public class VistaInicio extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JToolBar.Separator jSeparator10;
     private javax.swing.JToolBar.Separator jSeparator11;
@@ -373,22 +541,12 @@ public class VistaInicio extends javax.swing.JFrame {
     private javax.swing.JToolBar.Separator jSeparator19;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JToolBar.Separator jSeparator20;
-    private javax.swing.JToolBar.Separator jSeparator21;
-    private javax.swing.JToolBar.Separator jSeparator22;
-    private javax.swing.JToolBar.Separator jSeparator23;
-    private javax.swing.JToolBar.Separator jSeparator24;
-    private javax.swing.JToolBar.Separator jSeparator25;
-    private javax.swing.JToolBar.Separator jSeparator26;
-    private javax.swing.JToolBar.Separator jSeparator27;
-    private javax.swing.JToolBar.Separator jSeparator28;
-    private javax.swing.JToolBar.Separator jSeparator29;
     private javax.swing.JToolBar.Separator jSeparator3;
     private javax.swing.JToolBar.Separator jSeparator30;
     private javax.swing.JToolBar.Separator jSeparator31;
     private javax.swing.JToolBar.Separator jSeparator32;
     private javax.swing.JToolBar.Separator jSeparator33;
     private javax.swing.JToolBar.Separator jSeparator34;
-    private javax.swing.JToolBar.Separator jSeparator35;
     private javax.swing.JSeparator jSeparator36;
     private javax.swing.JSeparator jSeparator37;
     private javax.swing.JSeparator jSeparator38;
@@ -397,11 +555,24 @@ public class VistaInicio extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator40;
     private javax.swing.JToolBar.Separator jSeparator41;
     private javax.swing.JToolBar.Separator jSeparator42;
-    private javax.swing.JToolBar.Separator jSeparator43;
-    private javax.swing.JToolBar.Separator jSeparator44;
     private javax.swing.JToolBar.Separator jSeparator45;
+    private javax.swing.JToolBar.Separator jSeparator46;
+    private javax.swing.JToolBar.Separator jSeparator47;
+    private javax.swing.JToolBar.Separator jSeparator48;
+    private javax.swing.JToolBar.Separator jSeparator49;
     private javax.swing.JToolBar.Separator jSeparator5;
+    private javax.swing.JToolBar.Separator jSeparator50;
+    private javax.swing.JToolBar.Separator jSeparator51;
+    private javax.swing.JToolBar.Separator jSeparator52;
+    private javax.swing.JToolBar.Separator jSeparator53;
+    private javax.swing.JToolBar.Separator jSeparator54;
+    private javax.swing.JToolBar.Separator jSeparator55;
+    private javax.swing.JToolBar.Separator jSeparator56;
+    private javax.swing.JToolBar.Separator jSeparator57;
+    private javax.swing.JToolBar.Separator jSeparator58;
+    private javax.swing.JToolBar.Separator jSeparator59;
     private javax.swing.JToolBar.Separator jSeparator6;
+    private javax.swing.JToolBar.Separator jSeparator60;
     private javax.swing.JSeparator jSeparator69;
     private javax.swing.JToolBar.Separator jSeparator7;
     private javax.swing.JToolBar.Separator jSeparator8;

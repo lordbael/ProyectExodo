@@ -117,6 +117,7 @@ public class ModeloAdmin extends Admin {
             query += "upper(apellido) LIKE upper('%" + aguja + "%') OR ";
             query += "upper(codigo_usuario) LIKE upper('%" + aguja + "%') OR ";
             query += "upper(cedula) LIKE upper('%" + aguja + "%')";
+            query += "ORDER BY (codigo_usuario)";
             ResultSet rs = con.query(query);
             List<Admin> lista = new ArrayList<Admin>();
             byte[] bf;

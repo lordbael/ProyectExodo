@@ -28,7 +28,14 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.xml.ws.Holder;
 import modelo.Clientes;
+import modelo.ConexionPG;
 import modelo.ModeloCliente;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
 import vista.VistaClientes;
 
 /**
@@ -83,17 +90,10 @@ public class ControlCliente {
         vista.getBtnCancelar().addActionListener(l -> cerrarVentana());
         vista.getTxtBuscar().addKeyListener(kl);
         vista.getBtnExaminar().addActionListener(l -> cargarImagen());
-        //vista.getBtnImprimir().addActionListener(l -> imprimeReporte());
+        vista.getBtnImprimir().addActionListener(l -> ImprimeReporte());
 
     }
 
-//    public void iniciarControl() {
-//        vista.getBtnNuevo().addActionListener(l -> muestraDialogo());
-//        vista.getBtnExaminar().addActionListener(l -> cargarImagen());
-//        vista.getBtnAceptar().addActionListener(l -> grabarClientes());
-//        vista.getBtnEditar().addActionListener(l -> grabarEditarClientes());
-//
-//    }
     private void validarBoton() {
         if (validarBotonA) {
             grabarClientes();
@@ -145,10 +145,11 @@ public class ControlCliente {
     private void muestraDialogo() {
         vista.getTxtCodigoCliente().setEditable(true);
         vista.getDlgClientes().setVisible(true);
-        vista.getDlgClientes().setSize(630, 444);
+        vista.getDlgClientes().setSize(650, 425);
         vista.getDlgClientes().setTitle("NUEVO CLIENTE");
         vista.getDlgClientes().setLocationRelativeTo(vista);
         vista.getTxtCodigoCliente().setText("");
+        vista.getTxtCedula().setEditable(true);
         vista.getTxtCedula().setText("");
         vista.getTxtNombre().setText("");
         vista.getTxtApellido().setText("");
@@ -187,7 +188,7 @@ public class ControlCliente {
                 vista.getDlgClientes().setVisible(false);
                 JOptionPane.showMessageDialog(vista, "Registro creado satisfactoriamente");
             } else {
-                JOptionPane.showMessageDialog(vista, "ERROR");
+                JOptionPane.showMessageDialog(vista, "El cliente ya se encuentra registrado");
             }
         }
 
@@ -197,47 +198,47 @@ public class ControlCliente {
         boolean verificar = true;
         //////////////////////////////cedula
         if (vista.getTxtCedula().getText().length() > 10) {
-            JOptionPane.showMessageDialog(null, "Número de caracteres en cédula excedido", "Cédula errónea", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Número de caracteres en CÉDULA excedido", "Cédula errónea", JOptionPane.ERROR_MESSAGE);
             verificar = false;
         }
 
         if (vista.getTxtCedula().getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "El campo de cédula es obligatorio", "Campo vacío", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "El campo de CÉDULA es obligatorio", "Campo vacío", JOptionPane.ERROR_MESSAGE);
             verificar = false;
         }
         //////////////////////////////codigo cliente
         if (vista.getTxtCodigoCliente().getText().length() > 10) {
-            JOptionPane.showMessageDialog(null, "Número de caracteres en código cliente excedido", "Código cliente errónea", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Número de caracteres en CÓDIGO CLIENTE excedido", "Código cliente errónea", JOptionPane.ERROR_MESSAGE);
             verificar = false;
         }
 
         if (vista.getTxtCodigoCliente().getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "El campo de código cliente es obligatorio", "Campo vacío", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "El campo de CÓDIGO CLIENTE es obligatorio", "Campo vacío", JOptionPane.ERROR_MESSAGE);
             verificar = false;
         }
         ///////////////////////////////////////////////////////////////////nombres
         if (vista.getTxtNombre().getText().length() > 50) {
-            JOptionPane.showMessageDialog(null, "Número de caracteres en nombre excedido", "Nombre erróneo", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Número de caracteres en NOMBRE excedido", "Nombre erróneo", JOptionPane.ERROR_MESSAGE);
             verificar = false;
         }
 
         if (vista.getTxtNombre().getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "El campo de nombre es obligatorio", "Campo vacío", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "El campo de NOMBRE es obligatorio", "Campo vacío", JOptionPane.ERROR_MESSAGE);
             verificar = false;
         }
         ////////////////////////////////////////////////////////////////////apellidos
         if (vista.getTxtApellido().getText().length() > 50) {
-            JOptionPane.showMessageDialog(null, "Número de caracteres en apellido excedido", "Apellido erróneo", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Número de caracteres en APELLIDO excedido", "Apellido erróneo", JOptionPane.ERROR_MESSAGE);
             verificar = false;
         }
 
         if (vista.getTxtApellido().getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "El campo de apellido es obligatorio", "Campo vacío", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "El campo de APELLIDO es obligatorio", "Campo vacío", JOptionPane.ERROR_MESSAGE);
             verificar = false;
         }
         ////////////////////////////////////////////////////////////////////genero
         if (vista.getCmbGenero().getSelectedItem().equals("Seleccione")) {
-            JOptionPane.showMessageDialog(null, "El campo de género es obligatorio", "Campo vacío", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "El campo de GÉNERO es obligatorio", "Campo vacío", JOptionPane.ERROR_MESSAGE);
             verificar = false;
         }
         ////////////////////////////////////////////////////////////////////fecha
@@ -248,32 +249,32 @@ public class ControlCliente {
 
         ////////////////////////////////////////////////////////////////////direccion
         if (vista.getTxtDireccion().getText().length() > 100) {
-            JOptionPane.showMessageDialog(null, "Número de caracteres en dirección excedido", "Dirección erróneo", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Número de caracteres en DIRECCIÓN excedido", "Dirección erróneo", JOptionPane.ERROR_MESSAGE);
             verificar = false;
         }
 
         if (vista.getTxtDireccion().getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "El campo de dirección es obligatorio", "Campo vacío", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "El campo de DIRECCIÓN es obligatorio", "Campo vacío", JOptionPane.ERROR_MESSAGE);
             verificar = false;
         }
         ////////////////////////////////////////////////////////////////////correo
         if (vista.getTxtCorreo().getText().length() > 50) {
-            JOptionPane.showMessageDialog(null, "Número de caracteres en correo excedido", "Correo erróneo", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Número de caracteres en CORREO excedido", "Correo erróneo", JOptionPane.ERROR_MESSAGE);
             verificar = false;
         }
 
         if (vista.getTxtCorreo().getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "El campo de correo es obligatorio", "Campo vacío", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "El campo de CORREO es obligatorio", "Campo vacío", JOptionPane.ERROR_MESSAGE);
             verificar = false;
         }
         ////////////////////////////////////////////////////////////////////telefono
         if (vista.getTxtTelefono().getText().length() > 10) {
-            JOptionPane.showMessageDialog(null, "Número de caracteres en teléfono excedido", "Teléfono Erroneo", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Número de caracteres en TELÉFONO excedido", "Teléfono Erroneo", JOptionPane.ERROR_MESSAGE);
             verificar = false;
         }
 
         if (vista.getTxtTelefono().getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "El campo de teléfono es obligatorio", "Campo vacío", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "El campo de TELÉFONO es obligatorio", "Campo vacío", JOptionPane.ERROR_MESSAGE);
             verificar = false;
         }
         ///////////////////////////////////////////////////////////foto
@@ -419,6 +420,21 @@ public class ControlCliente {
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(vista, "No ha seleccionado ninguna fila para eliminar");
+        }
+
+    }
+
+    private void ImprimeReporte() {
+        ConexionPG con = new ConexionPG();
+
+        try {
+            JasperReport jr = (JasperReport) JRLoader.loadObject(getClass().getResource("/reporte/rptCliente.jasper"));
+            JasperPrint jp = JasperFillManager.fillReport(jr, null, con.getConexion());
+            JasperViewer jv = new JasperViewer(jp);
+            jv.setVisible(true);
+
+        } catch (JRException ex) {
+            Logger.getLogger(ControlCliente.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }

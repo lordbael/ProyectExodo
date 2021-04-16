@@ -100,7 +100,7 @@ public class ModeloFactura extends Factura {
             }
             rs.close();
             return lista;
-          } catch (SQLException ex) {
+        } catch (SQLException ex) {
             Logger.getLogger(ModeloCliente.class.getName()).log(Level.SEVERE, null, ex);
             return null;
         }
@@ -150,6 +150,28 @@ public class ModeloFactura extends Factura {
             return false;
         }
     }
-;
 
+    ;
+     
+//        public boolean ValidarFac(String medidor, String cedula) {
+//        try {
+//            boolean verificacion = false;
+//
+//            String sql;
+//            sql = "SELECT fkcodigomedidor, fkcedulacliente "
+//                    + "from contrato where fkcodigomedidor= '" + medidor + "' AND fkcedulacliente= '" + cedula + "'";
+//            ResultSet rs = con.query(sql);
+//            while (rs.next()) {
+//                verificacion = true;
+//
+//            }
+//            rs.close();
+//            return verificacion;
+//        } catch (SQLException ex) {
+//            Logger.getLogger(ModeloContrato.class.getName()).log(Level.SEVERE, null, ex);
+//            return true;
+//        }
+//
+//    }
+;
 }

@@ -15,17 +15,26 @@ import java.time.Instant;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.xml.ws.Holder;
 import modelo.Clientes;
+import modelo.ConexionPG;
 import modelo.Contratos;
 import modelo.Medidores;
 import modelo.ModeloCliente;
 import modelo.ModeloContrato;
 import modelo.ModeloMedidor;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
 import vista.VistaContratos;
 
 /**
@@ -89,6 +98,7 @@ public class ControlContrato {
         //--------------------------------------------------------------
         vista.getBtnCliente().addActionListener(l -> ObtenerClientes());
         vista.getBtnMedidor().addActionListener(l -> MuestraMedidor());
+        vista.getBtnImprimir().addActionListener(l -> ImprimirReporteContrato());
 
     }
 
@@ -140,7 +150,8 @@ public class ControlContrato {
     private void muestraDialogo() {
         vista.getTxtCodigoContrato().setEditable(true);
         vista.getDlgContratos().setVisible(true);
-        vista.getDlgContratos().setSize(630, 320);
+        vista.getDlgContratos().setSize(510, 300);
+        vista.getDlgContratos().setResizable(false);
         vista.getDlgContratos().setTitle("NUEVO CONTRATO");
         vista.getDlgContratos().setLocationRelativeTo(vista);
         vista.getTxtCodigoContrato().setText("");
@@ -161,14 +172,19 @@ public class ControlContrato {
             String fkcodigomedidor = vista.getTxtCodigoMedidor().getText();
 
             ModeloContrato contrato = new ModeloContrato(codigocontrato, fechacontrato, fkcedulacliente, fkcodigomedidor);
-            if (contrato.grabarContrato()) {
-                JOptionPane.showMessageDialog(vista, "Contrato grabado satisfactoriamente");
-                vista.getDlgCliente().setVisible(false);
-                vista.getDlgContratos().setVisible(false);
-                vista.getDlgMedidor().setVisible(false);
-                cargarLista("");
+            if (!contrato.ValidarCed(contrato.getFkcodigomedidor())) {
+                if (contrato.grabarContrato()) {
+                    JOptionPane.showMessageDialog(vista, "Contrato creado satisfactoriamente");
+                    vista.getDlgCliente().setVisible(false);
+                    vista.getDlgContratos().setVisible(false);
+                    vista.getDlgMedidor().setVisible(false);
+                    cargarLista("");
+                } else {
+                    JOptionPane.showMessageDialog(vista, "El contrato ya se encuentra registrado");
+                }
+
             } else {
-                JOptionPane.showMessageDialog(vista, "ERROR");
+                JOptionPane.showMessageDialog(vista, " El medidor ya se encuentra asociado a otro cliente");
             }
         }
 
@@ -178,12 +194,12 @@ public class ControlContrato {
         boolean verificar = true;
         //////////////////////////////codigo contrato
         if (vista.getTxtCodigoContrato().getText().length() > 10) {
-            JOptionPane.showMessageDialog(null, "el campo de codigo de contrato es obligatorio", "Campo Erroneo", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Número de caracteres en CÓDIGO CONTRATO excedido", "Código contrato erróneo", JOptionPane.ERROR_MESSAGE);
             verificar = false;
         }
 
         if (vista.getTxtCodigoContrato().getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "CODIGO CONTRATO VACIO VACIO", " Campo Erroneo", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "El campo de CÓDIGO CONTRATO es obligatorio", " Campo vacío", JOptionPane.ERROR_MESSAGE);
             verificar = false;
         }
         ///////////////////////////////////////////////////////////////////fecha
@@ -199,22 +215,22 @@ public class ControlContrato {
 
         ////////////////////////////////////////////////////////////////////////
         if (vista.getTxtCedula().getText().length() > 10) {
-            JOptionPane.showMessageDialog(null, "El campo de cedula es obligatorio", "Campo Erroneo", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Número de caracteres en CÉDULA excedido", "Cédula errónea", JOptionPane.ERROR_MESSAGE);
             verificar = false;
         }
 
         if (vista.getTxtCedula().getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "CEDULA VACIA", "Campo Erroneo", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "El campo de CÉDULA es obligatorio", "Campo vacío", JOptionPane.ERROR_MESSAGE);
             verificar = false;
         }
         ////////////////////////////////////////////////////////////////////////
         if (vista.getTxtCodigoMedidor().getText().length() > 10) {
-            JOptionPane.showMessageDialog(null, "El campo de cedula es obligatorio", "Campo Erroneo", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Número de caracteres en CÓDIGO MEDIDOR excedido", "Código medidor erróneo", JOptionPane.ERROR_MESSAGE);
             verificar = false;
         }
 
         if (vista.getTxtCodigoMedidor().getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "CODIGO VACIO", "Campo Erroneo", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Número de caracteres en CÓDIGO MEDIDOR excedido", "Campo vacío", JOptionPane.ERROR_MESSAGE);
             verificar = false;
         }
 
@@ -297,15 +313,19 @@ public class ControlContrato {
 
             ModeloContrato contrato = new ModeloContrato(codigocontrato, fechacontrato, fkcedulacliente, fkcodigomedidor);
 
-            if (contrato.EditarContrato()) {
-                JOptionPane.showMessageDialog(vista, "El Registro se ha editado satisfactoriamente");
-                vista.getDlgCliente().setVisible(false);
-                vista.getDlgContratos().setVisible(false);
-                vista.getDlgMedidor().setVisible(false);
-                cargarLista("");
+            if (!contrato.ValidarCed(contrato.getFkcodigomedidor())) {
+                if (contrato.EditarContrato()) {
+                    JOptionPane.showMessageDialog(vista, "Contrato grabado satisfactoriamente");
+                    vista.getDlgCliente().setVisible(false);
+                    vista.getDlgContratos().setVisible(false);
+                    vista.getDlgMedidor().setVisible(false);
+                    cargarLista("");
+                } else {
+                    JOptionPane.showMessageDialog(vista, "ERROR");
+                }
 
             } else {
-                JOptionPane.showMessageDialog(vista, "ERROR");
+                JOptionPane.showMessageDialog(vista, " El medidor ya se encuentra asociado a otro cliente");
             }
         }
 
@@ -342,9 +362,10 @@ public class ControlContrato {
     ///////////////////////////////////////////////////////////
     private void ObtenerClientes() {
 
-        vista.getDlgCliente().setSize(800, 300);
+        vista.getDlgCliente().setSize(1000, 500);
+        vista.getDlgCliente().setTitle("LISTA DE CLIENTES");
         vista.getDlgCliente().setVisible(true);
-//        vista.getDlgCliente().setTitle("LISTA DE CONTRATOS");
+        vista.getTblClientes().setRowHeight(30);
         vista.getDlgCliente().setLocationRelativeTo(vista);
         cargarListaCli("");
 
@@ -370,7 +391,7 @@ public class ControlContrato {
             vista.getTblClientes().setValueAt(pl.getDireccion(), i.value, 6);
             vista.getTblClientes().setValueAt(pl.getCorreo(), i.value, 7);
             vista.getTblClientes().setValueAt(pl.getTelefono(), i.value, 8);
-            vista.getTblClientes().setValueAt(pl.getFoto(), i.value, 9);
+            //vista.getTblClientes().setValueAt(pl.getFoto(), i.value, 9);
             i.value++;
 
         });
@@ -402,10 +423,11 @@ public class ControlContrato {
             String cedula = indexcliente.getCedula();
 
             vista.getDlgContratos().setVisible(true);
-            vista.getDlgContratos().setSize(660, 600);
+            //vista.getDlgContratos().setSize(660, 600);
             vista.getDlgContratos().setLocationRelativeTo(vista);
 
             vista.getTxtCedula().setText(cedula);
+            vista.getDlgCliente().setVisible(false);
 
         }
     }
@@ -414,8 +436,9 @@ public class ControlContrato {
     public void MuestraMedidor() {
 
         vista.getDlgMedidor().setVisible(true);
-        vista.getDlgMedidor().setSize(630, 320);
-        vista.getDlgMedidor().setTitle("NUEVO MEDIDOR");
+        vista.getDlgMedidor().setSize(1000, 500);
+        vista.getTblMedidores().setRowHeight(30);
+        vista.getDlgMedidor().setTitle("LISTA DE MEDIDORES");
         vista.getDlgMedidor().setLocationRelativeTo(vista);
         cargarListaMed("");
 
@@ -468,13 +491,28 @@ public class ControlContrato {
             String codigomedidor = indexMedidores.getCodigomedidor();
 
             vista.getDlgContratos().setVisible(true);
-            vista.getDlgContratos().setSize(660, 600);
+            //vista.getDlgContratos().setSize(660, 600);
             vista.getDlgContratos().setLocationRelativeTo(vista);
 
             vista.getTxtCodigoMedidor().setText(codigomedidor);
+            vista.getDlgMedidor().setVisible(false);
 
         }
     }
     //---------------------------------------------------------------------
 
+    private void ImprimirReporteContrato() {
+        ConexionPG con = new ConexionPG();
+
+        try {
+            JasperReport jr = (JasperReport) JRLoader.loadObject(getClass().getResource("/reporte/rptContratos.jasper"));
+            JasperPrint jp = JasperFillManager.fillReport(jr, null, con.getConexion());
+            JasperViewer jv = new JasperViewer(jp);
+            jv.setVisible(true);
+
+        } catch (JRException ex) {
+            Logger.getLogger(ControlContrato.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
 }

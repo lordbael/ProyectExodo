@@ -51,6 +51,7 @@ public class ModeloMedidor extends Medidores {
 
             query += "UPPER(codigomedidor) LIKE UPPER('%" + aguja + "%') OR ";
             query += "UPPER(marca) LIKE UPPER('%" + aguja + "%') ";
+            query += "ORDER BY (codigomedidor)";
        
 
             ResultSet rs = conectar.query(query);

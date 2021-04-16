@@ -15,13 +15,22 @@ import java.time.Instant;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.xml.ws.Holder;
+import modelo.ConexionPG;
 import modelo.Medidores;
 import modelo.ModeloMedidor;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
 import vista.VistaMedidores;
 
 /**
@@ -75,6 +84,7 @@ public class ControlMedidor {
         vista.getBtnEliminar().addActionListener(l -> Delet());
         vista.getBtnCancelar().addActionListener(l -> cerrarVentana());
         vista.getTxtBuscar().addKeyListener(kl);
+        vista.getBtnImprimir().addActionListener(l -> ImprimirReporte());
 
     }
 
@@ -156,7 +166,7 @@ public class ControlMedidor {
                 cargarLista("");
                 vista.getDlgMedidores().setVisible(false);
             } else {
-                JOptionPane.showMessageDialog(vista, "ERROR");
+                JOptionPane.showMessageDialog(vista, "El medidor ya se encuentra registrado");
             }
         }
 
@@ -166,43 +176,43 @@ public class ControlMedidor {
         boolean verificar = true;
         //////////////////////////////cedula
         if (vista.getTxtCodigo().getText().length() > 10) {
-            JOptionPane.showMessageDialog(null, "el campo de codigo de medidor es obligatorio", "Campo Erroneo", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Número de caracteres en CÓDIGO MEDIDOR excedido", "Código medidor erróneo", JOptionPane.ERROR_MESSAGE);
             verificar = false;
         }
 
         if (vista.getTxtCodigo().getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "CAMPO VACIO", " Campo Erroneo", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "El campo CÓDIGO MEDIDOR es obligatorio", " Campo vacío", JOptionPane.ERROR_MESSAGE);
             verificar = false;
         }
         ///////////////////////////////////////////////////////////////////nombres
         if (vista.getTxtMarca().getText().length() > 50) {
-            JOptionPane.showMessageDialog(null, "El campo de marca es obligatorio", "Campo Erroneo", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Número de caracteres en MARCA excedido", "Marca errónea", JOptionPane.ERROR_MESSAGE);
             verificar = false;
         }
 
         if (vista.getTxtMarca().getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "MARCA VACIA", "Campo Erroneo", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "El campo de MARCA es obligatorio", "Campo vacío", JOptionPane.ERROR_MESSAGE);
             verificar = false;
         }
         ////////////////////////////////////////////////////////////////////apellidos
 
-        if (vista.getCmbTipo().getSelectedItem().equals("")) {
-            JOptionPane.showMessageDialog(null, "El campo tipo es obligatorio", "Campo Erroneo", JOptionPane.ERROR_MESSAGE);
+        if (vista.getCmbTipo().getSelectedItem().equals("Seleccione")) {
+            JOptionPane.showMessageDialog(null, "El campo TIPO es obligatorio", "Campo vacío", JOptionPane.ERROR_MESSAGE);
             verificar = false;
         }
         ////////////////////////////////////////////////////////////////////////
         if (vista.getTxtCapacidad().getText().length() > 50) {
-            JOptionPane.showMessageDialog(null, "El campo de capacidad es obligatorio", "Campo Erroneo", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Número de caracteres en CAPACIDAD excedido", "Capacidad errónea", JOptionPane.ERROR_MESSAGE);
             verificar = false;
         }
 
         if (vista.getTxtCapacidad().getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "CAPACIDAD VACIA", "Campo Erroneo", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "El campo de CAPACIDAD es obligatorio", "Campo vacío", JOptionPane.ERROR_MESSAGE);
             verificar = false;
         }
 
         if (vista.getTxtPrecio().getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "PRECIO VACIO", "Campo Erroneo", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "El campo de PRECIO es obligatorio", "Campo vacío", JOptionPane.ERROR_MESSAGE);
             verificar = false;
         }
 
@@ -327,6 +337,21 @@ public class ControlMedidor {
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(vista, "No ha seleccionado ninguna fila para eliminar");
+        }
+
+    }
+
+    private void ImprimirReporte() {
+        ConexionPG con = new ConexionPG();
+
+        try {
+            JasperReport jr = (JasperReport) JRLoader.loadObject(getClass().getResource("/reporte/rptMedidores.jasper"));
+            JasperPrint jp = JasperFillManager.fillReport(jr, null, con.getConexion());
+            JasperViewer jv = new JasperViewer(jp);
+            jv.setVisible(true);
+
+        } catch (JRException ex) {
+            Logger.getLogger(ControlMedidor.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
