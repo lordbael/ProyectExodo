@@ -10,12 +10,15 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.net.URL;
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.time.Instant;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -29,6 +32,7 @@ import modelo.ModeloFactura;
 import modelo.Factura;
 import modelo.ModeloCliente;
 import modelo.ModeloContrato;
+import net.sf.jasperreports.engine.JREmptyDataSource;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
@@ -50,6 +54,7 @@ public class ControlFactura {
     boolean validarBotonA;
     public static VistaInicio vi;
     public static double costo_wats = 0.12;
+    private final String logotipo = "/reporte/minilogo.png";
 
     public ControlFactura(ModeloFactura modelo, VistaFacturas vista) {
         this.modelo = modelo;
@@ -108,7 +113,7 @@ public class ControlFactura {
         //-------------------------------------------------------------------------
         vista.getBtnSeleccionarContrato().addActionListener(l -> LlenarContrato());
         vista.getBtnBuscarContra().addActionListener(l -> MuestraContratos());
-         vista.getBtnImprimirFac().addActionListener(l -> ImprimirReporte());
+        vista.getBtnImprimirFac().addActionListener(l -> ImprimirReporteFactura());
 
     }
 
@@ -160,7 +165,7 @@ public class ControlFactura {
         vista.getTxtApellidoIn().setText("");
         vista.getTxtDireccionIn().setText("");
         vista.getTxtCodigoContratoIn().setText("");
-        vista.getTxtCostoIn().setText(""+costo_wats);
+        vista.getTxtCostoIn().setText("" + costo_wats);
         vista.getTxtCostoIn().setEditable(false);
         vista.getTxtWattsIn().setText("");
         vista.getTxtTotalIn().setText("");
@@ -206,7 +211,7 @@ public class ControlFactura {
         vista.getDlgFacturas().setVisible(false);
 
     }
-    
+
     public void editarFactura() {
         String seleccionarId = Elegir();
         ModeloFactura fact = new ModeloFactura(seleccionarId);
@@ -349,8 +354,6 @@ public class ControlFactura {
         return null;
     }
 
-    
-
     ///----------------------eventos externos Clientes------------------------------
     public void MuestraListaClientes() {
         vista.getDlgClientes().setSize(1000, 500);
@@ -454,7 +457,7 @@ public class ControlFactura {
             vista.getTblContratos().setValueAt(pl.getFkcodigomedidor(), i.value, 3);
 
             i.value++;
-            
+
         });
     }
 
@@ -487,21 +490,24 @@ public class ControlFactura {
 
         }
     }
-    
-        private void ImprimirReporte() {
+
+    private void ImprimirReporteFactura() {
         ConexionPG con = new ConexionPG();
-        
         try {
-            JasperReport jr = (JasperReport) JRLoader.loadObject(getClass().getResource("/reportes/"));
-            JasperPrint jp = JasperFillManager.fillReport(jr, null, con.getConexion());
-            JasperViewer jv = new JasperViewer(jp);
+            JasperReport jr = (JasperReport) JRLoader.loadObject(getClass().getResource("/reporte/rptFactura.jasper"));
+            String aguja = vista.getTxtBuscar().getText();
+            Map<String, Object> parametros = new HashMap<String, Object>();
+            parametros.put("aguja", "%" + aguja + "%");
+            parametros.put("logo", this.getClass().getResourceAsStream(logotipo));
+            JasperPrint jp = JasperFillManager.fillReport(jr, parametros, con.getConexion());
+            JasperViewer jv = new JasperViewer(jp, false);
             jv.setVisible(true);
+            jv.show();
+
 
         } catch (JRException ex) {
             Logger.getLogger(ControlFactura.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
-       
-
 }

@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.13.0.final using JasperReports Library version 6.13.0-46ada4d1be8f3c5985fd0b6146f3ed44caed6f05  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rptFactura" pageWidth="595" pageHeight="430" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5c36a1b6-edf1-411d-bfee-40dcb519fad3">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="exodo"/>
+	<parameter name="aguja" class="java.lang.String">
+		<parameterDescription><![CDATA[Búsqueda para facturas]]></parameterDescription>
+	</parameter>
+	<parameter name="logo" class="java.io.InputStream"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT factura.fechafactura,
+	factura.nombrecliente,
+	factura.fkcedulacliente,
+	factura.apellidocliente,
+	factura.direccion,
+	factura.fkcodigocontrato,
+	factura.costowatts,
+	factura.watts,
+	factura.total,
+	factura.codigofactura
+FROM factura
+WHERE 
+	 UPPER(factura.codigofactura) LIKE UPPER ( $P{aguja}) OR 
+	 UPPER(factura.nombrecliente) LIKE UPPER ( $P{aguja}) OR
+	 UPPER(factura.fkcedulacliente) LIKE UPPER ( $P{aguja})]]>
+	</queryString>
+	<field name="fechafactura" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="fechafactura"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="factura"/>
+	</field>
+	<field name="nombrecliente" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nombrecliente"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="factura"/>
+	</field>
+	<field name="fkcedulacliente" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="fkcedulacliente"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="factura"/>
+	</field>
+	<field name="apellidocliente" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="apellidocliente"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="factura"/>
+	</field>
+	<field name="direccion" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="direccion"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="factura"/>
+	</field>
+	<field name="fkcodigocontrato" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="fkcodigocontrato"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="factura"/>
+	</field>
+	<field name="costowatts" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="costowatts"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="factura"/>
+	</field>
+	<field name="watts" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="watts"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="factura"/>
+	</field>
+	<field name="total" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="total"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="factura"/>
+	</field>
+	<field name="codigofactura" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="codigofactura"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="factura"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="91" splitType="Stretch">
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="0" y="1" width="70" height="76" uuid="8c38f577-52cf-4664-ad7b-535a8a5dd323"/>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="80" y="20" width="400" height="30" uuid="f15fd141-14b9-4d9c-a97d-42a2be2b67f2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FACTURA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="47" width="400" height="30" uuid="29451e07-8f95-4230-83c5-220a869c996e"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom"/>
+				<text><![CDATA[Ave Max Uhle y Pumapungo Cuenca, Av. Max Uhle, Cuenca]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="460" y="10" width="90" height="67" forecolor="#000000" backcolor="#B8B8B8" uuid="99161df1-8068-4195-8252-0ace7df86e17"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="460" y="23" width="90" height="17" uuid="12e3a414-fbf3-4b7d-b007-9e204ff90604"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha de Pago:]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="460" y="40" width="90" height="30" uuid="787a32d3-d7e6-4707-a869-118752cc35c1"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm">
+				<reportElement x="460" y="50" width="91" height="27" uuid="b2c38e61-b91e-491b-b82d-41a2841846a4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="22" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="280" height="20" forecolor="#B8B6B6" backcolor="#B8B6B6" uuid="f670663c-88b1-4461-b376-8c49d7be130a"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="10" y="0" width="260" height="20" uuid="d8f18d72-3c5f-4c09-9988-798a05a92452"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[PAGO DE CONSUMO ELÉCTRICO]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="20" width="560" height="1" uuid="4febcf30-85b8-4823-aa05-114a97e4eb59"/>
+			</line>
+			<staticText>
+				<reportElement x="290" y="0" width="90" height="20" uuid="d761e40c-c335-46ef-b5e6-31a9be05fe29"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Código de Factura:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="380" y="0" width="80" height="19" uuid="e21df713-c1a9-42c4-b829-04ad7793e40d"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{codigofactura}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="151" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="280" height="149" uuid="f8292818-4a48-4b40-9312-9d145e41838c"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="0" width="280" height="20" uuid="9a71fa58-e6e7-41ee-b89b-ed40ed65b388"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Datos del Consumidor]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="20" width="280" height="1" uuid="8ca7e0e2-5078-4b08-bacc-74e1eb83e0bd"/>
+			</line>
+			<line>
+				<reportElement x="290" y="20" width="269" height="1" uuid="deaac167-c9d6-4088-ad48-5cc57843c9a0"/>
+			</line>
+			<staticText>
+				<reportElement x="280" y="0" width="278" height="20" uuid="97a404ec-0b6a-425f-9f33-4534905884c3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Detalles del Consumo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="30" width="60" height="22" uuid="f8248a0f-6548-4b01-90ce-71c63a0697cf"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[N° Contrato:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="52" width="60" height="22" uuid="8670676f-95f9-4ed9-8385-382b481ba498"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Cédula:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="74" width="60" height="22" uuid="e18261ab-a812-4691-951d-80daba830261"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Nombres:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="118" width="60" height="22" uuid="0e9b4800-9034-4e88-9052-67ea49d04195"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Dirección:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="72" y="21" width="1" height="127" forecolor="#8F8C8C" uuid="01408a62-ee0f-430b-b06b-724d635d7e25"/>
+			</line>
+			<textField>
+				<reportElement x="75" y="30" width="100" height="22" uuid="156a024d-d88c-43e0-b6c7-919dfdd96d8c"/>
+				<textFieldExpression><![CDATA[$F{fkcodigocontrato}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="75" y="52" width="100" height="22" uuid="acd07bda-4c2f-4d5a-9372-acab9c16d11f"/>
+				<textFieldExpression><![CDATA[$F{fkcedulacliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="75" y="74" width="100" height="22" uuid="c7ff057d-7859-4748-bdfb-d9485e49f931"/>
+				<textFieldExpression><![CDATA[$F{nombrecliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="75" y="96" width="100" height="22" uuid="db77b11e-c0ae-4b63-8db9-142606b93836"/>
+				<textFieldExpression><![CDATA[$F{apellidocliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="75" y="118" width="100" height="22" uuid="3d7434b2-baad-4227-a108-bfaae375c5ee"/>
+				<textFieldExpression><![CDATA[$F{direccion}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="96" width="60" height="22" uuid="45e8ee14-bd21-48c7-a53e-235ac24f363b"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Apellidos:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="355" y="30" width="60" height="22" uuid="5249e453-5fd2-432a-adf9-ec1f6662bff4"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Costo:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="335" y="52" width="80" height="22" uuid="95085600-f7f0-4136-a112-c681e2f2fea4"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Consumo Kw/h:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="355" y="100" width="60" height="22" uuid="9e8b2a13-d0a3-4c04-9914-da2f0f4a0178"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Total:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="355" y="70" width="60" height="22" uuid="13e46a6a-1a05-424c-9564-1a675aa68dbb"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Unidad Calc:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="425" y="70" width="30" height="22" uuid="fca91107-161b-40a7-a02d-eaa313337c28"/>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[KWH]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="425" y="30" width="100" height="22" uuid="8a6ebe35-189b-46f2-a59f-0f1019553ad3"/>
+				<textFieldExpression><![CDATA[$F{costowatts}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="425" y="52" width="100" height="18" uuid="472d480d-cd9c-4e10-b5d4-69c17892fb23"/>
+				<textFieldExpression><![CDATA[$F{watts}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="425" y="100" width="100" height="22" uuid="839b93fa-cfe5-4805-a66c-3bfff8ef5b9b"/>
+				<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="73" splitType="Stretch">
+			<textField>
+				<reportElement x="69" y="35" width="71" height="30" uuid="32da161b-7139-4773-ae24-956da9a50198"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{apellidocliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="346" y="35" width="69" height="30" uuid="b0cf35c3-f05c-44be-a0e7-7ef073f167c5"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{costowatts}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="140" y="35" width="68" height="30" uuid="39ba13af-df66-436a-9054-7ba93fd41cd5"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{fkcedulacliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="277" y="35" width="69" height="30" uuid="784a4e20-60b6-4a41-92fc-0f8ba448368d"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{fkcodigocontrato}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="35" width="69" height="30" uuid="479ac00d-2a74-41eb-a328-619b084c1ee7"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nombrecliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="208" y="35" width="69" height="30" uuid="63833ba1-c8ad-45b3-a5ab-610b4e411643"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{direccion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="415" y="35" width="69" height="30" uuid="c646f7cd-274a-433d-b7b7-a81db3e507b7"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{watts}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="484" y="35" width="69" height="30" uuid="efb3b740-73ec-4a26-b0f5-0812a2ca0c6e"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="10" width="70" height="22" uuid="69306e74-06c1-4f07-a8f4-e3f3275d41be"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Nombre:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="70" y="10" width="70" height="22" uuid="3a6b0d0f-5f2a-48c0-b9ba-f0bd20904829"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Apellidos:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="10" width="68" height="22" uuid="0c5dea69-6eb1-47c0-9cdf-06899e843c40"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Cédula:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="208" y="10" width="69" height="22" uuid="4059f64f-04c9-49b1-a43f-423fde58de24"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Dirección:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="277" y="10" width="69" height="22" uuid="8a19a8c5-1dad-45e1-b6e5-84dedaa3babe"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Contrato:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="346" y="10" width="69" height="22" uuid="4b6936fc-6ec6-4db2-849a-3697359ab67f"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Costo:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="415" y="10" width="69" height="22" uuid="98781f5f-090c-445a-8c48-560cc08c5f0c"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Watts]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="484" y="10" width="69" height="22" uuid="a6574cbb-b069-4775-9aaa-70a991e4a3dc"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Total:]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="60" y="10" width="110" height="20" backcolor="#B3B1B1" uuid="1bc38edd-e535-4ef3-8792-7da6ca5f9d31"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[VALOR CANCELADO:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="170" y="10" width="100" height="20" uuid="3b9a3419-5e21-4b66-921f-4cd5c5d4e205"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="335" y="10" width="110" height="20" backcolor="#B3B1B1" uuid="753e53be-36fc-4166-9690-7cc471d15397"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[SALDO PENDIENTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="547" y="10" width="10" height="20" uuid="badbccd8-354b-4855-94ec-e73a2a972971">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[$]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="445" y="10" width="100" height="20" uuid="fdecb5ee-c46d-4958-9202-2d0b3f3be32d"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<text><![CDATA[0.00]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="0" width="555" height="1" uuid="c7ad7d5e-d379-4aa5-94e6-2691314f1f6d"/>
+			</line>
+			<staticText>
+				<reportElement x="272" y="11" width="10" height="20" uuid="cee2c87b-911b-46aa-9dc2-fd1abc2198d0">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[$]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

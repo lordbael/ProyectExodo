@@ -430,8 +430,9 @@ public class ControlCliente {
         try {
             JasperReport jr = (JasperReport) JRLoader.loadObject(getClass().getResource("/reporte/rptCliente.jasper"));
             JasperPrint jp = JasperFillManager.fillReport(jr, null, con.getConexion());
-            JasperViewer jv = new JasperViewer(jp);
+            JasperViewer jv = new JasperViewer(jp, false);
             jv.setVisible(true);
+            jv.show();
 
         } catch (JRException ex) {
             Logger.getLogger(ControlCliente.class.getName()).log(Level.SEVERE, null, ex);
