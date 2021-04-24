@@ -14,7 +14,9 @@ import java.sql.Date;
 import java.time.Instant;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -43,6 +45,7 @@ public class ControlMedidor {
     private VistaMedidores vista;
     String st;
     boolean validarBotonA;
+    private final String logotipo = "/reporte/minilogo.png";
 
     public ControlMedidor(ModeloMedidor modelo, VistaMedidores vista) {
         this.modelo = modelo;
@@ -346,7 +349,9 @@ public class ControlMedidor {
 
         try {
             JasperReport jr = (JasperReport) JRLoader.loadObject(getClass().getResource("/reporte/rptMedidores.jasper"));
-            JasperPrint jp = JasperFillManager.fillReport(jr, null, con.getConexion());
+            Map<String, Object> parametros = new HashMap<String, Object>();
+            parametros.put("logo", this.getClass().getResourceAsStream(logotipo));
+            JasperPrint jp = JasperFillManager.fillReport(jr, parametros, con.getConexion());
             JasperViewer jv = new JasperViewer(jp, false);
             jv.setVisible(true);
             jv.show();
