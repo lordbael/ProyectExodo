@@ -114,6 +114,7 @@ public class ControlFactura {
         vista.getBtnSeleccionarContrato().addActionListener(l -> LlenarContrato());
         vista.getBtnBuscarContra().addActionListener(l -> MuestraContratos());
         vista.getBtnImprimirFac().addActionListener(l -> ImprimirReporteFactura());
+        vista.getBtnExportarFac().addActionListener(l -> ExportarReporte());
 
     }
 
@@ -504,9 +505,26 @@ public class ControlFactura {
             jv.setVisible(true);
             jv.show();
 
-
         } catch (JRException ex) {
             Logger.getLogger(ControlFactura.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+
+    private void ExportarReporte() {
+        ConexionPG con = new ConexionPG();
+
+        try {
+            JasperReport jr = (JasperReport) JRLoader.loadObject(getClass().getResource("/reporte/rptFacturaEstadistico.jasper"));
+            Map<String, Object> parametros = new HashMap<String, Object>();
+            parametros.put("logo", this.getClass().getResourceAsStream(logotipo));
+            JasperPrint jp = JasperFillManager.fillReport(jr, parametros, con.getConexion());
+            JasperViewer jv = new JasperViewer(jp, false);
+            jv.setVisible(true);
+            jv.show();
+
+        } catch (JRException ex) {
+            Logger.getLogger(ControlCliente.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }

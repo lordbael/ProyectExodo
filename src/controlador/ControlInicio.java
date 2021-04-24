@@ -28,6 +28,7 @@ public class ControlInicio {
     public ControlInicio(VistaInicio vi) {
         this.vi = vi;
         vi.setVisible(true);
+        vi.setTitle("Exodo");
     }
 
     public void iniciaControl() {
