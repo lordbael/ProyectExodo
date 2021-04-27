@@ -96,6 +96,7 @@ public class ModeloCliente extends Clientes {
             query += "UPPER(nombre) LIKE UPPER('%" + aguja + "%') OR ";
             query += "UPPER(apellido) LIKE UPPER('%" + aguja + "%') OR ";
             query += "UPPER(cedula) LIKE UPPER('%" + aguja + "%')";
+            query += "ORDER BY (codigo_cliente)";
 
             ResultSet rs = conectar.query(query);
             List<Clientes> lista = new ArrayList<Clientes>();

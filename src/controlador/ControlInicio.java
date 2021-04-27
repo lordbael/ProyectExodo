@@ -10,6 +10,7 @@ import modelo.ModeloContrato;
 import modelo.ModeloFactura;
 import modelo.ModeloMedidor;
 import modelo.ModeloCliente;
+import vista.VistaAcercade;
 import vista.VistaAdmin;
 import vista.VistaContratos;
 import vista.VistaFacturas;
@@ -30,6 +31,8 @@ public class ControlInicio {
         vi.setVisible(true);
         vi.setTitle("Exodo");
     }
+    
+    
 
     public void iniciaControl() {
 
@@ -38,7 +41,6 @@ public class ControlInicio {
         vi.getTblCrudContratos().addActionListener(l -> crudContratos());
         vi.getTblCrudFacturas().addActionListener(l -> crudFacturas());
         vi.getTblCrudAdmin().addActionListener(l -> crudAdmin());
-
     }
 
     public void crudPersonas() {
@@ -85,5 +87,5 @@ public class ControlInicio {
         ControlAdmin c = new ControlAdmin(m, v);
         c.iniciaControl();
     }
-
+    
 }

@@ -115,6 +115,7 @@ public class ControlFactura {
         vista.getBtnBuscarContra().addActionListener(l -> MuestraContratos());
         vista.getBtnImprimirFac().addActionListener(l -> ImprimirReporteFactura());
         vista.getBtnExportarFac().addActionListener(l -> ExportarReporte());
+        vista.getBtnEliminarFac().setEnabled(false);
 
     }
 

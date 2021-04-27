@@ -7,6 +7,7 @@ package vista;
 
 import javax.swing.JButton;
 import javax.swing.JDesktopPane;
+import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JToggleButton;
 
@@ -25,6 +26,16 @@ public class VistaInicio extends javax.swing.JFrame {
         Desktop.setBorder(new ImagenFondo());
         this.setExtendedState(VistaInicio.MAXIMIZED_BOTH);
     }
+
+    public JButton getBtnacercade() {
+        return btnacercade;
+    }
+
+    public void setBtnacercade(JButton btnacercade) {
+        this.btnacercade = btnacercade;
+    }
+
+    
 
     public JDesktopPane getDesktop() {
         return Desktop;
@@ -145,7 +156,7 @@ public class VistaInicio extends javax.swing.JFrame {
         Desktop = new javax.swing.JDesktopPane();
         jPanel1 = new javax.swing.JPanel();
         barraxd = new javax.swing.JButton();
-        btnAcercade1 = new javax.swing.JButton();
+        btnacercade = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -319,9 +330,14 @@ public class VistaInicio extends javax.swing.JFrame {
             }
         });
 
-        btnAcercade1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/acercade.png"))); // NOI18N
-        btnAcercade1.setToolTipText("Acerca de");
-        btnAcercade1.setBorder(null);
+        btnacercade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/acercade.png"))); // NOI18N
+        btnacercade.setToolTipText("Acerca de");
+        btnacercade.setBorder(null);
+        btnacercade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnacercadeActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("|");
 
@@ -403,14 +419,14 @@ public class VistaInicio extends javax.swing.JFrame {
                 .addGap(48, 48, 48)
                 .addComponent(jLabel1)
                 .addGap(38, 38, 38)
-                .addComponent(btnAcercade1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnacercade, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnAcercade1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnacercade, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(barraxd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel1)
@@ -502,11 +518,19 @@ public class VistaInicio extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_barraxdActionPerformed
 
+    private void btnacercadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnacercadeActionPerformed
+        // TODO add your handling code here:
+        VistaAcercade abrir = new VistaAcercade();
+        abrir.setVisible(true);
+        abrir.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        abrir.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnacercadeActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane Desktop;
     private javax.swing.JButton barraxd;
-    private javax.swing.JButton btnAcercade1;
+    private javax.swing.JButton btnacercade;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;

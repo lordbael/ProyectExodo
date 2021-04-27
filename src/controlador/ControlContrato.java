@@ -352,7 +352,7 @@ public class ControlContrato {
                 ModeloContrato con1 = new ModeloContrato();
                 con1.setCodigocontrato(model.getValueAt(fila, 0).toString());
                 if (con1.EliminarContrato()) {
-                    JOptionPane.showMessageDialog(vista, "El contrato ha sido eliminada");
+                    JOptionPane.showMessageDialog(vista, "El contrato ha sido eliminado");
                     cargarLista("");
                 }
             }
